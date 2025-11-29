@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>     
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
+<container>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Behoof</a>
+    <p>Лучшие цены в <br> интернет магазинах</p>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="catalog-dropdown">
+  <button class="catalog-dropdown__toggle" type="button" aria-expanded="false" aria-controls="catalog-dropdown-menu" aria-label="Открыть каталог товаров">
+    Каталог товаров
+    <svg class="catalog-dropdown__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  
+  <div class="catalog-dropdown__menu" id="catalog-dropdown-menu">
+    <div class="catalog-dropdown__categories">
+      <section class="catalog-dropdown__category">
+        <h3 class="catalog-dropdown__category-title">Мобильные устройства</h3>
+        <ul class="catalog-dropdown__list">
+          <li><a href="#" class="catalog-dropdown__link">Смартфоны</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Умные часы</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Наушники</a></li>
+        </ul>
+      </section>
+      
+      <section class="catalog-dropdown__category">
+        <h3 class="catalog-dropdown__category-title">Компьютеры</h3>
+        <ul class="catalog-dropdown__list">
+          <li><a href="#" class="catalog-dropdown__link">Ноутбуки</a></li>
+        </ul>
+      </section>
+      
+      <section class="catalog-dropdown__category">
+        <h3 class="catalog-dropdown__category-title">Планшеты</h3>
+        <ul class="catalog-dropdown__list">
+          <li><a href="#" class="catalog-dropdown__link">Планшеты</a></li>
+        </ul>
+      </section>
+
+      <section class="catalog-dropdown__category">
+        <h3 class="catalog-dropdown__category-title">Разное</h3>
+        <ul class="catalog-dropdown__list">
+          <li><a href="#" class="catalog-dropdown__link">Игровые приставки</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Портативные колонки</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Аксесуары</a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>
+  <div class="container-fluid">
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+      <button class="btn btn-outline-success" type="submit">Поиск</button>
+    </form>
+  </div>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book-fill" viewBox="0 0 16 16">
+  <path d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+  <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+  <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+  <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+</svg>
+</nav>
+    </div>
+  </div>
+</nav>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Обзоры</li>
+  </ol>
+</nav>
+
+  <section class="reviews">
+        <div class="container">
+            <div class="review-image-container">
+              <h3>Топ-модели умных часов</h3>
+                <img class="image-container" src="assets/images/image 1 (17).svg" alt="Смартфон" class="review-image">
+                <p>
+К 2025 году смарт-часы вышли на новый уровень: это уже не просто умный и модный аксессуар, а персональный ассистент, способный значительно упростить жизнь. Отслеживание здоровья, уведомления о звонках и сообщениях, бесконтактная оплата, управление умным домом — возможности впечатляют. Но как выбрать модель, которая действительно будет полезна? 
+
+Умные часы — больше, чем просто аксессуар, который показывает время. Они мониторят показатели вашего здоровья (пульс, сон, уровень кислорода в крови), уведомляют о звонках и сообщениях, позволяют управлять музыкой и совершать бесконтактные платежи. В эпоху, когда каждая секунда на счету, смарт-часы в полном смысле экономят время: с ними можно оставаться на связи и контролировать важные параметры, не доставая смартфон из кармана. Часы помогают вести более здоровый и организованный образ жизни, напоминая о необходимости двигаться, пить воду и придерживаться режима сна.
+
+Универсальность и адаптивность к потребностям пользователя — вот что делает умные часы такими популярными. Спортсмены оценят GPS-трекинг и режимы для различных видов активности, а деловые люди — возможность быстро просматривать почту и календарь. Путешественники найдут полезными карты и компас, а люди, которые заботятся о здоровье, оценят мониторинг сна и уровня стресса. Смарт-часы эффективно интегрируются в современную, “цифровую”, повседневную жизнь, помогая, освобождая от рутины и позволяя сосредоточиться на главном. 
+
+Собрали подборку бюджетных смарт-часов: взрослых и детских. Читайте статью с рейтингом моделей до 5000 рублей. 
+
+Батарея и автономность
+Фото 12.jpg
+
+Время работы от батареи
+Время работы от батареи — один из ключевых факторов при выборе смарт-часов. Частая подзарядка утомляет и ограничивает функциональность устройства. Представьте: вы отправились в поход и часы разрядились в самый неподходящий момент, лишив вас возможности отслеживать маршрут или получать уведомления.
+
+Длительное время автономной работы означает, что вы будете реже беспокоиться о поиске розетки и сможете использовать смарт-часы в полной мере, не ограничивая себя в функциях. Особенно это важно для людей, которые ведут активный образ жизни, путешественников и тех, кто ценит свободу от проводов. Xiaomi Redmi Watch 4 могут работать до 20 дней без подзарядки в режиме активного использования. 
+
+Возможности быстрой зарядки и экономии энергии
+С технологией быстрой зарядки ваши смарт-часы восполнят заряд аккумулятора, пока вы пьёте утренний кофе. Если нет возможности зарядить их, то можно продлить срок работы другими способами. Например, отключите Always-On Display, ограничьте уведомления или переключитесь в режим «только время» — так ваши смарт-часы продержатся намного дольше. Эти функции особенно полезны в поездках, где доступ к розетке ограничен. Быстрая зарядка и режимы экономии энергии — гарантия того, что умные часы будут готовы к работе, когда они вам нужны больше всего.
+
+Xiaomi Watch 2 проработают на одном заряде до 3 дней при активном использовании, а полностью зарядятся всего за 45 минут. 
+
+Рекомендации по выбору
+Определите свои приоритеты, и тогда вы сможете легко найти смарт-часы, которые подойдут именно вам. 
+
+Для тех, кто выбирает активный образ жизни. Если вы увлечены спортом и фитнесом, вам нужны часы, которые помогут отслеживать ваши тренировки, измерять пульс, GPS и предлагать расширенные метрики. В этом случае вам подойдёт любая из этих моделей: Xiaomi Watch S3, Xiaomi Watch 2, Xiaomi Watch S1 Pro GL, Xiaomi Watch 2 Pro, Apple Watch Series 9 и Xiaomi Redmi Watch 4. Они предлагают широкий спектр спортивных режимов, точное отслеживание местоположения и интеграцию с фитнес-приложениями. Apple Watch Series 9 особенно выделяются передовыми возможностями отслеживания здоровья. Xiaomi Redmi Watch 4 станет отличным выбором для тех, кто ищет оптимальное соотношение цены и функциональности для занятий спортом.
+
+Mommy, [25.11.2025 21:02]
+Для тех, кто ценит автономность. Если вам важно, чтобы часы работали максимально долго без подзарядки, присмотритесь к моделям с высокой энергоэффективностью. Xiaomi Watch S3 и Xiaomi Redmi Watch 4 демонстрируют хорошую ёмкость аккумулятора. 
+
+Для тех, кому важна независимость от смартфона. Если вы хотите оставаться на связи даже без смартфона, обратите внимание на модель Xiaomi Watch 2 Pro LTE. Поддержка LTE позволит вам совершать звонки, отправлять сообщения и пользоваться интернетом прямо с часов.
+
+Для тех, кто ищет премиальный опыт. Если вы цените изысканный дизайн и расширенные функции, Xiaomi Watch S1 Pro GL и Apple Watch Series 9 станут отличным выбором. Они сочетают в себе элегантный внешний вид, передовые технологии и широкие возможности для персонализации, с которыми вы адаптируете смарт-часы под ваш индивидуальный стиль и потребности.
+
+Фото 14.jpg
+
+
+В 2025 году умные часы — это многофункциональный инструмент для поддержания здоровья, повышения продуктивности и организации повседневной жизни. Определитесь с ключевыми функциями: мониторинг здоровья, спортивные режимы, уведомления, бесконтактная оплата. Обратите внимание на совместимость с вашим смартфоном, автономность, удобство ношения и интеграцию с привычными сервисами. Выбирайте модель, которая максимально соответствует вашим потребностям и бюджету.
+                </p>
+              </div>
+        </div>
+    </section>
+
+<footer class="footer">
+  <button class="scroll-to-top" id="scrollUp" aria-label="Прокрутить наверх">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+    </svg>
+    <div class="scroll-progress"></div>
+</button>
+  <div class="footer__container">
+    <div class="footer__logo">
+      <img src="assets/images/behoof_logo.png"> ГаджетТриум
+    </div>
+    
+    <nav class="footer__links">
+      <div class="footer__column">
+        <h3 class="footer__title">Пользователю</h3>
+        <ul class="footer__list">
+          <li><a href="#" class="footer__link">Магазины</a></li>
+          <li><a href="#" class="footer__link">Кредит и рассрочка</a></li>
+          <li><a href="#" class="footer__link">Акции</a></li>
+          <li><a href="#" class="footer__link">Условия оплаты и доставки</a></li>
+          <li><a href="#" class="footer__link">Гарантия и возрат</a></li>
+          <li><a href="#" class="footer__link">Правовая информация</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer__column">
+        <h3 class="footer__title">Популярные категории</h3>
+        <ul class="footer__list">
+          <li><a href="#" class="footer__link">Умные часы</a></li>
+          <li><a href="#" class="footer__link">Смартфоны</a></li>
+          <li><a href="#" class="footer__link">Ноутбуки</a></li>
+          <li><a href="#" class="footer__link">Аксессуары</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer__column">
+        <h3 class="footer__title">Команда ГаджетТриум</h3>
+        <ul class="footer__list">
+          <li><a href="#" class="footer__link">О нас</a></li>
+          <li><a href="#" class="footer__link">Вакансии</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h3 class="footer__title">Контакты</h3>
+        <ul class="footer__list">
+          <li><a href="#" class="footer__link">+79632937333</a></li>
+          <li><a href="#" class="footer__link">ilakabirov78@mail.ru</a></li>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+  <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+</svg>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="footer__copyright">
+      <p>Copyright © 2025 GadgetTrium, Inc. Все права защищены</p>
+    </div>
+  </div>
+</footer>
+</container>
+
+<script>
+    document.querySelector('.catalog-dropdown__toggle').addEventListener('click', function() {
+  const dropdown = this.closest('.catalog-dropdown');
+  dropdown.classList.toggle('open');
+  
+  // Обновляем aria-атрибуты
+  const isExpanded = dropdown.classList.contains('open');
+  this.setAttribute('aria-expanded', isExpanded);
+});
+
+// Закрытие при клике вне dropdown
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.catalog-dropdown')) {
+    const openDropdowns = document.querySelectorAll('.catalog-dropdown.open');
+    openDropdowns.forEach(dropdown => {
+      dropdown.classList.remove('open');
+      dropdown.querySelector('.catalog-dropdown__toggle').setAttribute('aria-expanded', 'false');
+    });
+  }
+});
+</script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+<style>
+  .image-container {
+    width: 800px;
+  }
+</style>

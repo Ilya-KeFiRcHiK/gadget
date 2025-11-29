@@ -1,3 +1,4 @@
+<!-- <?= require_once("settings/database.php") ?> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,17 +7,18 @@
     <title>Document</title>
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
      <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 </head>
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-</body>
-</html>
-<container>
+
+<header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <div class="navbar-logo-container">
-      <img src="behoof_logo.png" alt="">
-      <h1>Behoof</h1>
+      <img src="assets/images/behoof_logo.png" alt="">
+      <h1>ГаджетТриум</h1>
       <p>Лучшие цены в интернет-магазинах</p>
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
@@ -24,48 +26,29 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div class="catalog-dropdown">
+        
   <button class="catalog-dropdown__toggle" type="button" aria-expanded="false" aria-controls="catalog-dropdown-menu" aria-label="Открыть каталог товаров">
     Каталог товаров
     <svg class="catalog-dropdown__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </button>
+  
   <div class="catalog-dropdown__menu" id="catalog-dropdown-menu">
     <div class="catalog-dropdown__categories">
       <section class="catalog-dropdown__category">
-        <h3 class="catalog-dropdown__category-title">Мобильные устройства</h3>
         <ul class="catalog-dropdown__list">
-          <li><a href="#" class="catalog-dropdown__link">Смартфоны</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Умные часы</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Наушники</a></li>
-        </ul>
-      </section>
-      
-      <section class="catalog-dropdown__category">
-        <h3 class="catalog-dropdown__category-title">Компьютеры</h3>
-        <ul class="catalog-dropdown__list">
-          <li><a href="#" class="catalog-dropdown__link">Ноутбуки</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Мониторы</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Принтеры и сканеры</a></li>
-        </ul>
-      </section>
-      
-      <section class="catalog-dropdown__category">
-        <h3 class="catalog-dropdown__category-title">Планшеты</h3>
-        <ul class="catalog-dropdown__list">
-          <li><a href="#" class="catalog-dropdown__link">Планшеты</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Электронные книги</a></li>
-        </ul>
-      </section>
-      
-      <section class="catalog-dropdown__category">
-        <h3 class="catalog-dropdown__category-title">Разное</h3>
-        <ul class="catalog-dropdown__list">
-          <li><a href="#" class="catalog-dropdown__link">Игровые приставки</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Портативные колонки</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Корпуса и блоки питания</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Аксессуары</a></li>
-        </ul>
+<!-- <?php
+$stmt = $db->prepare("SELECT * FROM categories");
+$stmt->execute();
+$result = $stmt->get_result();
+$rows = $result->fetch_all();   
+           
+foreach($rows as $row ){
+    echo sprintf('<li><a href="#" class="catalog-dropdown__link">%s</a></li>', $row[1]);
+}
+?> -->
+</ul>
       </section>
     </div>
   </div>
@@ -79,780 +62,598 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book-fill" viewBox="0 0 16 16">
-  <path d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+  <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"/>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+<svg xmlns="http://www.w3.org/2000/svg" id="openModalBtn" href="registration.html" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
   <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
   <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
   <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
 </svg>
 </nav>
+<nav class=" top-nav container">
+
+       <ul class="top-nav-ul">
+        <li class="top-nav-li"><a class="top-nav-link" href="#">Акции</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="#">О компании</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="#">Вакансии</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="#">Обзоры</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="#">Контакты</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="#">Помощь</a></li>
+       </ul>
+</nav>
+  
+  <div class="catalog-dropdown__menu" id="catalog-dropdown-menu">
+    <div class="catalog-dropdown__categories">
+      <section class="catalog-dropdown__category">
+        <ul class="catalog-dropdown__list">
+          <li><a href="#" class="catalog-dropdown__link">Смартфоны</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Умные часы</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Наушники</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Ноутбуки</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Планшеты</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Портативные колонки</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Аксессуары</a></li>
+
+        </ul>
+      </section>
+    </div>
+  </div>
+  </div>
     </div>
   </div>
 </nav>
+</header>
+<main>
+     <button class="feedback-toggle-btn" id="feedbackToggleBtn">
+        Заказать звонок <span class="icon"></span>
+    </button>
 
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item active" aria-current="page">Главная</li>
-    <li class="breadcrumb-item"><a href="obzor.html">Обзоры</a></li>
-  </ol>
-</nav>
+    <div class="overlay" id="overlay"></div>
 
+    <div class="feedback-form-container" id="feedbackFormContainer">
+        <button class="close-btn" id="closeBtn">×</button>
+        
+        <div class="feedback-form-header" id="feedbackFormHeader">
+            Оставьте свои данные и мы перезвоним в ближайшее время
+        </div>
+        
+        <form action="" method="" id="feedback-form" class="feedback-form" autocomplete="off" novalidate>
+            <label>
+                Имя:
+                <input type="text" class="name" name="name" id="name" 
+                       placeholder="Только буквы, от 1 до 12 символов" 
+                       pattern="[A-Za-zА-Яа-яЁё\s]{1,12}" 
+                       title="Только буквы (рус/англ), от 1 до 12 символов"
+                       required>
+                <div class="hint" id="name-hint"></div>
+            </label>
+
+            <label>
+                Телефон:
+                <input type="tel" class="telefon-name" name="phone" id="phone" 
+                       placeholder="+7 (___) ___-__-__" 
+                       pattern="\+7\s?[\(]{0,1}\d{3}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" 
+                       title="Формат: +7 (XXX) XXX-XX-XX"
+                       required>
+                <div class="hint" id="phone-hint"></div>
+            </label>
+        
+            <button id="submit-btn" type="submit">Отправить</button>
+        </form>
+    </div>
 <section>
   <div class="tovars">
     <div class="tovar-1">
-      <p class="tovar-text">1.8 млн товаров в 2272 магазинах <br> найди, сравни, выберай!</p>
-      <button class="button-red-1">Перейти по категориям</button> 
+      <div class="swiper swiper-sell">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide tovar-slide-1"><h2>Дешёвые смартфоны до 30000</h2><a href="#">Перейти</a></div>
+          <div class="swiper-slide tovar-slide-2"><h2>Кредит без переплаты</h2><a href="#">Перейти</a></div>
+          <div class="swiper-slide tovar-slide-3"><h2>Получи скидку 3% при оплате наличными</h2><a href="#">Перейти</a></div>
+          <div class="swiper-slide tovar-slide-4"><h2>Скидка 30% на часы при покупке дуэта!</h2><a href="#">Перейти</a></div>
+          <div class="swiper-slide tovar-slide-5"><h2>Новая бонусная программа</h2><a href="#">Перейти</a></div>
+        </div>
+      </div>
     </div>
-    <div class="tovar-1">
-      <p class="tovar-text">Топ-10 смартофонов <br> 2023 года</p>
-      <button class="button-red-2">Смотреть</button> 
+    <div class="tovar-2">
+      <p class="tovar-text-2"><span style="color: #dc3545;">Самое горячее</span> предложение 2025 года</p>
+      <p class="timer-text">Успейте купить!:</p>
+            <div class="timer" id="countdown">
+                    Загрузка...
+            </div>
+      <div class="tovar-wrap">
+      <img class="phone-image17" src="assets/images/34759-60717_promax_orange@2x.jpg" alt="">
+      <div class="tovar-price">
+        <h3>Iphone 17 pro</h3>
+        <p>77 990 p.</p>
+      <button class="button-red-2">В корзину</button>
+      <div class="img-home parallax" style="background-image: url('img/e3f3dc517ec08cf38a70b364f6e29d3abf9f2ff4.jpg');"></div>
+        <div class="sale-container">
+    <div class="sale-tanhouse">
+        <div class="sale-content">
+            <script src="JS/script.js"></script>
+        </div>
+    </div>
+</div>
+      </div>
+      </div>
     </div>
   </div>
 
   <h1 class="vibor-h1">Лучший выбор</h1>
+  
+ <div class="stats-1">
+        <div class="stat-1">
+            <img src="assets/images/Telephone.png" alt="Смартфоны">
+            <p>Смартфоны</p>
+        </div>
+        
+        <div class="stat-1">
+            <img src="assets/images/clock.png" alt="Умные часы">
+            <p>Умные часы</p>
+        </div>
+        
+        <div class="stat-1">
+            <img src="assets/images/ears 1.png" alt="Наушники">
+            <p>Наушники</p>
+        </div>
+        
+        <div class="stat-1">
+            <img src="assets/images/Notebook.png" alt="Ноутбуки">
+            <p>Ноутбуки</p>
+        </div>
 
-  <div class="container py-4">
-        <div id="categoryCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <!-- Слайд 1 -->
-                <div class="carousel-item active">
-                    <div class="d-flex justify-content-center">
-                        <div class="category-card">
-                            <img src="Telephone.png" alt="Смартфоны">
-                            <p>Смартфоны</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Слайд 2 -->
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-center">
-                        <div class="category-card">
-                            <img src="Notebook.png" alt="Ноутбуки">
-                            <p>Ноутбуки</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Слайд 3 -->
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-center">
-                        <div class="category-card">
-                            <img src="Table.png" alt="Планшеты">
-                            <p>Планшеты</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Слайд 4 -->
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-center">
-                        <div class="category-card">
-                            <img src="clock.png" alt="Умные часы">
-                            <p>Умные часы</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Слайд 5 -->
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-center">
-                        <div class="category-card">
-                            <img src="PS.png" alt="Игровые приставки">
-                            <p>Игровые приставки</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Слайд 6 -->
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-center">
-                        <div class="category-card">
-                            <img src="ears.png" alt="Наушники">
-                            <p>Наушники</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Слайд 7 -->
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-center">
-                        <div class="category-card">
-                            <img src="colonka.png" alt="Колонки">
-                            <p>Портативные колонки</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Слайд 8 -->
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-center">
-                        <div class="category-card">
-                            <img src="accesories.png" alt="Аксессуары">
-                            <p>Аксессуары</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Кнопки управления -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#categoryCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#categoryCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+        <div class="stat-1">
+            <img src="assets/images/Table.png" alt="Планшеты">
+            <p>Планшеты</p>
+        </div>
+
+        <div class="stat-1">
+            <img src="assets/images/colonka.png" alt="Портативные колонки">
+            <p>Портативные колонки</p>
+        </div>
+
+        <div class="stat-1">
+            <img src="assets/images/accesories.png" alt="Аксессуары">
+            <p>Аксессуары</p>
         </div>
     </div>
-
-<div class="features-container">
-  <div class="feature-box">
-    <div class="feature-header">
-      <p class="feature-title">Дизайн</p>
-      <div class="feature-icon">
-        <img src="Krestiksvgpng.ru_.png" alt="Оценка дизайна" width="24">
-      </div>
     </div>
-  </div>
-  
-  <div class="feature-box">
-    <div class="feature-header">
-      <p class="feature-title">Портативность</p>
-      <div class="feature-icon">
-        <img src="Krestiksvgpng.ru_.png" alt="Оценка портативности" width="24">
-      </div>
-    </div>
-  </div>
-  
-  <div class="feature-box">
-    <div class="feature-header">
-      <p class="feature-title">Камера</p>
-      <div class="feature-icon">
-        <img src="Krestiksvgpng.ru_.png" alt="Оценка портативности" width="24">
-      </div>
-    </div>
-  </div>
-  
-  <div class="feature-box">
-    <div class="feature-header">
-      <p class="feature-title">Дисплей</p>
-      <div class="feature-icon">
-        <img src="Krestiksvgpng.ru_.png" alt="Оценка портативности" width="24">
-      </div>
-    </div>
-  </div>
 </section>
 
-    <div class="container py-5">
-        <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <!-- Карточка 1 -->
-                <div class="carousel-item active">
-                    <div class="product-card">
-                        <div class="product-header">
-                            <span class="product-category">Портативные колонки</span>
-                            <h2 class="product-title">Apple iPhone 13 Pro Max 256 ГБ серый</h2>
-                            <div class="">
-                                <img src="Telephone.png" alt="iPhone 13 Pro Max">
-                            </div>
-                        </div>
-                        
-                        <div class="rating-container">
-                            <div class="rating-item">
-                                <div class="rating-info">
-                                    <span class="rating-label">Дизайн</span>
-                                    <span class="rating-value">65%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 65%; background-color: #ff3b30;"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="rating-item">
-                                <div class="rating-info">
-                                    <span class="rating-label">Батарея</span>
-                                    <span class="rating-value">35%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 35%; background-color: #ff3b30;"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="rating-item">
-                                <div class="rating-info">
-                                    <span class="rating-label">Дисплей</span>
-                                    <span class="rating-value">50%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 50%; background-color: #ff9500;"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="rating-item">
-                                <div class="rating-info">
-                                    <span class="rating-label">Камера</span>
-                                    <span class="rating-value">75%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 75%; background-color: #34c759;"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="rating-item">
-                                <div class="rating-info">
-                                    <span class="rating-label">Ответ</span>
-                                    <span class="rating-value">70%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 70%; background-color: #34c759;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Карточка 2 -->
-                <div class="carousel-item">
-                    <div class="product-card">
-                        <div class="product-header">
-                            <span class="product-category">Портативные колонки</span>
-                            <h2 class="product-title">Apple iPhone 13 Pro Max 256 ГБ серый</h2>
-                            <div class="">
-                                <img src="Telephone.png" alt="iPhone 13 Pro Max">
-                            </div>
-                        </div>
-                        
-                        <div class="rating-container">
-                            <div class="rating-item">
-                                <div class="rating-info">
-                                    <span class="rating-label">Дизайн</span>
-                                    <span class="rating-value">65%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 65%; background-color: #ff3b30;"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="rating-item">
-                                <div class="rating-info">
-                                    <span class="rating-label">Батарея</span>
-                                    <span class="rating-value">35%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 35%; background-color: #ff3b30;"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="rating-item">
-                                <div class="rating-info">
-                                    <span class="rating-label">Дисплей</span>
-                                    <span class="rating-value">50%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 50%; background-color: #ff9500;"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="rating-item">
-                                <div class="rating-info">
-                                    <span class="rating-label">Камера</span>
-                                    <span class="rating-value">75%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 75%; background-color: #34c759;"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="rating-item">
-                                <div class="rating-info">
-                                    <span class="rating-label">Ответ</span>
-                                    <span class="rating-value">70%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 70%; background-color: #34c759;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Карточка 3 -->
-                <div class="carousel-item">
-                    <div class="product-card">
-                        <div class="product-header">
-                            <span class="product-category">Портативные колонки</span>
-                            <h2 class="product-title">Apple iPhone 13 Pro Max 256 ГБ серый</h2>
-                            <div class="">
-                                <img src="Telephone.png" alt="iPhone 13 Pro Max">
-                            </div>
-                        </div>
-                        
-                        <div class="rating-container">
-                            <div class="rating-item">
-                                <div class="rating-info">
-                                    <span class="rating-label">Дизайн</span>
-                                    <span class="rating-value">65%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 65%; background-color: #ff3b30;"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="rating-item">
-                                <div class="rating-info">
-                                    <span class="rating-label">Батарея</span>
-                                    <span class="rating-value">35%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 35%; background-color: #ff3b30;"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="rating-item">
-                                <div class="rating-info">
-                                    <span class="rating-label">Дисплей</span>
-                                    <span class="rating-value">50%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 50%; background-color: #ff9500;"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="rating-item">
-                                <div class="rating-info">
-                                    <span class="rating-label">Камера</span>
-                                    <span class="rating-value">75%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 75%; background-color: #34c759;"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="rating-item">
-                                <div class="rating-info">
-                                    <span class="rating-label">Ответ</span>
-                                    <span class="rating-value">70%</span>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 70%; background-color: #34c759;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Предыдущий</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Следующий</span>
-            </button>
-        </div>
-    </div>
-
+   
  <section class="goals">
+
   <h2 class="goals__title">Наша цель - создать фантастический сервис для всех потребителей</h2>
 
   <div class="stats">
-    <div class="stat">
-      <span class="stat__number">5</span>
-      <p class="stat__description">Lorem ipsum dolor sit amet consectetur. Rhoncus risus nunc a pharetra viverra enim nunc.</p>
+        <div class="stat">
+            <span class="stat__number">5</span>
+            <p class="stat__description">Минут в среднем занимает оформление заказа. Быстро, понятно, без лишних полей.</p>
+        </div>
+        
+        <div class="stat">
+            <span class="stat__number">30</span>
+            <p class="stat__description">Дней на бесплатный тест-драйв топовых моделей. Если не понравится - вернем деньги.</p>
+        </div>
+        
+        <div class="stat">
+            <span class="stat__number">3</span>
+            <p class="stat__description">Года рассрочки без переплат на всю технику. Платите с комфортом.</p>
+        </div>
+        
+        <div class="stat">
+            <span class="stat__number">300+</span>
+            <p class="stat__description">Бонусов на счет за первый заказ. Дарим возможность выгодной покупки.</p>
+        </div>
+        
+        <div class="stat">
+            <span class="stat__number">8</span>
+            <p class="stat__description">Часов - рекордная скорость доставки по Калининграду. Технологии будущего должны быть у вас сегодня!</p>
+        </div>
     </div>
-    
-    <div class="stat">
-      <span class="stat__number">30</span>
-      <p class="stat__description">Gravida vel convallis id aliquet volutpat nullam dignissim. Amet parturient elementum lectus rhoncus at.</p>
-    </div>
-    
-    <div class="stat">
-      <span class="stat__number">30</span>
-      <p class="stat__description">Gravida vel convallis id aliquet volutpat nullam dignissim. Amet parturient elementum lectus rhoncus at.</p>
-    </div>
-    
-    <div class="stat">
-      <span class="stat__number">300</span>
-      <p class="stat__description">Sed varius ut venenatis id amet et consectetur pellentesque. Vitae urna ornare vel suspendisse tincidunt.</p>
-    </div>
-    
-    <div class="stat">
-      <span class="stat__number">8</span>
-      <p class="stat__description">Id enim ornare lacus duis. Ac fermentum auctor cras adipiscing feugiat quis convallis velit.</p>
-    </div>
-  </div>
 </section>
 
 <section class="benefits">
   <div class="benefits__content">
     <h2 class="benefits__title"><span style="color: red;">Экономьте</span> свое время<br>и получайте <span style="color: red;">максимум</span><br>от ежедневных покупок</h2>
-    <img src="Frame 2358.png" alt="Преимущества сервиса" class="benefits__image" width="300">
+    <img src="assets/images/Frame 2358.png" alt="Преимущества сервиса" class="benefits__image" width="300">
+    <img class="benefits__title_phone" src="assets/images/iPhone 14 Pro Space Black Mockup.png" alt="">
+    <img class="benefits__title_phone_2" src="assets/images/iPhone 14 Pro Space Black Mockup.png" alt="">
   </div>
 </section>
 
-<h2 class="index-h2">Новинки</h2>
 
-    <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner" data-bs-interval="3000">
-        <!-- Слайд 1 -->
-        <div class="carousel-item active">
-            <div class="d-flex justify-content-center">
-                <div class="product-card mx-2">
-                    <div class="product-image-container">
-                        <img src="2272131 1.png" alt="Умные часы Apple iPhone 13 Pro Max" class="product-image d-block w-100">
-                        <div class="product-actions">
-                            <button class="action-btn" aria-label="Добавить в избранное">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-                                </svg>
-                            </button>
-                        </div>
+
+<section class="container">
+  <h2 class="index-h2">Новинки</h2>
+  <div class="row g-4">
+            <!-- Xiaomi -->
+            <div class="col-md-6 col-lg-3">
+              <div class="new">
+               <div class="new-img">
+                  <img class="new-image" src="assets/images/samsung 1.png" alt="">
+                  <img class="new-image-heart" src="assets/images/heart.png" alt="">
+                </div>
+                <div class="new-info">
+                  <h3 class="new-title">Samsung Galaxy S25</h3>
+                  <p class="new-info-price">Цена</p>
+                  <p class="new-price">55 000 ₽</p>
+                  <button class="new-basket">В корзину</button>
+                </div> 
+              </div>
+                
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+              <div class="new">
+               <div class="new-img">
+                  <img class="new-image" src="assets/images/galaxywatch 1.svg" alt="">
+                  <img class="new-image-heart" src="assets/images/heart.png" alt="">
+                </div>
+                <div class="new-info">
+                  <h3 class="new-title">Galaxy Watch Ultra 47 мм LTE-синий-титан</h3>
+                  <p class="new-info-price">Цена</p>
+                  <p class="new-price">39 990 ₽</p>
+                  <button class="new-basket">В корзину</button>
+                </div> 
+              </div>
+                
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+              <div class="new">
+               <div class="new-img">
+                  <img class="new-image" src="assets/images/ears 1.png" alt="">
+                  <img class="new-image-heart" src="assets/images/heart.png" alt="">
+                </div>
+                <div class="new-info">
+                  <h3 class="new-title">Беспроводные наушники JBL Tune 770NC Black</h3>
+                  <p class="new-info-price">Цена</p>
+                  <p class="new-price">6 000 ₽</p>
+                  <button class="new-basket">В корзину</button>
+                </div> 
+              </div>
+                
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+              <div class="new">
+               <div class="new-img">
+                  <img class="new-image" src="assets/images/notebook.png" alt="">
+                  <img class="new-image-heart" src="assets/images/heart.png" alt="">
+                </div>
+                <div class="new-info">
+                  <h3 class="new-title">Ноутбук HUAWEI MateBook D 16 i5-13420H/8/512GB WIN SG 53014CNC5</h3>
+                  <p class="new-info-price">Цена</p>
+                  <p class="new-price">54 999 ₽</p>
+                  <button class="new-basket">В корзину</button>
+                </div> 
+              </div>
+                
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+              <div class="new">
+               <div class="new-img">
+                  <img class="new-image" src="assets/images/tablet.avif" alt="">
+                  <img class="new-image-heart" src="assets/images/heart.png" alt="">
+                </div>
+                <div class="new-info">
+                  <h3 class="new-title">Планшет HUAWEI MatePad SE 11 (2024) 8/128GB LTE Gray 53014AYK</h3>
+                  <p class="new-info-price">Цена</p>
+                  <p class="new-price">17 399 ₽</p>
+                  <button class="new-basket">В корзину</button>
+                </div> 
+              </div>
+                
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+              <div class="new">
+               <div class="new-img">
+                  <img class="new-image" src="assets/images/kolonka.avif" alt="">
+                  <img class="new-image-heart" src="assets/images/heart.png" alt="">
+                </div>
+                <div class="new-info">
+                  <h3 class="new-title">Умная колонка Яндекс Станция Мини с Алисой, с часами, 10Вт, синий сапфир</h3>
+                  <p class="new-info-price">Цена</p>
+                  <p class="new-price">8 499 ₽</p>
+                  <button class="new-basket">В корзину</button>
+                </div> 
+              </div>
+                
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+              <div class="new">
+               <div class="new-img">
+                  <img class="new-image" src="assets/images/samsung 1.png" alt="">
+                  <img class="new-image-heart" src="assets/images/heart.png" alt="">
+                </div>
+                <div class="new-info">
+                  <h3 class="new-title">Samsung Galaxy S25</h3>
+                  <p class="new-info-price">Цена</p>
+                  <p class="new-price">55 000 p</p>
+                  <button class="new-basket">В корзину</button>
+                </div> 
+              </div>
+                
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+              <div class="new">
+               <div class="new-img">
+                  <img class="new-image" src="assets/images/30079355bb.avif" alt="">
+                  <img class="new-image-heart" src="assets/images/heart.png" alt="">
+                </div>
+                <div class="new-info">
+                  <h3 class="new-title">Samsung Galaxy S25+</h3>
+                  <p class="new-info-price">Цена</p>
+                  <p class="new-price">96 999 ₽</p>
+                  <button class="new-basket">В корзину</button>
+                </div> 
+              </div>
+                
+            </div>
+            
+            
+        </div>
+</section>   
+
+
+<div class="container">
+        <div class="header-section">
+            <h2 class="obzor-h2">Бренды</h2>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Xiaomi -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card brand-card">
+                    <div class="card-img-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Xiaomi_logo_%282021-%29.svg/2560px-Xiaomi_logo_%282021-%29.svg.png" alt="Xiaomi" class="brand-logo">
                     </div>
-                    <div class="product-content">
-                        <span class="product-category">Умные часы</span>
-                        <h3 class="product-title">Apple iPhone 13 Pro Max 256 ГБ серый</h3>
-                        <div class="product-price">
-                            <span class="price-label">Цена</span>
-                            <span class="price-value">114 099 ₽</span>
-                        </div>
-                        <button class="add-to-cart">В корзину</button>
+                    <div class="card-body">
+                        <h5 class="card-title brand-title">Xiaomi</h5>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Слайд 2 -->
-        <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-                <div class="product-card mx-2">
-                    <div class="product-image-container">
-                        <img src="2272131 1 (1).png" alt="Наушники Apple iPhone 13 Pro Max" class="product-image d-block w-100">
-                        <div class="product-actions">
-                            <button class="action-btn" aria-label="Добавить в избранное">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-                                </svg>
-                            </button>
-                        </div>
+            
+            <!-- Samsung -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card brand-card">
+                    <div class="card-img-container">
+                        <img src="assets/images/Samsung_old_logo_before_year_2015.svg.png" alt="Samsung" class="brand-logo">
                     </div>
-                    <div class="product-content">
-                        <span class="product-category">Наушники</span>
-                        <h3 class="product-title">Apple iPhone 13 Pro Max 256 ГБ серый</h3>
-                        <div class="product-price">
-                            <span class="price-label">Цена</span>
-                            <span class="price-value">114 099 ₽</span>
-                        </div>
-                        <button class="add-to-cart">В корзину</button>
+                    <div class="card-body">
+                        <h5 class="card-title brand-title">Samsung</h5>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Слайд 3 -->
-        <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-                <div class="product-card mx-2">
-                    <div class="product-image-container">
-                        <img src="2272131 1 (2).png" alt="Игровая консоль" class="product-image d-block w-100">
-                        <div class="product-actions">
-                            <button class="action-btn" aria-label="Добавить в избранное">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-                                </svg>
-                            </button>
-                        </div>
+            
+            <!-- Apple -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card brand-card">
+                    <div class="card-img-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/488px-Apple_logo_black.svg.png" alt="Apple" class="brand-logo">
                     </div>
-                    <div class="product-content">
-                        <span class="product-category">Консоль</span>
-                        <h3 class="product-title">Apple iPhone 13 Pro Max 256 ГБ серый</h3>
-                        <div class="product-price">
-                            <span class="price-label">Цена</span>
-                            <span class="price-value">114 099 ₽</span>
-                        </div>
-                        <button class="add-to-cart">В корзину</button>
+                    <div class="card-body">
+                        <h5 class="card-title brand-title">Apple</h5>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Слайд 4 -->
-        <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-                <div class="product-card mx-2">
-                    <div class="product-image-container">
-                        <img src="Telephone.png" alt="Смартфон Apple iPhone 13 Pro Max" class="product-image d-block w-100">
-                        <div class="product-actions">
-                            <button class="action-btn" aria-label="Добавить в избранное">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-                                </svg>
-                            </button>
-                        </div>
+            
+            <!-- Asus -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card brand-card">
+                    <div class="card-img-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/ASUS_Logo.svg/2560px-ASUS_Logo.svg.png" alt="Asus" class="brand-logo">
                     </div>
-                    <div class="product-content">
-                        <span class="product-category">Смартфон</span>
-                        <h3 class="product-title">Apple iPhone 13 Pro Max 256 ГБ серый</h3>
-                        <div class="product-price">
-                            <span class="price-label">Цена</span>
-                            <span class="price-value">114 099 ₽</span>
-                        </div>
-                        <button class="add-to-cart">В корзину</button>
+                    <div class="card-body">
+                        <h5 class="card-title brand-title">Asus</h5>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Слайд 5 -->
-        <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-                <div class="product-card mx-2">
-                    <div class="product-image-container">
-                        <img src="Table.png" alt="Планшет Apple" class="product-image d-block w-100">
-                        <div class="product-actions">
-                            <button class="action-btn" aria-label="Добавить в избранное">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-                                </svg>
-                            </button>
-                        </div>
+            
+            <!-- HP -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card brand-card">
+                    <div class="card-img-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/2560px-HP_logo_2012.svg.png" alt="HP" class="brand-logo">
                     </div>
-                    <div class="product-content">
-                        <span class="product-category">Планшеты</span>
-                        <h3 class="product-title">Apple iPhone 13 Pro Max 256 ГБ серый</h3>
-                        <div class="product-price">
-                            <span class="price-label">Цена</span>
-                            <span class="price-value">114 099 ₽</span>
-                        </div>
-                        <button class="add-to-cart">В корзину</button>
+                    <div class="card-body">
+                        <h5 class="card-title brand-title">HP</h5>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Слайд 6 -->
-        <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-                <div class="product-card mx-2">
-                    <div class="product-image-container">
-                        <img src="accesories.png" alt="Аксессуары Apple" class="product-image d-block w-100">
-                        <div class="product-actions">
-                            <button class="action-btn" aria-label="Добавить в избранное">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-                                </svg>
-                            </button>
-                        </div>
+            
+            <!-- Lenovo -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card brand-card">
+                    <div class="card-img-container">
+                        <img src="assets/images/Lenovo_(2015).svg.png" alt="Lenovo" class="brand-logo">
                     </div>
-                    <div class="product-content">
-                        <span class="product-category">Аксессуары</span>
-                        <h3 class="product-title">Apple iPhone 13 Pro Max 256 ГБ серый</h3>
-                        <div class="product-price">
-                            <span class="price-label">Цена</span>
-                            <span class="price-value">114 099 ₽</span>
-                        </div>
-                        <button class="add-to-cart">В корзину</button>
+                    <div class="card-body">
+                        <h5 class="card-title brand-title">Lenovo</h5>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Слайд 7 -->
-        <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-                <div class="product-card mx-2">
-                    <div class="product-image-container">
-                        <img src="Notebook.png" alt="Ноутбук Apple" class="product-image d-block w-100">
-                        <div class="product-actions">
-                            <button class="action-btn" aria-label="Добавить в избранное">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-                                </svg>
-                            </button>
-                        </div>
+            
+            <!-- JBL -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card brand-card">
+                    <div class="card-img-container">
+                        <img src="assets/images/JBL_logo.svg.png" alt="JBL" class="brand-logo">
                     </div>
-                    <div class="product-content">
-                        <span class="product-category">Ноутбуки</span>
-                        <h3 class="product-title">Apple iPhone 13 Pro Max 256 ГБ серый</h3>
-                        <div class="product-price">
-                            <span class="price-label">Цена</span>
-                            <span class="price-value">114 099 ₽</span>
-                        </div>
-                        <button class="add-to-cart">В корзину</button>
+                    <div class="card-body">
+                        <h5 class="card-title brand-title">JBL</h5>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Слайд 8 -->
-        <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-                <div class="product-card mx-2">
-                    <div class="product-image-container">
-                        <img src="colonka.png" alt="Портативные колонки" class="product-image d-block w-100">
-                        <div class="product-actions">
-                            <button class="action-btn" aria-label="Добавить в избранное">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-                                </svg>
-                            </button>
-                        </div>
+            
+            <!-- Huawei -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card brand-card">
+                    <div class="card-img-container">
+                        <img src="assets/images/Huawei_Standard_logo.svg.png" alt="Huawei" class="brand-logo">
                     </div>
-                    <div class="product-content">
-                        <span class="product-category">Портативные колонки</span>
-                        <h3 class="product-title">Apple iPhone 13 Pro Max 256 ГБ серый</h3>
-                        <div class="product-price">
-                            <span class="price-label">Цена</span>
-                            <span class="price-value">114 099 ₽</span>
-                        </div>
-                        <button class="add-to-cart">В корзину</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Слайд 9 -->
-        <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-                <div class="product-card mx-2">
-                    <div class="product-image-container">
-                        <img src="Telephone.png" alt="Смартфон Apple iPhone 13" class="product-image d-block w-100">
-                        <div class="product-actions">
-                            <button class="action-btn" aria-label="Добавить в избранное">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <span class="product-category">Смартфоны</span>
-                        <h3 class="product-title">Apple iPhone 13 Pro Max 256 ГБ серый</h3>
-                        <div class="product-price">
-                            <span class="price-label">Цена</span>
-                            <span class="price-value">114 099 ₽</span>
-                        </div>
-                        <button class="add-to-cart">В корзину</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Слайд 10 -->
-        <div class="carousel-item">
-            <div class="d-flex justify-content-center">
-                <div class="product-card mx-2">
-                    <div class="product-image-container">
-                        <img src="2272131 1.png" alt="Умные часы Samsung" class="product-image d-block w-100">
-                        <div class="product-actions">
-                            <button class="action-btn" aria-label="Добавить в избранное">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <span class="product-category">Умные часы</span>
-                        <h3 class="product-title">Samsung Galaxy Watch 5 Pro</h3>
-                        <div class="product-price">
-                            <span class="price-label">Цена</span>
-                            <span class="price-value">32 999 ₽</span>
-                        </div>
-                        <button class="add-to-cart">В корзину</button>
+                    <div class="card-body">
+                        <h5 class="card-title brand-title">Huawei</h5>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    <!-- Элементы управления каруселью -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Предыдущий</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Следующий</span>
-    </button>
-</div>
 
 <h2 class="obzor-h2">Обзоры</h2>
 
-<section class="reviews">
-    <div class="review-card review-card--primary">
-        <div class="review-content">
-            <img src="Frame 2371.png" alt="">
-            <h3 class="review-title">Обзор устаревших смартфонов</h3>
-            <p class="review-text">Lorem ipsum dolor sit amet consectetur. Rhoncus risus viverra enim nunc.</p>
-            <button class="review-button">Смотреть <span class="arrow">→</span></button>
-        </div>
-    </div>
+ <section class="reviews">
+        <div class="container">
+            
+            <div class="row g-4">
+                <!-- Карточка 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="review-card review-card--primary">
+                        <div class="review-content">
+                            <div class="review-image-container">
+                                <img src="assets/images/rtl_0009_large 1.svg" alt="Смартфон" class="review-image">
+                            </div>
+                            <h3 class="review-title">На что нужно обратить внимание <br> при покупке нового смартфона?</h3>
+                            <a href="#" class="review-button">Смотреть обзор <span class="arrow">→</span></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Карточка 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="review-card review-card--secondary">
+                        <div class="review-content">
+                            <div class="review-image-container">
+                                <img src="assets/images/OIP 1.svg" alt="Смартфон 2025" class="review-image">
+                            </div>
+                            <h3 class="review-title">Какой смартфон лучше выбрать <br> в 2025 году?</h3>
+                            <a href="#" class="review-button">Смотреть обзор <span class="arrow">→</span></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Карточка 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="review-card review-card--tertiary">
+                        <div class="review-content">
+                            <div class="review-image-container">
+                                <img src="assets/images/ears.webp" alt="Портативные колонки" class="review-image">
+                            </div>
+                            <h3 class="review-title">Топ-10 лучших портативных <br> колонок</h3>
+                           <a href="#" class="review-button">Смотреть обзор <span class="arrow">→</span></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Карточка 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="review-card review-card--quaternary">
+                        <div class="review-content">
+                            <div class="review-image-container">
+                                <img src="assets/images/image 1 (17).svg" alt="Умные часы" class="review-image">
+                            </div>
+                            <h3 class="review-title">Топ-модели умных часов</h3>
+                            <a href="#" class="review-button">Смотреть обзор <span class="arrow">→</span></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Карточка 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="review-card review-card--primary">
+                        <div class="review-content">
+                            <div class="review-image-container">
+                                <img src="assets/images/1749688696357 1.svg" alt="Ноутбуки" class="review-image">
+                            </div>
+                            <h3 class="review-title">Топ-15 ноутбуков</h3>
+                            <a href="#" class="review-button">Смотреть обзор <span class="arrow">→</span></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Карточка 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="review-card review-card--secondary">
+                        <div class="review-content">
+                            <div class="review-image-container">
+                                <img src="assets/images/airpodsear 1.svg" alt="TWS наушники" class="review-image">
+                            </div>
+                            <h3 class="review-title">Как выбрать лучшие наушники?</h3>
+                            <a href="#" class="review-button">Смотреть обзор <span class="arrow">→</span></a>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="review-card review-card--secondary">
-        <div class="review-content">
-            <img src="Frame 2371 (1).png" alt="">
-            <h3 class="review-title">Обзор устаревших смартфонов</h3>
-            <p class="review-text">Lorem ipsum dolor sit amet consectetur. Rhoncus risus viverra enim nunc.</p>
-            <button class="review-button">Смотреть <span class="arrow">→</span></button>
+            </div>
         </div>
-    </div>
-
-    <div class="review-card review-card--tertiary">
-        <div class="review-content">
-            <img src="Frame 2371 (2).png" alt="">
-            <h3 class="review-title">Обзор устаревших смартфонов</h3>
-            <p class="review-text">Lorem ipsum dolor sit amet consectetur. Rhoncus risus viverra enim nunc.</p>
-            <button class="review-button">Смотреть <span class="arrow">→</span></button>
-        </div>
-    </div>
-
-    <div class="review-card review-card--quaternary">
-        <div class="review-content">
-            <img src="Frame 2371 (3).png" alt="">
-            <h3 class="review-title">Обзор устаревших смартфонов</h3>
-            <p class="review-text">Lorem ipsum dolor sit amet consectetur. Rhoncus risus viverra enim nunc.</p>
-            <button class="review-button">Смотреть <span class="arrow">→</span></button>
-        </div>
-    </div>
-</section>
-
+    </section>
+</main>
 <footer class="footer">
+  <button class="scroll-to-top" id="scrollUp" aria-label="Прокрутить наверх">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+    </svg>
+    <div class="scroll-progress"></div>
+</button>
   <div class="footer__container">
     <div class="footer__logo">
-      <img src="Frame 52.png" width="100" >
+      <img src="assets/images/behoof_logo.png"> ГаджетТриум
     </div>
     
     <nav class="footer__links">
       <div class="footer__column">
         <h3 class="footer__title">Пользователю</h3>
         <ul class="footer__list">
-          <li><a href="#" class="footer__link">Связаться с нами</a></li>
-          <li><a href="#" class="footer__link">Поддержка пользователей</a></li>
-          <li><a href="#" class="footer__link">FAQ & Руководства</a></li>
-          <li><a href="#" class="footer__link">Политика конфиденциальности</a></li>
-          <li><a href="#" class="footer__link">Пользовательское соглашение</a></li>
+          <li><a href="#" class="footer__link">Магазины</a></li>
+          <li><a href="#" class="footer__link">Кредит и рассрочка</a></li>
+          <li><a href="#" class="footer__link">Акции</a></li>
+          <li><a href="#" class="footer__link">Условия оплаты и доставки</a></li>
+          <li><a href="#" class="footer__link">Гарантия и возрат</a></li>
+          <li><a href="#" class="footer__link">Правовая информация</a></li>
         </ul>
       </div>
       
       <div class="footer__column">
         <h3 class="footer__title">Популярные категории</h3>
         <ul class="footer__list">
+          <li><a href="#" class="footer__link">Умные часы</a></li>
           <li><a href="#" class="footer__link">Смартфоны</a></li>
-          <li><a href="#" class="footer__link">Teteras electricas</a></li>
-          <li><a href="#" class="footer__link">Стиральные машины</a></li>
-          <li><a href="#" class="footer__link">Телевизоры</a></li>
           <li><a href="#" class="footer__link">Ноутбуки</a></li>
+          <li><a href="#" class="footer__link">Аксессуары</a></li>
         </ul>
       </div>
       
       <div class="footer__column">
-        <h3 class="footer__title">Команда Behoof</h3>
+        <h3 class="footer__title">Команда ГаджетТриум</h3>
         <ul class="footer__list">
           <li><a href="#" class="footer__link">О нас</a></li>
-          <li><a href="#" class="footer__link">Работа у нас</a></li>
+          <li><a href="#" class="footer__link">Вакансии</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h3 class="footer__title">Контакты</h3>
+        <ul class="footer__list">
+          <li><a href="#" class="footer__link">+79632937333</a></li>
+          <li><a href="#" class="footer__link">ilakabirov78@mail.ru</a></li>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+  <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+</svg>
         </ul>
       </div>
     </nav>
-    
+
     <div class="footer__copyright">
-      <p>Copyright © 2023 Behoof, Inc. Все права защищены</p>
+      <p>Copyright © 2025 GadgetTrium, Inc. Все права защищены</p>
     </div>
   </div>
 </footer>
@@ -877,202 +678,180 @@ document.addEventListener('click', function(e) {
     });
   }
 });
+
+        const feedbackToggleBtn = document.getElementById('feedbackToggleBtn');
+        const feedbackFormContainer = document.getElementById('feedbackFormContainer');
+        const overlay = document.getElementById('overlay');
+        const closeBtn = document.getElementById('closeBtn');
+        const feedbackForm = document.getElementById('feedback-form');
+        const nameInput = document.getElementById('name');
+        const phoneInput = document.getElementById('phone');
+        const nameHint = document.getElementById('name-hint');
+        const phoneHint = document.getElementById('phone-hint');
+
+        // Открытие формы
+        feedbackToggleBtn.addEventListener('click', () => {
+            feedbackFormContainer.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Закрытие формы
+        function closeForm() {
+            feedbackFormContainer.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        closeBtn.addEventListener('click', closeForm);
+        overlay.addEventListener('click', closeForm);
+
+        // Валидация в реальном времени
+        nameInput.addEventListener('input', function() {
+            if (this.validity.valid) {
+                nameHint.textContent = '✓ Корректное имя';
+                nameHint.style.color = '#2ecc71';
+            } else {
+                nameHint.textContent = 'Только буквы (рус/англ), от 1 до 12 символов';
+                nameHint.style.color = '#e74c3c';
+            }
+        });
+
+        phoneInput.addEventListener('input', function() {
+            if (this.validity.valid) {
+                phoneHint.textContent = '✓ Корректный номер';
+                phoneHint.style.color = '#2ecc71';
+            } else {
+                phoneHint.textContent = 'Формат: +7 (XXX) XXX-XX-XX';
+                phoneHint.style.color = '#e74c3c';
+            }
+        });
+
+        // Обработка отправки формы
+        feedbackForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (nameInput.validity.valid && phoneInput.validity.valid) {
+                // Имитация отправки
+                const submitBtn = document.getElementById('submit-btn');
+                submitBtn.textContent = 'Отправка...';
+                submitBtn.disabled = true;
+                
+                setTimeout(() => {
+                    alert('Форма успешно отправлена! Мы свяжемся с вами в ближайшее время.');
+                    feedbackForm.reset();
+                    nameHint.textContent = '';
+                    phoneHint.textContent = '';
+                    submitBtn.textContent = 'Отправить';
+                    submitBtn.disabled = false;
+                    closeForm();
+                }, 1500);
+            }
+        });
+
+        // Маска для телефона
+        phoneInput.addEventListener('input', function(e) {
+            let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+            e.target.value = '+7' + (x[2] ? ' (' + x[2] : '') + (x[3] ? ') ' + x[3] : '') + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
+        });
+
+        // Закрытие по ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeForm();
+            }
+        });
+
+// Функционал кнопки
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.getElementById('scrollUp');
+    const scrollProgress = scrollButton.querySelector('.scroll-progress');
+    
+    // Показывать/скрывать кнопку при прокрутке
+    window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (scrollY / (documentHeight - windowHeight)) * 100;
+        
+        if (scrollY > 400) {
+            scrollButton.classList.add('show');
+            scrollButton.classList.add('show-progress');
+            
+            // Обновление индикатора прогресса
+            const circumference = 2 * Math.PI * 30; // радиус кнопки
+            const offset = circumference - (scrollPercentage / 100) * circumference;
+            scrollProgress.style.strokeDasharray = circumference;
+            scrollProgress.style.strokeDashoffset = offset;
+        } else {
+            scrollButton.classList.remove('show');
+            scrollButton.classList.remove('show-progress');
+        }
+    });
+    
+    // Плавная прокрутка наверх
+    scrollButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // Микро-анимация при клике
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});
+
+ // Получаем элементы
+        const openModalBtn = document.getElementById('openModalBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const modalOverlay = document.getElementById('modalOverlay');
+        
+        // Открытие модального окна
+        openModalBtn.addEventListener('click', function() {
+            modalOverlay.style.display = 'flex';
+        });
+        
+        // Закрытие модального окна при клике на крестик
+        closeModalBtn.addEventListener('click', function() {
+            modalOverlay.style.display = 'none';
+        });
+        
+        // Закрытие модального окна при клике вне формы
+        modalOverlay.addEventListener('click', function(event) {
+            if (event.target === modalOverlay) {
+                modalOverlay.style.display = 'none';
+            }
+        });
+        
+        // Закрытие модального окна при нажатии клавиши Esc
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                modalOverlay.style.display = 'none';
+            }
+        });
+
 </script>
     
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+   <script>
+    var swiper = new Swiper(".swiper-sell", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      freeMode: false,
+      autoplay: {
+        delay: 5000,
+      },
+    });
+  </script>
 </body>
 </html>
-
-<style>
-    @media (max-width: 640px) {
-  /* Навигационная панель */
-  .navbar {
-    flex-direction: column;
-    padding: 10px;
-  }
-  
-  .navbar-brand {
-    margin-bottom: 10px;
-  }
-  
-  .navbar p {
-    text-align: center;
-    margin-bottom: 15px;
-  }
-  
-  .navbar-collapse {
-    width: 100%;
-  }
-  
-  .catalog-dropdown {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  
-  .d-flex {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  
-  .bi {
-    margin: 5px;
-  }
-  
-  /* Хлебные крошки */
-  .breadcrumb {
-    padding: 10px;
-    font-size: 14px;
-  }
-  
-  /* Блоки товаров */
-  .tovars {
-    flex-direction: column;
-  }
-  
-  .tovar-1 {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-  
-  /* Категории */
-  .bibor {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-  
-  /* Особенности */
-  .features-container {
-    flex-direction: column;
-  }
-  
-  .feature-box {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  
-  /* Карусель */
-  .carousel-inner {
-    padding: 0 15px;
-  }
-  
-  .product-card {
-    width: 100%;
-  }
-  
-  /* Статистика */
-  .stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  /* Преимущества */
-  .benefits__content {
-    flex-direction: column;
-  }
-  
-  .benefits__image {
-    margin-top: 20px;
-    max-width: 100%;
-  }
-  
-  /* Каталог товаров */
-  .catalog {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-  
-  .product-card {
-    margin-bottom: 15px;
-  }
-  
-  /* Обзоры */
-  .reviews {
-    flex-direction: column;
-  }
-  
-  .review-card {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-  
-  /* Футер */
-  .footer__links {
-    flex-direction: column;
-  }
-  
-  .footer__column {
-    margin-bottom: 20px;
-  }
-  
-  /* Общие настройки */
-  h2 {
-    font-size: 1.5rem;
-    margin-left: 15px;
-  }
-  
-  .container-fluid {
-    padding: 0 15px;
-  }
-}
-
-/* Дополнительные стили для улучшения мобильного отображения */
-@media (max-width: 640px) {
-  body {
-    font-size: 14px;
-  }
-  
-  button, .btn {
-    padding: 8px 12px;
-    font-size: 14px;
-  }
-  
-  .product-title {
-    font-size: 14px;
-  }
-  
-  .product-price {
-    font-size: 16px;
-  }
-  
-  .rating-label, .rating-value {
-    font-size: 12px;
-  }
-  
-  .progress-bar {
-    height: 8px;
-  }
-  
-  .stat__number {
-    font-size: 2rem;
-  }
-  
-  .stat__description {
-    font-size: 12px;
-  }
-  
-  .benefits__title {
-    font-size: 1.5rem;
-    line-height: 1.3;
-  }
-  
-  .review-title {
-    font-size: 1rem;
-  }
-  
-  .review-text {
-    font-size: 12px;
-  }
-  
-  .footer__title {
-    font-size: 1rem;
-  }
-  
-  .footer__link {
-    font-size: 14px;
-  }
-  
-  .footer__copyright {
-    font-size: 12px;
-  }
-}
-</style>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>     
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
+<container>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Behoof</a>
+    <p>Лучшие цены в <br> интернет магазинах</p>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="catalog-dropdown">
+  <button class="catalog-dropdown__toggle" type="button" aria-expanded="false" aria-controls="catalog-dropdown-menu" aria-label="Открыть каталог товаров">
+    Каталог товаров
+    <svg class="catalog-dropdown__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  
+  <div class="catalog-dropdown__menu" id="catalog-dropdown-menu">
+    <div class="catalog-dropdown__categories">
+      <section class="catalog-dropdown__category">
+        <h3 class="catalog-dropdown__category-title">Мобильные устройства</h3>
+        <ul class="catalog-dropdown__list">
+          <li><a href="#" class="catalog-dropdown__link">Смартфоны</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Умные часы</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Наушники</a></li>
+        </ul>
+      </section>
+      
+      <section class="catalog-dropdown__category">
+        <h3 class="catalog-dropdown__category-title">Компьютеры</h3>
+        <ul class="catalog-dropdown__list">
+          <li><a href="#" class="catalog-dropdown__link">Ноутбуки</a></li>
+        </ul>
+      </section>
+      
+      <section class="catalog-dropdown__category">
+        <h3 class="catalog-dropdown__category-title">Планшеты</h3>
+        <ul class="catalog-dropdown__list">
+          <li><a href="#" class="catalog-dropdown__link">Планшеты</a></li>
+        </ul>
+      </section>
+
+      <section class="catalog-dropdown__category">
+        <h3 class="catalog-dropdown__category-title">Разное</h3>
+        <ul class="catalog-dropdown__list">
+          <li><a href="#" class="catalog-dropdown__link">Игровые приставки</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Портативные колонки</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Аксесуары</a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>
+  <div class="container-fluid">
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+      <button class="btn btn-outline-success" type="submit">Поиск</button>
+    </form>
+  </div>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book-fill" viewBox="0 0 16 16">
+  <path d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+  <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+  <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+  <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+</svg>
+</nav>
+    </div>
+  </div>
+</nav>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Обзоры</li>
+  </ol>
+</nav>
+
+<section class="reviews" aria-labelledby="main-heading">
+    <div class="container">
+        
+        <div class="review-content">
+            <div class="review-image-container">                
+              <h2 class="image-caption">На что нужно обратить внимание при покупке нового смартфона?</h2>
+                <img class="review-image" src="assets/images/rtl_0009_large 1.svg" alt="Смартфон с открытыми приложениями" loading="lazy">
+
+            </div>
+            
+            <nav class="table-of-contents" aria-label="Содержание руководства">
+                <h3>Содержание:</h3>
+                <ol>
+                    <li><a href="#performance">Быстрота работы — процессор и память</a></li>
+                    <li><a href="#display">Экран — чтобы было приятно смотреть</a></li>
+                    <li><a href="#camera">Камера — не только мегапиксели</a></li>
+                    <li><a href="#battery">Заряд — чтобы не подводил</a></li>
+                    <li><a href="#storage">Память — куда всё складывать</a></li>
+                    <li><a href="#features">Дополнительные функции</a></li>
+                    <li><a href="#os">Операционная система</a></li>
+                    <li><a href="#design">Удобство и внешний вид</a></li>
+                    <li><a href="#brand">Бренд и сервис</a></li>
+                    <li><a href="#budget">Стоит ли переплачивать?</a></li>
+                </ol>
+            </nav>
+            
+            <article class="guide-content">
+                <section id="performance" class="section">
+                    <h2>1. Быстрота работы — процессор и память</h2>
+                    <p>Если телефон «тормозит», пользоваться им будет неприятно. Чтобы этого не случилось, выбирайте смартфон с современным процессором и достаточным объёмом оперативной памяти.</p>
+                    
+                    <div class="comparison">
+                        <div class="comparison-item">
+                            <h3>Для обычных задач</h3>
+                            <p>Звонки, интернет, соцсети — подойдут модели с 6 или 8 ГБ оперативной памяти и процессорами от известных производителей.</p>
+                        </div>
+                        <div class="comparison-item">
+                            <h3>Для игр и многозадачности</h3>
+                            <p>Если вы играете в игры или открываете много приложений одновременно — лучше взять модель помощнее с 8-12 ГБ оперативной памяти.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tip" role="note" aria-label="Совет">
+                        <p><strong>Совет:</strong> Обратите внимание на процессоры Snapdragon, Exynos, MediaTek или Apple A-series — они обеспечивают хорошую производительность.</p>
+                    </div>
+                </section>
+                
+                <section id="display" class="section">
+                    <h2>2. Экран — чтобы было приятно смотреть</h2>
+                    <p>Вы будете смотреть на экран каждый день, поэтому он должен быть качественным.</p>
+                    
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <h3>Размер</h3>
+                            <p>От 6 до 6,7 дюйма удобно и не слишком громоздко.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3>Тип экрана</h3>
+                            <p>AMOLED даёт яркие и насыщенные цвета, IPS подойдёт для тех, кто не так требователен.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3>Плавность</h3>
+                            <p>Если указано 90 или 120 Гц, значит, картинка будет «плавной», особенно заметно при прокрутке.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="camera" class="section">
+                    <h2>3. Камера — не только мегапиксели</h2>
+                    <p>Хорошая камера — это не только цифры, но и качество объектива, стабилизация изображения, способность снимать при слабом освещении.</p>
+                    
+                    <h3>Что важно в камере:</h3>
+                    <ul>
+                        <li>Наличие ночного режима</li>
+                        <li>Качество портретных снимков</li>
+                        <li>Стабильность съёмки при движении</li>
+                        <li>Качество обработки изображений</li>
+                    </ul>
+                    
+                    <div class="highlight" role="note" aria-label="Важная информация">
+                        <p><strong>Важно:</strong> Если фотография для вас важна, лучше посмотреть реальные снимки из обзоров или отзывов, чем просто верить в «108 МП».</p>
+                    </div>
+                </section>
+                
+                <section id="battery" class="section">
+                    <h2>4. Заряд — чтобы не подводил</h2>
+                    <p>Хороший смартфон должен работать целый день без подзарядки.</p>
+                    
+                    <h3>На что обратить внимание:</h3>
+                    <ul>
+                        <li>Аккумулятор не меньше 4500–5000 мАч</li>
+                        <li>Наличие быстрой зарядки</li>
+                        <li>Энергоэффективность процессора</li>
+                    </ul>
+                    
+                    <div class="tip" role="note" aria-label="Совет">
+                        <p><strong>Совет:</strong> Быстрая зарядка позволяет зарядить телефон наполовину всего за 30 минут. Очень удобно, если вы куда-то торопитесь.</p>
+                    </div>
+                </section>
+                
+                <section id="storage" class="section">
+                    <h2>5. Память — куда всё складывать</h2>
+                    <p>Музыка, фото, видео, приложения — всё это занимает место.</p>
+                    
+                    <div class="comparison">
+                        <div class="comparison-item">
+                            <h3>Минимальный вариант</h3>
+                            <p>Если вы не планируете хранить много файлов — 64-128 ГБ</p>
+                        </div>
+                        <div class="comparison-item">
+                            <h3>Рекомендуемый вариант</h3>
+                            <p>Для комфортного использования — от 128 ГБ</p>
+                        </div>
+                        <div class="comparison-item">
+                            <h3>Для любителей контента</h3>
+                            <p>Если храните много фото, видео и игр — 256 ГБ и больше</p>
+                        </div>
+                    </div>
+                    
+                    <div class="highlight" role="note" aria-label="Важная информация">
+                        <p><strong>Плюс:</strong> Если в телефоне есть слот для карты памяти — это большое преимущество для расширения хранилища.</p>
+                    </div>
+                </section>
+                
+                <section id="features" class="section">
+                    <h2>6. Дополнительные функции</h2>
+                    <p>Вот дополнительные функции, на которые стоит обратить внимание:</p>
+                    
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <h3>NFC</h3>
+                            <p>Позволяет платить телефоном, как банковской картой.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3>5G</h3>
+                            <p>Пригодится, если у вас уже есть покрытие этой сети.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3>Bluetooth 5.0+</h3>
+                            <p>Для беспроводных наушников и аксессуаров.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3>Стереозвук</h3>
+                            <p>Для тех, кто любит смотреть видео или слушать музыку без наушников.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3>Защита от воды</h3>
+                            <p>Пригодится, если часто бываете на улице или на природе.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="os" class="section">
+                    <h2>7. Операционная система</h2>
+                    <p>Большинство смартфонов работают на Android. Некоторые — на iOS (только iPhone). У каждого свои плюсы:</p>
+                    
+                    <div class="comparison">
+                        <div class="comparison-item">
+                            <h3>Android</h3>
+                            <ul>
+                                <li>Больше моделей и возможностей настройки</li>
+                                <li>Гибкость интерфейса</li>
+                                <li>Разнообразие цен</li>
+                            </ul>
+                        </div>
+                        <div class="comparison-item">
+                            <h3>iOS</h3>
+                            <ul>
+                                <li>Простота и стабильность</li>
+                                <li>Быстрая работа</li>
+                                <li>Интеграция с другими устройствами Apple</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="tip" role="note" aria-label="Совет">
+                        <p><strong>Совет:</strong> Посмотрите, как часто производитель обновляет свои телефоны. Чем дольше поддержка — тем дольше смартфон будет актуален и безопасен.</p>
+                    </div>
+                </section>
+                
+                <section id="design" class="section">
+                    <h2>8. Удобство и внешний вид</h2>
+                    <p>Даже самый мощный телефон может быть неудобным.</p>
+                    
+                    <h3>На что обратить внимание:</h3>
+                    <ul>
+                        <li>Насколько хорошо он лежит в руке</li>
+                        <li>Не слишком ли тяжёлый</li>
+                        <li>Удобно ли расположены кнопки и сканер отпечатков</li>
+                        <li>Приятный ли материал корпуса (стекло, металл, пластик)</li>
+                    </ul>
+                    
+                    <div class="highlight" role="note" aria-label="Важная информация">
+                        <p><strong>Рекомендация:</strong> Лучше подержать смартфон в магазине перед покупкой или хотя бы посмотреть обзор, где его показывают вживую.</p>
+                    </div>
+                </section>
+                
+                <section id="brand" class="section">
+                    <h2>9. Бренд и сервис</h2>
+                    <p>Известные бренды часто предлагают не только смартфон, но и удобную экосистему: часы, ноутбуки, наушники, которые работают «в связке».</p>
+                    
+                    <h3>Что важно:</h3>
+                    <ul>
+                        <li>Наличие официальных гарантийных центров в вашем городе</li>
+                        <li>Доступность запчастей и аксессуаров</li>
+                        <li>Качество обслуживания клиентов</li>
+                        <li>Продолжительность программного обеспечения</li>
+                    </ul>
+                </section>
+                
+                <section id="budget" class="section">
+                    <h2>10. Стоит ли переплачивать?</h2>
+                    <p>Флагманские смартфоны стоят дорого, но не всегда нужны всем.</p>
+                    
+                    <div class="highlight" role="note" aria-label="Важная информация">
+                        <p>Часто модели среднего класса (от 300 до 600 долларов) предлагают всё необходимое для комфортной работы — хорошую камеру, быструю зарядку, красивый экран и надёжную батарею.</p>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+  <button class="scroll-to-top" id="scrollUp" aria-label="Прокрутить наверх">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+    </svg>
+    <div class="scroll-progress"></div>
+</button>
+  <div class="footer__container">
+    <div class="footer__logo">
+      <img src="assets/images/behoof_logo.png"> ГаджетТриум
+    </div>
+    
+    <nav class="footer__links">
+      <div class="footer__column">
+        <h3 class="footer__title">Пользователю</h3>
+        <ul class="footer__list">
+          <li><a href="#" class="footer__link">Магазины</a></li>
+          <li><a href="#" class="footer__link">Кредит и рассрочка</a></li>
+          <li><a href="#" class="footer__link">Акции</a></li>
+          <li><a href="#" class="footer__link">Условия оплаты и доставки</a></li>
+          <li><a href="#" class="footer__link">Гарантия и возрат</a></li>
+          <li><a href="#" class="footer__link">Правовая информация</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer__column">
+        <h3 class="footer__title">Популярные категории</h3>
+        <ul class="footer__list">
+          <li><a href="#" class="footer__link">Умные часы</a></li>
+          <li><a href="#" class="footer__link">Смартфоны</a></li>
+          <li><a href="#" class="footer__link">Ноутбуки</a></li>
+          <li><a href="#" class="footer__link">Аксессуары</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer__column">
+        <h3 class="footer__title">Команда ГаджетТриум</h3>
+        <ul class="footer__list">
+          <li><a href="#" class="footer__link">О нас</a></li>
+          <li><a href="#" class="footer__link">Вакансии</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h3 class="footer__title">Контакты</h3>
+        <ul class="footer__list">
+          <li><a href="#" class="footer__link">+79632937333</a></li>
+          <li><a href="#" class="footer__link">ilakabirov78@mail.ru</a></li>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+  <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+</svg>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="footer__copyright">
+      <p>Copyright © 2025 GadgetTrium, Inc. Все права защищены</p>
+    </div>
+  </div>
+</footer>
+</container>
+
+<script>
+    document.querySelector('.catalog-dropdown__toggle').addEventListener('click', function() {
+  const dropdown = this.closest('.catalog-dropdown');
+  dropdown.classList.toggle('open');
+  
+  // Обновляем aria-атрибуты
+  const isExpanded = dropdown.classList.contains('open');
+  this.setAttribute('aria-expanded', isExpanded);
+});
+
+// Закрытие при клике вне dropdown
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.catalog-dropdown')) {
+    const openDropdowns = document.querySelectorAll('.catalog-dropdown.open');
+    openDropdowns.forEach(dropdown => {
+      dropdown.classList.remove('open');
+      dropdown.querySelector('.catalog-dropdown__toggle').setAttribute('aria-expanded', 'false');
+    });
+  }
+});
+</script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+<style>
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+</style>
