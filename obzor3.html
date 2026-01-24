@@ -12,15 +12,20 @@
 </body>
 </html>
 <container>
+    <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Behoof</a>
-    <p>Лучшие цены в <br> интернет магазинах</p>
+    <div class="navbar-logo-container">
+      <img src="assets/images/behoof_logo.png" alt="">
+      <h1>ГаджетТриум</h1>
+      <p>Лучшие цены в интернет-магазинах</p>
+    </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div class="catalog-dropdown">
+        
   <button class="catalog-dropdown__toggle" type="button" aria-expanded="false" aria-controls="catalog-dropdown-menu" aria-label="Открыть каталог товаров">
     Каталог товаров
     <svg class="catalog-dropdown__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -31,35 +36,18 @@
   <div class="catalog-dropdown__menu" id="catalog-dropdown-menu">
     <div class="catalog-dropdown__categories">
       <section class="catalog-dropdown__category">
-        <h3 class="catalog-dropdown__category-title">Мобильные устройства</h3>
         <ul class="catalog-dropdown__list">
-          <li><a href="#" class="catalog-dropdown__link">Смартфоны</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Умные часы</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Наушники</a></li>
-        </ul>
-      </section>
-      
-      <section class="catalog-dropdown__category">
-        <h3 class="catalog-dropdown__category-title">Компьютеры</h3>
-        <ul class="catalog-dropdown__list">
-          <li><a href="#" class="catalog-dropdown__link">Ноутбуки</a></li>
-        </ul>
-      </section>
-      
-      <section class="catalog-dropdown__category">
-        <h3 class="catalog-dropdown__category-title">Планшеты</h3>
-        <ul class="catalog-dropdown__list">
-          <li><a href="#" class="catalog-dropdown__link">Планшеты</a></li>
-        </ul>
-      </section>
-
-      <section class="catalog-dropdown__category">
-        <h3 class="catalog-dropdown__category-title">Разное</h3>
-        <ul class="catalog-dropdown__list">
-          <li><a href="#" class="catalog-dropdown__link">Игровые приставки</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Портативные колонки</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Аксесуары</a></li>
-        </ul>
+<?php
+$stmt = $db->prepare("SELECT * FROM categories");
+$stmt->execute();
+$result = $stmt->get_result();
+$rows = $result->fetch_all();   
+           
+foreach($rows as $row ){
+    echo sprintf('<li><a href="#" class="catalog-dropdown__link">%s</a></li>', $row[1]);
+}
+?> 
+</ul>
       </section>
     </div>
   </div>
@@ -67,361 +55,360 @@
   <div class="container-fluid">
     <form class="d-flex" role="search">
       <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
-      <button class="btn btn-outline-success" type="submit">Поиск</button>
+      <button class="btn btn-outline-success btn-ilya" type="submit">Поиск</button>
     </form>
   </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book-fill" viewBox="0 0 16 16">
-  <path d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+  <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"/>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+<svg xmlns="http://www.w3.org/2000/svg" id="openModalBtn" href="registration.html" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
   <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
   <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
   <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
 </svg>
 </nav>
-    </div>
-  </div>
+<nav class=" top-nav container">
+
+       <ul class="top-nav-ul">
+        <li class="top-nav-li"><a class="top-nav-link" href="#">Акции</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="company.html">О компании</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="#">Вакансии</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="">Обзоры</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="contacts.html">Контакты</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="help.html">Помощь</a></li>
+       </ul>
 </nav>
+
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
     <li class="breadcrumb-item active" aria-current="page">Обзоры</li>
   </ol>
 </nav>
-
-  <section class="reviews">
-        <div class="container">
-            <div class="review-image-container">
-              <h3>Топ-10 лучших портативных колонок</h3>
-                <img class="image-container" src="assets/images/OIP (1) 1.svg" alt="Смартфон" class="review-image">
-                <p>
-Портативные колонки становятся популярными, благодаря своей компактности и возможности обеспечить качественный звук в любом месте. Такие устройства позволяют наслаждаться любимой музыкой, подкастами или аудиокнигами вне дома — на прогулке, пикнике, на вечеринке или в путешествии.
-
-
-
-
-Описание и рейтинг популярных моделей
-1.  Marshall Stockwell II
-
-3.jpg
-
-У колонки Stockwell II два динамика с общей мощностью 20 Вт, что подойдёт для небольших компаний и времени на природе, если рядом нет слишком шумных источников. Однако для больших мероприятий или шумных улиц такой мощности может не хватить. 
-
-Характеристики:
-
-Время работы: 20 часов 
-
-Частотный диапазон: 60-20000 Гц
-
-Мощность: 20 Вт
-
-Преимущества:
-
-Мощное и объёмное звучание
-
-Регуляторы баса и высоких частот
-
-Влагозащитный корпус
-
-2. Tronsmart bang SE
-
-4.jpg
-
-Tronsmart bang SE выдаёт мощность 40 Вт. На вечеринках в квартире или доме такая колонка обеспечит качественный и достаточно громкий звук для нескольких десятков человек. Стереодинамики обеспечивают чёткое и детализированное звучание в диапазоне частот от 60 до 20000 Гц. 
-
-Характеристики:
-
-Время работы: 24 часа
-
-Класс защиты: IPX6
-
-Мощность: 40 Вт
-
-Преимущества:
-
-Светомузыка с тремя режимами
-
-Возможность подключения через AUX и карту памяти
-
-Встроенный микрофон для звонков
-
-3. Tronsmart T7 Turquoise
-
-5.jpg
-
-Tronsmart T7 обеспечивает мощный и чистый звук из-за поддержки кодека SBC. Мощность 30 Вт подойдет для пикников или встреч с друзьями, особенно если вокруг не слишком шумно. Встроенный литий-ионный аккумулятор ёмкостью 2000 мА·ч обеспечивает до 12 часов работы на одном заряде. 
-
-Характеристики:
-
-Время работы: 12 часов
-
-Частотный диапазон: 60-20000
-
-Мощность: 30 Вт
-
-Преимущества:
-
-Высокая степень защиты IPX7
-
-Возможность подключения через Bluetooth, AUX и карту памяти
-
-Встроенный микрофон для громкой связи
-
-4.  Xiaomi Mi Portable Bluetooth Speaker 16W
-
-6.jpg
-
-Xiaomi Mi Portable Bluetooth Speaker 16W даёт мощный звук, благодаря двум динамикам общей мощностью 16 Вт. Такая мощность подойдет для тех, кто слушает музыку в одиночку. 
-
-Характеристики:
-
-Время работы: 13 часов 
-
-Ёмкость аккумулятора: 2600 мА·ч
-
-Мощность: 16 Вт 
-
-Преимущества:
-
-Влагозащитный корпус IPX7
-
-Беспроводное подключение по Bluetooth
-
-Стильный и компактный дизайн
-
-5.  HONOR Choice Musicbox M1 5W
-
-7.jpg
-
-Несмотря на свои компактные размеры, HONOR Choice Musicbox M1 выдаёт мощный и чистый звук. Колонка мощностью подойдет для фонового прослушивания музыки на небольшой громкости.
-
-Характеристики:
-
-Время работы: 10 часов
-
-Ёмкость аккумулятора: 1000 мА·ч
-
-Мощность: 5 Вт
-
-Преимущества:
-
-Защита от воды и пыли IP67
-
-Поддержка кодеков SBC / AAC / AptX
-
-Встроенный микрофон для звонков
-
-6. Xiaomi Mi Portable Bluetooth Speaker 4W
-
-8.jpg
-
-Xiaomi Mi Portable Bluetooth Speaker 4W выдаёт чистый и достаточно громкий звук. Мощность 4 Вт сравнима с громкостью обычного разговора: её хватает, чтобы комфортно слушать музыку в небольшой комнате или на улице.
-
-Характеристики:
-
-Время работы: 10 часов 
-
-Ёмкость аккумулятора: 2000 мА·ч
-
-Мощность: 4 Вт
-
-Преимущества:
-
-Влагозащита IP67
-
-До 10 часов работы от аккумулятора
-
-Простое подключение по Bluetooth
-
-7. Tronsmart Trip
-
-9.jpg
-
-Аккумулятор ёмкостью 2000 мА·ч обеспечивает до 20 часов автономной работы. Для проводного подключение, можно использовать AUX-вход 3.5 мм. Мощность 10 Вт подойдёт для помещений до 15-20 квадратных метров. 
-
-Характеристики:
-
-Время работы: 20 часов 
-
-Ёмкость аккумулятора: 2000 мА·ч
-
-Мощность: 10 Вт
-
-Преимущества:
-
-Длительный срок эксплуатации, благодаря бесшовному материалу
-
-Поддержка протоколов HFP, A2DP, AVRCP и кодека сжатия звука SBC.
-
-Подключение по Bluetooth 5.3 и AUX
-
-8. Xiaomi Mi Compact Bluetooth Speaker 2
-
-10.jpg
-
-Мощность 2 Вт выдаёт приятное звучание для личного прослушивания. Колонка Xiaomi Mi Compact Bluetooth Speaker 2 работает до шести часов от одного заряда аккумулятора ёмкостью 480 мА·ч. Этого достаточно для прослушивания музыки в течение дня. 
-
-Характеристики:
-
-Время работы: 6 часов  
-
-Ёмкость аккумулятора: 480 мА·ч
-
-Мощность: 2 Вт 
-
-Преимущества:
-
-Компактность и портативность
-
-Возможность синхронизации с любыми современными устройствами
-
-Совместимость с устройствами Xiaomi
-
-9. Accesstyle Titan BTL 5W
-
-11.jpg
-
-Accesstyle Titan BTL 5W обладает чистым и насыщенным звуком, благодаря динамику диаметром 45 мм. Сопротивление 4 Ом обеспечивает оптимальную работу с различными устройствами.
-
-Характеристики:
-
-Время работы: 6 часов 
-
-Ёмкость аккумулятора: 1200 мА·ч
-
-Частотный диапазон: 100-20000 Гц
-
-Преимущества:
-
-Многоцветная подсветка
-
-AUX-разъем 3.5 мм
-
-Встроенный микрофон
-
-10.  Accesstyle Jungle BT
-
-12.jpg
-
-Accesstyle Jungle BT легко подключается к любому смартфону или планшету через Bluetooth 5.0. Радиус действия — десять метров, что обеспечивает свободу перемещения. Мощность 3 Вт подойдёт для маленьких помещений до 5-7 квадратных. метров. 
-
-Характеристики:
-
-Время работы: 4 часа
-
-Частотный диапазон: 100-15000 Гц
-
-Мощность: 3 Вт
-
-Преимущества:
-
-Поддержка карт памяти microSD до 32 ГБ
-
-Зарядка через Type-C
-
-Миниатюрные размеры и лёгкий вес
-
-Модель
-
-Мощность 
-
-Частотный диапазон 
-
-Время работы 
-
-Marshall Stockwell II
-
-20 Вт 
-
-60-20000 Гц
-
-20 часов 
-
-Tronsmart bang SE
-
-40 Вт
-
-60-20000 Гц 
-
-24 часа 
-
-Tronsmart T7 Turquoise
-
-30 Вт
-
-60-20000 Гц 
-
-12 часов
-
-Xiaomi Mi Portable Bluetooth Speaker 16W
-
-16 Вт
-
-80–20 000 Гц  
-
-13 часов
-
-HONOR Choice Musicbox M1 5W
-
-5 Вт
-
-100-20000 Гц 
-
-10 часов 
-
-Xiaomi Mi Portable Bluetooth Speaker 4W
-
-4 Вт
-
-20-20000 Гц 
-
-10 часов 
-
-Tronsmart Trip
-
-10 Вт
-
-20-20000 Гц 
-
-20 часов
-
-Xiaomi Mi Compact Bluetooth Speaker 2
-
-2 Вт
-
-200–18000 Гц
-
-6 часов
-
-Accesstyle Titan BTL 5W
-
-5 Вт
-
-100-20000 Гц 
-
-6 часов
-
-Accesstyle Jungle BT
-
-3 Вт
-
-100-15000 Гц
-
-4 часа
-
-
-
-Правильный выбор портативной колонки значительно влияет на качество прослушивания музыки и удовлетворение от использования устройства.
-
-Выбор портативной колонки зависит от индивидуальных потребностей покупателя. При выборе важно учитывать качество звука, время работы аккумулятора, уровень защиты от влаги и пыли, а также наличие дополнительных функций. Так вы сможете найти колонку, которая подойдёт именно вам.
-                </p>
-              </div>
-        </div>
-    </section>
-
+  
+  <div class="catalog-dropdown__menu" id="catalog-dropdown-menu">
+    <div class="catalog-dropdown__categories">
+      <section class="catalog-dropdown__category">
+        <ul class="catalog-dropdown__list">
+          <li><a href="#" class="catalog-dropdown__link">Смартфоны</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Умные часы</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Наушники</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Ноутбуки</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Планшеты</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Портативные колонки</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Аксессуары</a></li>
+
+        </ul>
+      </section>
+    </div>
+  </div>
+  </div>
+    </div>
+  </div>
+</nav>
+</header>
+
+<section class="reviews">
+    <div class="container">
+        <header class="article-header">
+            <h1 class="main-title">Гейминг и VR: топ игровых устройств 2025 года</h1>
+            <div class="hero-image-container">
+                <img class="hero-image" src="assets/images/vr.jpg" alt="Игровые устройства и VR 2025 года">
+            </div>
+        </header>
+
+        <main class="review-content">
+            <p class="intro-text">В 2025 году игровая индустрия предлагает невероятные устройства для погружения в виртуальные миры. Мы представляем обзор лучших гейминг-гаджетов и VR-оборудования.</p>
+
+            <section class="category-section">
+                <h2 class="category-title">Игровые консоли нового поколения</h2>
+                <p class="category-description">Мощные домашние консоли для самых требовательных игроков.</p>
+
+                <div class="phone-grid">
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/playstation5.avif" alt="PlayStation 6 Pro">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">PlayStation 5 Pro</h3>
+                            <p class="phone-description">Мощнейший апгрейд легендарной консоли, поддержка 8K/120fps, улучшенный DualSense 3, SSD 2TB.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">8K/120fps</li>
+                                <li class="feature-item">DualSense 3</li>
+                                <li class="feature-item">SSD 2TB</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/controller.png" alt="Xbox Series Z">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Xbox Series S</h3>
+                            <p class="phone-description">Новая флагманская консоль Microsoft, технология DirectML для ИИ, Game Pass Ultimate в комплекте.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">Технология DirectML</li>
+                                <li class="feature-item">Game Pass Ultimate</li>
+                                <li class="feature-item">Поддержка облачного гейминга</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/nintendo.webp" alt="Nintendo Switch 2">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Nintendo Switch 2</h3>
+                            <p class="phone-description">Гибридная консоль нового поколения, OLED-экран 8 дюймов, обратная совместимость, улучшенная графика.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">OLED-экран 8"</li>
+                                <li class="feature-item">Обратная совместимость</li>
+                                <li class="feature-item">Гибридный дизайн</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/steam-deck-cover_1_large.jpg" alt="Steam Deck 2">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Steam Deck 2</h3>
+                            <p class="phone-description">Портативная игровая система от Valve, процессор AMD Zen 4, экран 90 Гц, улучшенная эргономика.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">Процессор AMD Zen 4</li>
+                                <li class="feature-item">Экран 90 Гц</li>
+                                <li class="feature-item">Портативная система</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="category-section">
+                <h2 class="category-title">VR и AR очки нового поколения</h2>
+                <p class="category-description">Иммерсивные технологии для полного погружения в виртуальную реальность.</p>
+
+                <div class="phone-grid">
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/stimes-2untitled.jpg" alt="Meta Quest 4">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Meta Quest 4</h3>
+                            <p class="phone-description">Беспроводные VR-очки с улучшенными контроллерами, разрешение 8K на глаз, автономность 5 часов.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">Разрешение 8K</li>
+                                <li class="feature-item">Беспроводные</li>
+                                <li class="feature-item">Автономность 5ч</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/e2242097.webp" alt="Apple Vision Pro 2">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Apple Vision Pro 2</h3>
+                            <p class="phone-description">Премиум AR/VR очки от Apple, процессор M3, продвинутое отслеживание глаз и жестов.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">Процессор M3</li>
+                                <li class="feature-item">Отслеживание глаз</li>
+                                <li class="feature-item">Экосистема Apple</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/ba7b4.jpg" alt="HTC Vive Ultra">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">HTC Vive Ultra</h3>
+                            <p class="phone-description">Профессиональные VR-очки для киберспорта, частота обновления 144 Гц, отслеживание всего тела.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">Частота 144 Гц</li>
+                                <li class="feature-item">Отслеживание тела</li>
+                                <li class="feature-item">Для киберспорта</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/920485.jpg" alt="Sony PlayStation VR 3">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Sony PlayStation VR 3</h3>
+                            <p class="phone-description">VR-очки для PS6, беспроводная работа, улучшенные контроллеры, библиотека эксклюзивов.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">Для PS6</li>
+                                <li class="feature-item">Беспроводные</li>
+                                <li class="feature-item">Эксклюзивные игры</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="category-section">
+                <h2 class="category-title">Игровые контроллеры и аксессуары</h2>
+                <p class="category-description">Продвинутые устройства управления для максимального комфорта.</p>
+
+                <div class="phone-grid">
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/Scuf.png" alt="SCUF Reflex Pro">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">SCUF Reflex Pro</h3>
+                            <p class="phone-description">Профессиональный контроллер с настраиваемыми задними лепестками, магнитные триггеры, сменные модули.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">Настраиваемые лепестки</li>
+                                <li class="feature-item">Магнитные триггеры</li>
+                                <li class="feature-item">Профессиональный уровень</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/800x600-razer.png" alt="Razer Turret V2">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Razer Turret V2</h3>
+                            <p class="phone-description">Игровая клавиатура и мышь для консолей, беспроводное соединение 2.4 ГГц, подсветка Chroma RGB.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">Клавиатура + мышь</li>
+                                <li class="feature-item">Подсветка Chroma</li>
+                                <li class="feature-item">Для консолей</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="category-section">
+                <h2 class="category-title">Игровые мониторы и телевизоры</h2>
+                <p class="category-description">Дисплеи с минимальной задержкой для конкурентного гейминга.</p>
+
+                <div class="phone-grid">
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/main2.jpg" alt="Samsung Odyssey G10">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Samsung Odyssey G10</h3>
+                            <p class="phone-description">Изогнутый 49-дюймовый монитор 240 Гц, разрешение 5120x1440, технология Quantum HDR.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">49" изогнутый</li>
+                                <li class="feature-item">240 Гц</li>
+                                <li class="feature-item">Quantum HDR</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/gallery-03.avif" alt="LG OLED Gaming TV">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">LG OLED Gaming TV</h3>
+                            <p class="phone-description">65-дюймовый OLED телевизор для гейминга, 4K/144 Гц, NVIDIA G-SYNC, задержка 1 мс.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">65" OLED</li>
+                                <li class="feature-item">144 Гц</li>
+                                <li class="feature-item">NVIDIA G-SYNC</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/B22FF0CB6BC9.png" alt="ASUS ROG Swift PG32UQX">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">ASUS ROG Swift PG32UQX</h3>
+                            <p class="phone-description">32-дюймовый 4K монитор 144 Гц, Mini-LED подсветка, DisplayHDR 1400, NVIDIA Reflex.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">4K Mini-LED</li>
+                                <li class="feature-item">144 Гц</li>
+                                <li class="feature-item">DisplayHDR 1400</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="category-section">
+                <h2 class="category-title">Игровые аксессуары и стриминг</h2>
+                <p class="category-description">Оборудование для стримеров и улучшения игрового процесса.</p>
+
+                <div class="phone-grid">
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/PCM0015911-000.webp" alt="Elgato Stream Deck XL">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Elgato Stream Deck XL</h3>
+                            <p class="phone-description">32 программируемые LCD-кнопки для стримеров, интеграция с OBS, Twitch и YouTube.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">32 программируемые кнопки</li>
+                                <li class="feature-item">Интеграция с OBS</li>
+                                <li class="feature-item">Для стримеров</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/7544233107.jpg" alt="Blue Yeti Nano Pro">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Blue Yeti Nano Pro</h3>
+                            <p class="phone-description">USB-микрофон для стриминга, 4 режима записи, встроенный усилитель, RGB-подсветка.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">4 режима записи</li>
+                                <li class="feature-item">RGB-подсветка</li>
+                                <li class="feature-item">Для стриминга</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/bc323caa-hi.jpg" alt="Secretlab Titan Evo 2025">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Secretlab Titan Evo 2025</h3>
+                            <p class="phone-description">Эргономичное игровое кресло премиум-класса, адаптивная поясничная поддержка, магнитные подушки.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">Адаптивная поддержка</li>
+                                <li class="feature-item">Магнитные подушки</li>
+                                <li class="feature-item">Эргономичный дизайн</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="conclusion-section">
+                <div class="conclusion-content">
+                    <p>2025 год стал настоящим прорывом в мире игровых устройств. От мощных консолей нового поколения до иммерсивных VR-очков — технологии позволяют полностью погрузиться в виртуальные миры.</p>
+                    <p>При выборе игрового оборудования учитывайте не только технические характеристики, но и совместимость с вашей экосистемой, эргономику и реальные отзывы геймеров. Правильно подобранные устройства сделают каждый игровой сеанс незабываемым.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+</section>
+
+            
 <footer class="footer">
   <button class="scroll-to-top" id="scrollUp" aria-label="Прокрутить наверх">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
@@ -460,7 +447,7 @@ Accesstyle Jungle BT
       <div class="footer__column">
         <h3 class="footer__title">Команда ГаджетТриум</h3>
         <ul class="footer__list">
-          <li><a href="#" class="footer__link">О нас</a></li>
+          <li><a href="#" class="footer__link">О компании</a></li>
           <li><a href="#" class="footer__link">Вакансии</a></li>
         </ul>
       </div>
@@ -507,6 +494,90 @@ document.addEventListener('click', function(e) {
     });
   }
 });
+
+// Функционал кнопки
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.getElementById('scrollUp');
+    const scrollProgress = scrollButton.querySelector('.scroll-progress');
+    
+    // Показывать/скрывать кнопку при прокрутке
+    window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (scrollY / (documentHeight - windowHeight)) * 100;
+        
+        if (scrollY > 400) {
+            scrollButton.classList.add('show');
+            scrollButton.classList.add('show-progress');
+            
+            // Обновление индикатора прогресса
+            const circumference = 2 * Math.PI * 30; // радиус кнопки
+            const offset = circumference - (scrollPercentage / 100) * circumference;
+            scrollProgress.style.strokeDasharray = circumference;
+            scrollProgress.style.strokeDashoffset = offset;
+        } else {
+            scrollButton.classList.remove('show');
+            scrollButton.classList.remove('show-progress');
+        }
+    });
+    
+    // Плавная прокрутка наверх
+    scrollButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // Микро-анимация при клике
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});
+
+// Функционал кнопки
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.getElementById('scrollUp');
+    const scrollProgress = scrollButton.querySelector('.scroll-progress');
+    
+    // Показывать/скрывать кнопку при прокрутке
+    window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (scrollY / (documentHeight - windowHeight)) * 100;
+        
+        if (scrollY > 400) {
+            scrollButton.classList.add('show');
+            scrollButton.classList.add('show-progress');
+            
+            // Обновление индикатора прогресса
+            const circumference = 2 * Math.PI * 30; // радиус кнопки
+            const offset = circumference - (scrollPercentage / 100) * circumference;
+            scrollProgress.style.strokeDasharray = circumference;
+            scrollProgress.style.strokeDashoffset = offset;
+        } else {
+            scrollButton.classList.remove('show');
+            scrollButton.classList.remove('show-progress');
+        }
+    });
+    
+    // Плавная прокрутка наверх
+    scrollButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // Микро-анимация при клике
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});
 </script>
 
     <!-- Bootstrap JS -->
@@ -515,7 +586,10 @@ document.addEventListener('click', function(e) {
 </html>
 
 <style>
+
   .image-container {
-    width: 800px;
+    width: 1020px;
   }
+
+
 </style>

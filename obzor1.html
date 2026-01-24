@@ -12,15 +12,20 @@
 </body>
 </html>
 <container>
+    <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Behoof</a>
-    <p>Лучшие цены в <br> интернет магазинах</p>
+    <div class="navbar-logo-container">
+      <img src="assets/images/behoof_logo.png" alt="">
+      <h1>ГаджетТриум</h1>
+      <p>Лучшие цены в интернет-магазинах</p>
+    </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div class="catalog-dropdown">
+        
   <button class="catalog-dropdown__toggle" type="button" aria-expanded="false" aria-controls="catalog-dropdown-menu" aria-label="Открыть каталог товаров">
     Каталог товаров
     <svg class="catalog-dropdown__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -31,35 +36,18 @@
   <div class="catalog-dropdown__menu" id="catalog-dropdown-menu">
     <div class="catalog-dropdown__categories">
       <section class="catalog-dropdown__category">
-        <h3 class="catalog-dropdown__category-title">Мобильные устройства</h3>
         <ul class="catalog-dropdown__list">
-          <li><a href="#" class="catalog-dropdown__link">Смартфоны</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Умные часы</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Наушники</a></li>
-        </ul>
-      </section>
-      
-      <section class="catalog-dropdown__category">
-        <h3 class="catalog-dropdown__category-title">Компьютеры</h3>
-        <ul class="catalog-dropdown__list">
-          <li><a href="#" class="catalog-dropdown__link">Ноутбуки</a></li>
-        </ul>
-      </section>
-      
-      <section class="catalog-dropdown__category">
-        <h3 class="catalog-dropdown__category-title">Планшеты</h3>
-        <ul class="catalog-dropdown__list">
-          <li><a href="#" class="catalog-dropdown__link">Планшеты</a></li>
-        </ul>
-      </section>
-
-      <section class="catalog-dropdown__category">
-        <h3 class="catalog-dropdown__category-title">Разное</h3>
-        <ul class="catalog-dropdown__list">
-          <li><a href="#" class="catalog-dropdown__link">Игровые приставки</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Портативные колонки</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Аксесуары</a></li>
-        </ul>
+<?php
+$stmt = $db->prepare("SELECT * FROM categories");
+$stmt->execute();
+$result = $stmt->get_result();
+$rows = $result->fetch_all();   
+           
+foreach($rows as $row ){
+    echo sprintf('<li><a href="#" class="catalog-dropdown__link">%s</a></li>', $row[1]);
+}
+?> 
+</ul>
       </section>
     </div>
   </div>
@@ -67,254 +55,360 @@
   <div class="container-fluid">
     <form class="d-flex" role="search">
       <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
-      <button class="btn btn-outline-success" type="submit">Поиск</button>
+      <button class="btn btn-outline-success btn-ilya" type="submit">Поиск</button>
     </form>
   </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book-fill" viewBox="0 0 16 16">
-  <path d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+  <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"/>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+<svg xmlns="http://www.w3.org/2000/svg" id="openModalBtn" href="registration.html" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
   <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
   <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
   <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
 </svg>
 </nav>
-    </div>
-  </div>
+<nav class=" top-nav container">
+
+       <ul class="top-nav-ul">
+        <li class="top-nav-li"><a class="top-nav-link" href="#">Акции</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="company.html">О компании</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="#">Вакансии</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="">Обзоры</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="contacts.html">Контакты</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="help.html">Помощь</a></li>
+       </ul>
 </nav>
+
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
     <li class="breadcrumb-item active" aria-current="page">Обзоры</li>
   </ol>
 </nav>
+  
+  <div class="catalog-dropdown__menu" id="catalog-dropdown-menu">
+    <div class="catalog-dropdown__categories">
+      <section class="catalog-dropdown__category">
+        <ul class="catalog-dropdown__list">
+          <li><a href="#" class="catalog-dropdown__link">Смартфоны</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Умные часы</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Наушники</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Ноутбуки</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Планшеты</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Портативные колонки</a></li>
+          <li><a href="#" class="catalog-dropdown__link">Аксессуары</a></li>
 
-<section class="reviews" aria-labelledby="main-heading">
+        </ul>
+      </section>
+    </div>
+  </div>
+  </div>
+    </div>
+  </div>
+</nav>
+</header>
+
+<section class="reviews">
     <div class="container">
-        
-        <div class="review-content">
-            <div class="review-image-container">                
-              <h2 class="image-caption">На что нужно обратить внимание при покупке нового смартфона?</h2>
-                <img class="review-image" src="assets/images/rtl_0009_large 1.svg" alt="Смартфон с открытыми приложениями" loading="lazy">
-
+        <header class="article-header">
+            <h1 class="main-title">Топ электроники для дома и офиса 2025</h1>
+            <div class="hero-image-container">
+                <img class="hero-image" src="assets/images/electronic.jpg" alt="Умная техника для дома 2025 года">
             </div>
-            
-            <nav class="table-of-contents" aria-label="Содержание руководства">
-                <h3>Содержание:</h3>
-                <ol>
-                    <li><a href="#performance">Быстрота работы — процессор и память</a></li>
-                    <li><a href="#display">Экран — чтобы было приятно смотреть</a></li>
-                    <li><a href="#camera">Камера — не только мегапиксели</a></li>
-                    <li><a href="#battery">Заряд — чтобы не подводил</a></li>
-                    <li><a href="#storage">Память — куда всё складывать</a></li>
-                    <li><a href="#features">Дополнительные функции</a></li>
-                    <li><a href="#os">Операционная система</a></li>
-                    <li><a href="#design">Удобство и внешний вид</a></li>
-                    <li><a href="#brand">Бренд и сервис</a></li>
-                    <li><a href="#budget">Стоит ли переплачивать?</a></li>
-                </ol>
-            </nav>
-            
-            <article class="guide-content">
-                <section id="performance" class="section">
-                    <h2>1. Быстрота работы — процессор и память</h2>
-                    <p>Если телефон «тормозит», пользоваться им будет неприятно. Чтобы этого не случилось, выбирайте смартфон с современным процессором и достаточным объёмом оперативной памяти.</p>
-                    
-                    <div class="comparison">
-                        <div class="comparison-item">
-                            <h3>Для обычных задач</h3>
-                            <p>Звонки, интернет, соцсети — подойдут модели с 6 или 8 ГБ оперативной памяти и процессорами от известных производителей.</p>
+        </header>
+
+        <main class="review-content">
+           <p class="intro-text">В 2025 году технологии умного дома и офисная электроника достигли нового уровня удобства. Мы представляем обзор лучших устройств для автоматизации и продуктивности.</p> 
+
+            <section class="category-section">
+                <h2 class="category-title">Умные колонки и дисплеи</h2>
+                <p class="category-description">Голосовые помощники стали умнее и функциональнее, превратившись в центры управления умным домом.</p>
+
+                <div class="phone-grid">
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/echo_show_15_1-1000x1000.jpg" alt="Amazon Echo Show 15">
                         </div>
-                        <div class="comparison-item">
-                            <h3>Для игр и многозадачности</h3>
-                            <p>Если вы играете в игры или открываете много приложений одновременно — лучше взять модель помощнее с 8-12 ГБ оперативной памяти.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="tip" role="note" aria-label="Совет">
-                        <p><strong>Совет:</strong> Обратите внимание на процессоры Snapdragon, Exynos, MediaTek или Apple A-series — они обеспечивают хорошую производительность.</p>
-                    </div>
-                </section>
-                
-                <section id="display" class="section">
-                    <h2>2. Экран — чтобы было приятно смотреть</h2>
-                    <p>Вы будете смотреть на экран каждый день, поэтому он должен быть качественным.</p>
-                    
-                    <div class="feature-list">
-                        <div class="feature-item">
-                            <h3>Размер</h3>
-                            <p>От 6 до 6,7 дюйма удобно и не слишком громоздко.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h3>Тип экрана</h3>
-                            <p>AMOLED даёт яркие и насыщенные цвета, IPS подойдёт для тех, кто не так требователен.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h3>Плавность</h3>
-                            <p>Если указано 90 или 120 Гц, значит, картинка будет «плавной», особенно заметно при прокрутке.</p>
-                        </div>
-                    </div>
-                </section>
-                
-                <section id="camera" class="section">
-                    <h2>3. Камера — не только мегапиксели</h2>
-                    <p>Хорошая камера — это не только цифры, но и качество объектива, стабилизация изображения, способность снимать при слабом освещении.</p>
-                    
-                    <h3>Что важно в камере:</h3>
-                    <ul>
-                        <li>Наличие ночного режима</li>
-                        <li>Качество портретных снимков</li>
-                        <li>Стабильность съёмки при движении</li>
-                        <li>Качество обработки изображений</li>
-                    </ul>
-                    
-                    <div class="highlight" role="note" aria-label="Важная информация">
-                        <p><strong>Важно:</strong> Если фотография для вас важна, лучше посмотреть реальные снимки из обзоров или отзывов, чем просто верить в «108 МП».</p>
-                    </div>
-                </section>
-                
-                <section id="battery" class="section">
-                    <h2>4. Заряд — чтобы не подводил</h2>
-                    <p>Хороший смартфон должен работать целый день без подзарядки.</p>
-                    
-                    <h3>На что обратить внимание:</h3>
-                    <ul>
-                        <li>Аккумулятор не меньше 4500–5000 мАч</li>
-                        <li>Наличие быстрой зарядки</li>
-                        <li>Энергоэффективность процессора</li>
-                    </ul>
-                    
-                    <div class="tip" role="note" aria-label="Совет">
-                        <p><strong>Совет:</strong> Быстрая зарядка позволяет зарядить телефон наполовину всего за 30 минут. Очень удобно, если вы куда-то торопитесь.</p>
-                    </div>
-                </section>
-                
-                <section id="storage" class="section">
-                    <h2>5. Память — куда всё складывать</h2>
-                    <p>Музыка, фото, видео, приложения — всё это занимает место.</p>
-                    
-                    <div class="comparison">
-                        <div class="comparison-item">
-                            <h3>Минимальный вариант</h3>
-                            <p>Если вы не планируете хранить много файлов — 64-128 ГБ</p>
-                        </div>
-                        <div class="comparison-item">
-                            <h3>Рекомендуемый вариант</h3>
-                            <p>Для комфортного использования — от 128 ГБ</p>
-                        </div>
-                        <div class="comparison-item">
-                            <h3>Для любителей контента</h3>
-                            <p>Если храните много фото, видео и игр — 256 ГБ и больше</p>
-                        </div>
-                    </div>
-                    
-                    <div class="highlight" role="note" aria-label="Важная информация">
-                        <p><strong>Плюс:</strong> Если в телефоне есть слот для карты памяти — это большое преимущество для расширения хранилища.</p>
-                    </div>
-                </section>
-                
-                <section id="features" class="section">
-                    <h2>6. Дополнительные функции</h2>
-                    <p>Вот дополнительные функции, на которые стоит обратить внимание:</p>
-                    
-                    <div class="feature-list">
-                        <div class="feature-item">
-                            <h3>NFC</h3>
-                            <p>Позволяет платить телефоном, как банковской картой.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h3>5G</h3>
-                            <p>Пригодится, если у вас уже есть покрытие этой сети.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h3>Bluetooth 5.0+</h3>
-                            <p>Для беспроводных наушников и аксессуаров.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h3>Стереозвук</h3>
-                            <p>Для тех, кто любит смотреть видео или слушать музыку без наушников.</p>
-                        </div>
-                        <div class="feature-item">
-                            <h3>Защита от воды</h3>
-                            <p>Пригодится, если часто бываете на улице или на природе.</p>
-                        </div>
-                    </div>
-                </section>
-                
-                <section id="os" class="section">
-                    <h2>7. Операционная система</h2>
-                    <p>Большинство смартфонов работают на Android. Некоторые — на iOS (только iPhone). У каждого свои плюсы:</p>
-                    
-                    <div class="comparison">
-                        <div class="comparison-item">
-                            <h3>Android</h3>
-                            <ul>
-                                <li>Больше моделей и возможностей настройки</li>
-                                <li>Гибкость интерфейса</li>
-                                <li>Разнообразие цен</li>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Amazon Echo Show 15</h3>
+                            <p class="phone-description">15-дюймовый сенсорный экран, камера 13 МП для видеозвонков, управление всеми устройствами умного дома.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">Экран 15"</li>
+                                <li class="feature-item">Камера 13 МП</li>
+                                <li class="feature-item">Управление умным домом</li>
                             </ul>
                         </div>
-                        <div class="comparison-item">
-                            <h3>iOS</h3>
-                            <ul>
-                                <li>Простота и стабильность</li>
-                                <li>Быстрая работа</li>
-                                <li>Интеграция с другими устройствами Apple</li>
+                    </article>
+
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/unnamed.jpg" alt="Google Nest Hub Max 3">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Google Nest Hub Max 3</h3>
+                            <p class="phone-description">10-дюймовый дисплей, встроенная камера с отслеживанием движений, интеграция с Google сервисами.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">Дисплей 10"</li>
+                                <li class="feature-item">Google Assistant</li>
+                                <li class="feature-item">Распознавание жестов</li>
                             </ul>
                         </div>
-                    </div>
-                    
-                    <div class="tip" role="note" aria-label="Совет">
-                        <p><strong>Совет:</strong> Посмотрите, как часто производитель обновляет свои телефоны. Чем дольше поддержка — тем дольше смартфон будет актуален и безопасен.</p>
-                    </div>
-                </section>
-                
-                <section id="design" class="section">
-                    <h2>8. Удобство и внешний вид</h2>
-                    <p>Даже самый мощный телефон может быть неудобным.</p>
-                    
-                    <h3>На что обратить внимание:</h3>
-                    <ul>
-                        <li>Насколько хорошо он лежит в руке</li>
-                        <li>Не слишком ли тяжёлый</li>
-                        <li>Удобно ли расположены кнопки и сканер отпечатков</li>
-                        <li>Приятный ли материал корпуса (стекло, металл, пластик)</li>
-                    </ul>
-                    
-                    <div class="highlight" role="note" aria-label="Важная информация">
-                        <p><strong>Рекомендация:</strong> Лучше подержать смартфон в магазине перед покупкой или хотя бы посмотреть обзор, где его показывают вживую.</p>
-                    </div>
-                </section>
-                
-                <section id="brand" class="section">
-                    <h2>9. Бренд и сервис</h2>
-                    <p>Известные бренды часто предлагают не только смартфон, но и удобную экосистему: часы, ноутбуки, наушники, которые работают «в связке».</p>
-                    
-                    <h3>Что важно:</h3>
-                    <ul>
-                        <li>Наличие официальных гарантийных центров в вашем городе</li>
-                        <li>Доступность запчастей и аксессуаров</li>
-                        <li>Качество обслуживания клиентов</li>
-                        <li>Продолжительность программного обеспечения</li>
-                    </ul>
-                </section>
-                
-                <section id="budget" class="section">
-                    <h2>10. Стоит ли переплачивать?</h2>
-                    <p>Флагманские смартфоны стоят дорого, но не всегда нужны всем.</p>
-                    
-                    <div class="highlight" role="note" aria-label="Важная информация">
-                        <p>Часто модели среднего класса (от 300 до 600 долларов) предлагают всё необходимое для комфортной работы — хорошую камеру, быструю зарядку, красивый экран и надёжную батарею.</p>
-                    </div>
-                </section>
-            </article>
-        </div>
+                    </article>
+
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/apple_homepod_mini_white_1-400x400.webp" alt="Apple HomePod 3">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Apple HomePod 3</h3>
+                            <p class="phone-description">Премиум-качество звука, поддержка Spatial Audio, управление HomeKit устройствами.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">Качество звука Hi-Fi</li>
+                                <li class="feature-item">Spatial Audio</li>
+                                <li class="feature-item">Apple HomeKit</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/image 1 (3).png" alt="Xiaomi Smart Speaker Pro">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Xiaomi Smart Speaker Pro</h3>
+                            <p class="phone-description">Доступная умная колонка с поддержкой русского языка, управление Xiaomi устройствами.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">Поддержка русского</li>
+                                <li class="feature-item">Экосистема Xiaomi</li>
+                                <li class="feature-item">Ценовая доступность</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="category-section">
+                <h2 class="category-title">Роботы-пылесосы и климатическая техника</h2>
+                <p class="category-description">Автоматизация уборки и поддержания комфортного микроклимата.</p>
+
+                <div class="phone-grid">
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/iRobot.jpg" alt="iRobot Roomba s9+">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">iRobot Roomba s9+</h3>
+                            <p class="feature-list">Система навигации vSLAM, самоочистка контейнера, уборка по расписанию, работа с коврами и паркетом.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">Самоочистка</li>
+                                <li class="feature-item">Навигация vSLAM</li>
+                                <li class="feature-item">Мощная всасывание</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/1_767497.jpg" alt="Dyson Purifier Cool">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Dyson Purifier Cool</h3>
+                            <p class="phone-description">Очистка воздуха от аллергенов, охлаждение помещения, мониторинг качества воздуха в реальном времени.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">Очистка воздуха HEPA</li>
+                                <li class="feature-item">Охлаждение</li>
+                                <li class="feature-item">Мониторинг качества</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/Vacuum.avif" alt="Xiaomi Robot Vacuum X10">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Xiaomi Robot Vacuum X10</h3>
+                            <p class="phone-description">Картография LIDAR, моющий модуль, управление через приложение, голосовые команды.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">Навигация LIDAR</li>
+                                <li class="feature-item">Мойка полов</li>
+                                <li class="feature-item">Управление через приложение</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/Airflyer.jpg" alt="Philips Airfryer XXL">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Philips Airfryer XXL</h3>
+                            <p class="phone-description">Приготовление с горячим воздухом без масла, 7 предустановленных программ, дистанционное управление.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">Приготовление без масла</li>
+                                <li class="feature-item">7 программ</li>
+                                <li class="feature-item">Умное управление</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="category-section">
+                <h2 class="category-title">Умное освещение и безопасность</h2>
+                <p class="category-description">Системы для комфортного и безопасного дома.</p>
+
+                <div class="phone-grid">
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/philips_hue.jpg" alt="Philips Hue Gradient Lightstrip">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Philips Hue Gradient Lightstrip</h3>
+                            <p class="phone-description">Многоцветная световая лента с градиентом, синхронизация с медиа, управление голосом.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">Градиентная подсветка</li>
+                                <li class="feature-item">Синхронизация с ТВ</li>
+                                <li class="feature-item">Голосовое управление</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/ring-video-doorbell-4_1.jpg" alt="Ring Video Doorbell Pro 4">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Ring Video Doorbell Pro 4</h3>
+                            <p class="phone-description">Видеодомофон с ИИ-распознаванием лиц, ночное видение, двусторонняя связь.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">ИИ-распознавание лиц</li>
+                                <li class="feature-item">Ночное видение</li>
+                                <li class="feature-item">Облачное хранение</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="category-section">
+                <h2 class="category-title">Офисная техника и оборудование</h2>
+                <p class="category-description">Продуктивность и комфорт на рабочем месте.</p>
+
+                <div class="phone-grid">
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/epson-wf7840-01.jpg" alt="Epson Workforce Pro WF-7840">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Epson Workforce Pro WF-7840</h3>
+                            <p class="phone-description">МФУ для офиса, автоматическая двухсторонняя печать, Wi-Fi Direct, облачная печать.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">Двухсторонняя печать</li>
+                                <li class="feature-item">Облачная печать</li>
+                                <li class="feature-item">Емкие картриджи</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/eynlpqcueq4aokjm11ko67m8qppvdz849272.webp" alt="Logitech MX Keys Mini + MX Master 3S">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Logitech MX Keys Mini + MX Master 3S</h3>
+                            <p class="phone-description">Беспроводные клавиатура и мышь премиум-класса, переключение между устройствами, тихие клики.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">Бесшумные клики</li>
+                                <li class="feature-item">Flow технология</li>
+                                <li class="feature-item">Эргономичный дизайн</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/33d213a33a-hi.jpg" alt="Dell UltraSharp 49 Curved Monitor">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Dell UltraSharp 49 Curved Monitor</h3>
+                            <p class="phone-description">Изогнутый 49-дюймовый монитор 5120x1440, 120 Гц, USB-C с питанием 90 Вт.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">Экран 49" изогнутый</li>
+                                <li class="feature-item">Разрешение 5120x1440</li>
+                                <li class="feature-item">Частота 120 Гц</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="category-section">
+                <h2 class="category-title">Кухонная умная техника</h2>
+                <p class="category-description">Интеллектуальные помощники на кухне.</p>
+
+                <div class="phone-grid">
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/6913500949.jpg" alt="Instant Pot Pro Plus">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Instant Pot Pro Plus</h3>
+                            <p class="phone-description">Мультиварка с Wi-Fi, управление через приложение, 15 программ приготовления, датчик температуры.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">Wi-Fi управление</li>
+                                <li class="feature-item">15 программ</li>
+                                <li class="feature-item">Датчик температуры</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/Product-0-I_3b518188-188d-4d4c-990b-0bdee9c89095_1024x1024.webp" alt="Breville Smart Oven Air Fryer">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Breville Smart Oven Air Fryer</h3>
+                            <p class="phone-description">Умная духовка с функцией фритюрницы, 13 режимов приготовления, подключение к приложению.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">13 режимов</li>
+                                <li class="feature-item">Функция фритюрницы</li>
+                                <li class="feature-item">Точный контроль температуры</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="phone-card">
+                        <div class="phone-image-container">
+                            <img src="assets/images/Shopify-Product-Coffee-FC-3DCoffee-1_1600x.webp" alt="Smarter Coffee Machine 2.0">
+                        </div>
+                        <div class="phone-content">
+                            <h3 class="phone-name">Smarter Coffee Machine 2.0</h3>
+                            <p class="phone-description">Кофемашина с управлением через приложение, помол зерен, настройка крепости, расписание приготовления.</p>
+                            <ul class="feature-list">
+                                <li class="feature-item">Управление через приложение</li>
+                                <li class="feature-item">Свежий помол</li>
+                                <li class="feature-item">Расписание приготовления</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="conclusion-section">
+                <div class="conclusion-content">
+                    <p>2025 год предлагает впечатляющий выбор умной техники для дома и офиса. От автоматической уборки до интеллектуального приготовления пищи — технологии делают нашу жизнь комфортнее и эффективнее.</p>
+                    <p>При выборе устройств обращайте внимание на совместимость с экосистемами, удобство управления и реальные отзывы пользователей. Современная электроника должна не просто работать, а действительно улучшать качество жизни.</p>
+                </div>
+            </section>
+        </main>
     </div>
 </section>
 
+            
 <footer class="footer">
   <button class="scroll-to-top" id="scrollUp" aria-label="Прокрутить наверх">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
@@ -353,7 +447,7 @@
       <div class="footer__column">
         <h3 class="footer__title">Команда ГаджетТриум</h3>
         <ul class="footer__list">
-          <li><a href="#" class="footer__link">О нас</a></li>
+          <li><a href="#" class="footer__link">О компании</a></li>
           <li><a href="#" class="footer__link">Вакансии</a></li>
         </ul>
       </div>
@@ -400,6 +494,132 @@ document.addEventListener('click', function(e) {
     });
   }
 });
+
+// Функционал кнопки
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.getElementById('scrollUp');
+    const scrollProgress = scrollButton.querySelector('.scroll-progress');
+    
+    // Показывать/скрывать кнопку при прокрутке
+    window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (scrollY / (documentHeight - windowHeight)) * 100;
+        
+        if (scrollY > 400) {
+            scrollButton.classList.add('show');
+            scrollButton.classList.add('show-progress');
+            
+            // Обновление индикатора прогресса
+            const circumference = 2 * Math.PI * 30; // радиус кнопки
+            const offset = circumference - (scrollPercentage / 100) * circumference;
+            scrollProgress.style.strokeDasharray = circumference;
+            scrollProgress.style.strokeDashoffset = offset;
+        } else {
+            scrollButton.classList.remove('show');
+            scrollButton.classList.remove('show-progress');
+        }
+    });
+    
+    // Плавная прокрутка наверх
+    scrollButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // Микро-анимация при клике
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});
+
+// Функционал кнопки
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.getElementById('scrollUp');
+    const scrollProgress = scrollButton.querySelector('.scroll-progress');
+    
+    // Показывать/скрывать кнопку при прокрутке
+    window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (scrollY / (documentHeight - windowHeight)) * 100;
+        
+        if (scrollY > 400) {
+            scrollButton.classList.add('show');
+            scrollButton.classList.add('show-progress');
+            
+            // Обновление индикатора прогресса
+            const circumference = 2 * Math.PI * 30; // радиус кнопки
+            const offset = circumference - (scrollPercentage / 100) * circumference;
+            scrollProgress.style.strokeDasharray = circumference;
+            scrollProgress.style.strokeDashoffset = offset;
+        } else {
+            scrollButton.classList.remove('show');
+            scrollButton.classList.remove('show-progress');
+        }
+    });
+    
+    // Плавная прокрутка наверх
+    scrollButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // Микро-анимация при клике
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});
+
+// Функционал кнопки
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.getElementById('scrollUp');
+    const scrollProgress = scrollButton.querySelector('.scroll-progress');
+    
+    // Показывать/скрывать кнопку при прокрутке
+    window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (scrollY / (documentHeight - windowHeight)) * 100;
+        
+        if (scrollY > 400) {
+            scrollButton.classList.add('show');
+            scrollButton.classList.add('show-progress');
+            
+            // Обновление индикатора прогресса
+            const circumference = 2 * Math.PI * 30; // радиус кнопки
+            const offset = circumference - (scrollPercentage / 100) * circumference;
+            scrollProgress.style.strokeDasharray = circumference;
+            scrollProgress.style.strokeDashoffset = offset;
+        } else {
+            scrollButton.classList.remove('show');
+            scrollButton.classList.remove('show-progress');
+        }
+    });
+    
+    // Плавная прокрутка наверх
+    scrollButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // Микро-анимация при клике
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});
 </script>
 
     <!-- Bootstrap JS -->
@@ -408,10 +628,10 @@ document.addEventListener('click', function(e) {
 </html>
 
 <style>
-* {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-        }
+
+  .image-container {
+    width: 1020px;
+  }
+
+
 </style>

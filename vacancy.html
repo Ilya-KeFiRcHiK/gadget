@@ -82,6 +82,65 @@ foreach($rows as $row ){
         <li class="top-nav-li"><a class="top-nav-link" href="#">Помощь</a></li>
        </ul>
 </nav>
+
+<div class="vacancy-card">
+        <div class="vacancy-header">
+            <h1 class="vacancy-title">Стань частью нашей дружной команды!</h1>
+            <div class="vacancy-salary">Зарплата от 60 000 руб.</div>
+        </div>
+        
+        <p>Заполните форму, нажав на кнопку «Оставить заявку на вакансию», и мы свяжемся с вами в ближайшее рабочее время.</p>
+        
+        <div class="highlight">
+            Мы используем в работе все актуальные инструменты, на что имеем и желание, и компетенцию, и финансовые возможности. Работать с нами честно, интересно и перспективно!
+        </div>
+        
+        <h2 class="section-title">Вакансия: Продавец в магазин электроники</h2>
+        
+        <h3 class="section-title">Обязанности:</h3>
+        <ul>
+            <li>Ведение ежедневной отчётности;</li>
+            <li>Обслуживание и консультирование покупателей в соответствии с технологиями продаж;</li>
+            <li>Предоставление качественного сервиса;</li>
+            <li>Работа на компьютере: заполнение таблиц, работа с различными системами и сервисами, размещение объявлений на площадках;</li>
+            <li>Учёт товара в магазине, приём поставок, сверка остатков, маркировка.</li>
+        </ul>
+        
+        <h3 class="section-title">Мы ищем кандидата, который:</h3>
+        <ul>
+            <li>Быстро и легко обучается;</li>
+            <li>Готов полностью погружаться в рабочий процесс с первого дня, не ищет отговорок, умеет преодолевать страх нового;</li>
+            <li>Добросовестно относится к работе, проявляет инициативу;</li>
+            <li>Готов нести ответственность за свои поступки;</li>
+            <li>Коммуникабелен, легко находит общий язык с незнакомыми людьми.</li>
+        </ul>
+        
+        <h3 class="section-title">Условия работы:</h3>
+        
+        <div class="benefits-grid">
+            <div class="benefit-item">График работы: с 09:00 до 18:00 или до 20:00 (обсуждается индивидуально)</div>
+            <div class="benefit-item">Адекватное руководство, дружный коллектив</div>
+            <div class="benefit-item">Конкурентная заработная плата, выплачивается без задержек</div>
+            <div class="benefit-item">Реальные возможности для карьерного роста</div>
+        </div>
+        
+        <p style="text-align: center; font-weight: 600; margin-top: 30px;">
+            Будем рады получить ваше резюме и познакомиться ближе!
+        </p>
+        
+        <div class="cta-buttons">
+            <button class="cta-button" id="feedbackToggleBtn">Оставить заявку на вакансию</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('feedbackToggleBtn').addEventListener('click', function() {
+            alert('Спасибо за интерес к вакансии! В реальном проекте здесь открывалась бы форма для заполнения.');
+            // В реальном проекте здесь мог бы быть код для открытия формы:
+            // document.getElementById('feedbackForm').style.display = 'block';
+        });
+    </script>
+
   
   <div class="catalog-dropdown__menu" id="catalog-dropdown-menu">
     <div class="catalog-dropdown__categories">
@@ -98,6 +157,11 @@ foreach($rows as $row ){
       </section>
     </div>
   </div>
+  </div>
+    </div>
+  </div>
+</nav>
+</header>
   <footer class="footer">
   <button class="scroll-to-top" id="scrollUp" aria-label="Прокрутить наверх">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
@@ -161,9 +225,33 @@ foreach($rows as $row ){
     </div>
   </div>
 </footer>
+
+<script>
+    document.querySelector('.catalog-dropdown__toggle').addEventListener('click', function() {
+  const dropdown = this.closest('.catalog-dropdown');
+  dropdown.classList.toggle('open');
+  
+  // Обновляем aria-атрибуты
+  const isExpanded = dropdown.classList.contains('open');
+  this.setAttribute('aria-expanded', isExpanded);
+});
+
+// Закрытие при клике вне dropdown
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.catalog-dropdown')) {
+    const openDropdowns = document.querySelectorAll('.catalog-dropdown.open');
+    openDropdowns.forEach(dropdown => {
+      dropdown.classList.remove('open');
+      dropdown.querySelector('.catalog-dropdown__toggle').setAttribute('aria-expanded', 'false');
+    });
+  }
+});
+</script>
   </div>
     </div>
   </div>
 </nav>
 </header>
+<script src="script.js"></script>
 </body>
+</html>

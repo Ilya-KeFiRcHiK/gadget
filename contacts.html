@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="registration.css">
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+
 <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -38,7 +36,7 @@
     <div class="catalog-dropdown__categories">
       <section class="catalog-dropdown__category">
         <ul class="catalog-dropdown__list">
-<!-- <?php
+<?php
 $stmt = $db->prepare("SELECT * FROM categories");
 $stmt->execute();
 $result = $stmt->get_result();
@@ -47,7 +45,7 @@ $rows = $result->fetch_all();
 foreach($rows as $row ){
     echo sprintf('<li><a href="#" class="catalog-dropdown__link">%s</a></li>', $row[1]);
 }
-?> -->
+?> 
 </ul>
       </section>
     </div>
@@ -56,7 +54,7 @@ foreach($rows as $row ){
   <div class="container-fluid">
     <form class="d-flex" role="search">
       <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
-      <button class="btn btn-outline-success" type="submit">Поиск</button>
+      <button class="btn btn-outline-success btn-ilya" type="submit">Поиск</button>
     </form>
   </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
@@ -71,137 +69,92 @@ foreach($rows as $row ){
   <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
 </svg>
 </nav>
+
 <nav class=" top-nav container">
 
        <ul class="top-nav-ul">
         <li class="top-nav-li"><a class="top-nav-link" href="#">Акции</a></li>
-        <li class="top-nav-li"><a class="top-nav-link" href="#">О компании</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="company.html">О компании</a></li>
         <li class="top-nav-li"><a class="top-nav-link" href="#">Вакансии</a></li>
-        <li class="top-nav-li"><a class="top-nav-link" href="#">Обзоры</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="">Обзоры</a></li>
         <li class="top-nav-li"><a class="top-nav-link" href="#">Контакты</a></li>
-        <li class="top-nav-li"><a class="top-nav-link" href="#">Помощь</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="help.html">Помощь</a></li>
        </ul>
 </nav>
 
-<h1>Контакты</h1>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Контакты</li>
+  </ol>
+</nav>
+
+<h2 class="index-h2">Контакты</h2>
 
 <section id="address-map">
     <script id="address" class="map" type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ada444df6a63e56e8427f115d85c3c42fd681fa56634f1e79d054e72ebf3aa537&amp;width=1905&amp;height=720&amp;lang=ru_RU&amp;scroll=true"></script>
 </section>
-  
-  <div class="catalog-dropdown__menu" id="catalog-dropdown-menu">
-    <div class="catalog-dropdown__categories">
-      <section class="catalog-dropdown__category">
-        <ul class="catalog-dropdown__list">
-          <li><a href="#" class="catalog-dropdown__link">Смартфоны</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Умные часы</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Наушники</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Ноутбуки</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Планшеты</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Портативные колонки</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Аксессуары</a></li>
-        </ul>
-      </section>
-    </div>
-  </div>
 
-<div class="page-container">
+<div class="container">
         
-        <div class="contacts-container">
-            <div class="contact-cards-horizontal">
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="bi bi-telephone-fill fs-4"></i>
-                    </div>
-                    <div class="contact-details">
-                        <span class="contact-label">Телефон</span>
-                        <a href="tel:+79632937333" class="contact-value phone-link">+7 (963) 293-73-33</a>
-                    </div>
+        <div class="cards-contacts">
+            <div class="card">
+                <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+</svg>
                 </div>
-                
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="bi bi-geo-alt-fill fs-4"></i>
-                    </div>
-                    <div class="contact-details">
-                        <span class="contact-label">Адрес</span>
-                        <address class="contact-value">
-                            236000, Россия, Калининград,<br>ул. Шиллера, 25А, офис 7
-                        </address>
-                    </div>
+                <h3 class="card-title">Адрес</h3>
+                <p class="card-subtitle">236000, Россия, Калининград</p>
+                <p class="card-subtitle">ул. Шиллера, 25А, офис 7</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+</svg>
                 </div>
-
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="bi bi-building fs-4"></i>
-                    </div>
-                    <div class="contact-details">
-                        <span class="contact-label">Юридический адрес</span>
-                        <address class="contact-value">
-                            ООО "ГаджетТриум"<br>
-                            236000, Россия, Калининград,<br>ул. Шиллера, 25А, офис 7
-                        </address>
-                    </div>
+                <h3 class="card-title">Телефон</h3>
+                <p class="card-subtitle">+7 (963) 293-73-33</p>
+                <div class="card-divider"></div>
+                <p class="card-subtitle">Доступен ежедневно</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-alarm-fill" viewBox="0 0 16 16">
+  <path d="M6 .5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H9v1.07a7.001 7.001 0 0 1 3.274 12.474l.601.602a.5.5 0 0 1-.707.708l-.746-.746A6.97 6.97 0 0 1 8 16a6.97 6.97 0 0 1-3.422-.892l-.746.746a.5.5 0 0 1-.707-.708l.602-.602A7.001 7.001 0 0 1 7 2.07V1h-.5A.5.5 0 0 1 6 .5m2.5 5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9zM.86 5.387A2.5 2.5 0 1 1 4.387 1.86 8.04 8.04 0 0 0 .86 5.387M11.613 1.86a2.5 2.5 0 1 1 3.527 3.527 8.04 8.04 0 0 0-3.527-3.527"/>
+</svg>
                 </div>
-                
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="bi bi-clock-fill fs-4"></i>
-                    </div>
-                    <div class="contact-details">
-                        <span class="contact-label">Часы работы</span>
-                        <div class="contact-value">
-                            <span class="working-hours">Ежедневно с 9:00 - 19:00</span>
-                        </div>
-                    </div>
+                <h3 class="card-title">Режим работы</h3>
+                <p class="card-subtitle">С 9:00 до 19:00</p>
+                <p class="card-subtitle">Без выходных</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-building-fill" viewBox="0 0 16 16">
+  <path d="M3 0a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h3v-3.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V16h3a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1zm1 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5M4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM7.5 5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5m2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM4.5 8h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5m2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5"/>
+</svg>
                 </div>
+                <h3 class="card-title">Юридическая информация</h3>
+                <p class="card-subtitle">ООО "ГаджетТриум"</p>
+                <div class="card-divider"></div>
+                <p class="card-subtitle legal-info">ИНН: 1234567890</p>
+                <p class="card-subtitle legal-info">ОГРН: 1234567890123</p>
             </div>
         </div>
-    </div>
+      </header>
 
-<button class="catalog-show-all" id="zayavka-show-all">Оставить заявку</button>
+      <div class="cta-section-2">
+                    <p>Мы стремимся быть лидерами в своей отрасли и продолжаем развиваться, следуя последним тенденциям и инновациям в мире электроники.</p>
+                    <div class="cta-buttons-2">
+                        <button class="cta-button-2" id="feedbackToggleBtn">связаться</button>
+                    </div>
+                </div>
 
-<main>
-    <form class="form">
-      <span class="title">Оставить заявку</span>
-        <input type="text" class="input" placeholder="Введите заголовок">
-        <input type="email" class="input" placeholder="Введите имя">
-        <input type="text" class="input" placeholder="Введите вашу почту">
-        <input type="password" class="input" placeholder="Введите сообщение"> 
-        <button>Отправить</button>
-    </form>
-  </main>
-
-<section id="feedback" class="feedback-section">
-            <form action="feedback.php" method="POST" id="feedback-form" class="feedback-form" autocomplete="off">
-                <label>
-                Заголовок:
-                <input type="text" id="title" name="heading" placeholder="Введите заголовок" required>
-                <div class="hint" id="title-hint"></div>
-            </label>
-            <label>
-                Имя:
-                <input type="text" class="name" name="name" id="name" placeholder="Только буквы, от 1 до 12 символов" required>
-                <div class="hint" id="name-hint"></div>
-            </label>
-        
-            <label>
-                Email:
-                <input type="text" id="email" name="email" placeholder="example@mail.com" required>
-                <div class="hint" id="email-hint"></div>
-            </label>
-        
-            <label>
-                Сообщение:
-                <textarea id="message" name="message" placeholder="Макс. 255 слов, предлоги и союзы учитываются" required></textarea>
-                <div class="hint" id="message-hint"></div>
-            </label>
-        
-            <button id="submit-btn" type="submit">Отправить</button>
-            </form>
-</section>
-
-  <footer class="footer">
+<footer class="footer">
   <button class="scroll-to-top" id="scrollUp" aria-label="Прокрутить наверх">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
@@ -239,7 +192,7 @@ foreach($rows as $row ){
       <div class="footer__column">
         <h3 class="footer__title">Команда ГаджетТриум</h3>
         <ul class="footer__list">
-          <li><a href="#" class="footer__link">О нас</a></li>
+          <li><a href="#" class="footer__link">О компании</a></li>
           <li><a href="#" class="footer__link">Вакансии</a></li>
         </ul>
       </div>
@@ -260,646 +213,209 @@ foreach($rows as $row ){
     </nav>
 
     <div class="footer__copyright">
-      <p>Copyright © 2025 GadgetTrium, Inc. Все права защищены</p>
+      <p class="footer-p">Copyright © 2025 GadgetTrium, Inc. Все права защищены</p>
     </div>
   </div>
 </footer>
+
+<dialog class="form-container" id="formModal">
+    <button class="form-button" onclick="this.closest('.form-container').close()">
+        <img class="form-img"  src="assets/images/Krestiksvgpng.ru_.png" alt="">
+    </button>
+    
+    <form class="form">
+      <span class="title">Форма регистрации</span>
+        <input type="text" class="input" placeholder="Введите ваше имя">
+        <input type="email" class="input" placeholder="Введите вашу почту">
+        <input type="text" class="input" placeholder="Введите ваш номер телефона">
+                <div class="Gender">
+          <h5 class="pol">Выберите ваш пол</h5>
+          <div class="home-wrap">
+          <input type="radio" name="gender1" class="gender1" id="gender1">
+          <label for="gender1">Мужской</label>  
+          </div>
+          <div class="home-wrap">
+          <input type="radio" name="gender2" class="gender2" id="gender2">
+          <label for="gender2">Женский</label>  
+          </div>
+        </div>
+        <input type="password" class="input" placeholder="Введите ваш пароль"> 
+
+      <span class="sub">Вы уже зарегистрированы? <a href="sign-in.html">Войти</a></span>
+        <button>Зарегистрироваться</button>
+    </form>
+</dialog>
+
+<dialog class="form-container-2" id="formModal-2">
+    <button class="form-button" onclick="this.closest('.form-container-2').close()">
+        <img class="form-img"  src="assets/images/Krestiksvgpng.ru_.png" alt="">
+    </button>
+    <form class="form">
+      <span class="title">Форма входа</span>
+        <input type="email" class="input" placeholder="Введите вашу почту">
+        </div>
+        <input type="password" class="input" placeholder="Введите ваш пароль"> 
+
+      <span class="sub">Вы уже зарегистрированы? <a href="registration.html">Войти</a></span>
+        <button>войти</button>
+    </form>
+</dialog>
+
+<div class="feedback-form-container" id="feedbackFormContainer">
+            <form action="feedback.php" method="POST" id="feedback-form" class="feedback-form" autocomplete="off">
+                <label>
+                Заголовок:
+                <input type="text" id="title" name="heading" placeholder="Введите заголовок" required>
+                <div class="hint" id="title-hint"></div>
+            </label>
+            <label>
+                Имя:
+                <input type="text" class="name" name="name" id="name" placeholder="Только буквы, от 1 до 12 символов" required>
+                <div class="hint" id="name-hint"></div>
+            </label>
+        
+            <label>
+                Email:
+                <input type="text" id="email" name="email" placeholder="example@mail.com" required>
+                <div class="hint" id="email-hint"></div>
+            </label>
+        
+            <label>
+                Сообщение:
+                <textarea id="message" name="message" placeholder="Макс. 255 слов, предлоги и союзы учитываются" required></textarea>
+                <div class="hint" id="message-hint"></div>
+            </label>
+        
+            <button id="submit-btn" type="submit">Отправить</button>
+            </form>
+         </div>
+
+         <dialog class="form-container-2" id="formModal-2">
+    <button class="form-button" onclick="this.closest('.form-container-2').close()">
+        <img class="form-img"  src="assets/images/Krestiksvgpng.ru_.png" alt="">
+    </button>
+    <form class="form">
+      <span class="title">Форма входа</span>
+        <input type="email" class="input" placeholder="Введите вашу почту">
+        </div>
+        <input type="password" class="input" placeholder="Введите ваш пароль"> 
+
+      <span class="sub">Вы уже зарегистрированы? <a href="registration.html">Войти</a></span>
+        <button>войти</button>
+    </form>
+</dialog>
+
+<script>
+    document.querySelector('.catalog-dropdown__toggle').addEventListener('click', function() {
+  const dropdown = this.closest('.catalog-dropdown');
+  dropdown.classList.toggle('open');
+  
+  // Обновляем aria-атрибуты
+  const isExpanded = dropdown.classList.contains('open');
+  this.setAttribute('aria-expanded', isExpanded);
+});
+
+// Закрытие при клике вне dropdown
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.catalog-dropdown')) {
+    const openDropdowns = document.querySelectorAll('.catalog-dropdown.open');
+    openDropdowns.forEach(dropdown => {
+      dropdown.classList.remove('open');
+      dropdown.querySelector('.catalog-dropdown__toggle').setAttribute('aria-expanded', 'false');
+    });
+  }
+});
+
+// Функционал кнопки
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.getElementById('scrollUp');
+    const scrollProgress = scrollButton.querySelector('.scroll-progress');
+    
+    // Показывать/скрывать кнопку при прокрутке
+    window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (scrollY / (documentHeight - windowHeight)) * 100;
+        
+        if (scrollY > 400) {
+            scrollButton.classList.add('show');
+            scrollButton.classList.add('show-progress');
+            
+            // Обновление индикатора прогресса
+            const circumference = 2 * Math.PI * 30; // радиус кнопки
+            const offset = circumference - (scrollPercentage / 100) * circumference;
+            scrollProgress.style.strokeDasharray = circumference;
+            scrollProgress.style.strokeDashoffset = offset;
+        } else {
+            scrollButton.classList.remove('show');
+            scrollButton.classList.remove('show-progress');
+        }
+    });
+    
+    // Плавная прокрутка наверх
+    scrollButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // Микро-анимация при клике
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});
+
+// Функционал кнопки
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.getElementById('scrollUp');
+    const scrollProgress = scrollButton.querySelector('.scroll-progress');
+    
+    // Показывать/скрывать кнопку при прокрутке
+    window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (scrollY / (documentHeight - windowHeight)) * 100;
+        
+        if (scrollY > 400) {
+            scrollButton.classList.add('show');
+            scrollButton.classList.add('show-progress');
+            
+            // Обновление индикатора прогресса
+            const circumference = 2 * Math.PI * 30; // радиус кнопки
+            const offset = circumference - (scrollPercentage / 100) * circumference;
+            scrollProgress.style.strokeDasharray = circumference;
+            scrollProgress.style.strokeDashoffset = offset;
+        } else {
+            scrollButton.classList.remove('show');
+            scrollButton.classList.remove('show-progress');
+        }
+    });
+    
+    // Плавная прокрутка наверх
+    scrollButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // Микро-анимация при клике
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});
+</script>
   </div>
     </div>
   </div>
 </nav>
 </header>
+<script src="script.js"></script>
+</header>
 </body>
-  <script src="script.js"></script>
-
-<style>
-* {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-
-        
-        body {
-            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
-            color: var(--light);
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        
-        .contacts-container {
-            width: 900px;
-            display: flex;
-            align-content: center;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .contacts-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .contacts-title {
-            font-size: 2.8rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-        
-        .contacts-subtitle {
-            font-size: 1.2rem;
-            color: var(--gray);
-            max-width: 600px;
-            margin: 0 auto;
-            font-weight: 300;
-        }
-        
-        .contact-card-unified {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: black;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            overflow: hidden;
-            transition: var(--transition);
-            margin-bottom: 2.5rem;
-            width: 100%;
-            max-width: 800px;
-        }
-        
-        .contact-card-unified:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-            border-color: rgba(139, 92, 235, 0.3);
-        }
-        
-        .contact-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 2.5rem 2rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .contact-item:last-child {
-            border-bottom: none;
-        }
-        
-        .contact-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(139, 92, 235, 0.1), transparent);
-            transition: var(--transition);
-        }
-        
-        .contact-item:hover::before {
-            left: 100%;
-        }
-        
-        .contact-item:hover {
-            background: rgba(255, 255, 255, 0.03);
-        }
-        
-        .contact-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            color: white;
-            font-size: 1.6rem;
-            box-shadow: 0 8px 20px rgba(139, 92, 235, 0.3);
-            transition: var(--transition);
-        }
-        
-        .contact-item:hover .contact-icon {
-            transform: scale(1.1);
-            box-shadow: 0 10px 25px rgba(139, 92, 235, 0.4);
-        }
-        
-        .contact-details {
-            width: 100%;
-        }
-        
-        .contact-label {
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-        
-        .contact-value {
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: var(--light);
-            line-height: 1.6;
-            margin-bottom: 0.5rem;
-        }
-        
-        .phone-link {
-            color: var(--light);
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            margin: 0 auto;
-            max-width: 300px;
-            width: 100%;
-        }
-        
-        .phone-link:hover {
-            color: var(--accent);
-            background: rgba(0, 212, 170, 0.1);
-            border-color: rgba(0, 212, 170, 0.3);
-            transform: translateY(-2px);
-        }
-        
-        .phone-link::after {
-            content: "\f0c1";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
-        
-        address {
-            font-style: normal;
-        }
-        
-        .working-hours {
-            display: block;
-            color: var(--accent);
-            font-weight: 600;
-            font-size: 1.2rem;
-        }
-        
-        .weekend {
-            display: block;
-            color: var(--gray);
-            font-size: 1rem;
-            margin-top: 0.5rem;
-        }
-        
-        .contact-note {
-            font-size: 0.9rem;
-            color: var(--gray);
-            margin-top: 0.8rem;
-            font-style: italic;
-            max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .action-buttons {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 2.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            width: 100%;
-            max-width: 800px;
-        }
-        
-        .action-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            padding: 1.2rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            min-width: 220px;
-        }
-        
-        .action-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: var(--transition);
-        }
-        
-        .action-button:hover::before {
-            left: 100%;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            box-shadow: 0 8px 20px rgba(139, 92, 235, 0.4);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(139, 92, 235, 0.5);
-        }
-        
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.08);
-            color: var(--light);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.12);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            border-color: rgba(139, 92, 235, 0.3);
-        }
-        
-        .map-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            color: var(--primary-light);
-            text-decoration: none;
-            font-size: 1rem;
-            margin-top: 1rem;
-            transition: var(--transition);
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
-            background: rgba(139, 92, 235, 0.1);
-            width: 300px;
-
-        }
-        
-        .map-link:hover {
-            color: var(--accent);
-            background: rgba(0, 212, 170, 0.1);
-            transform: translateY(-2px);
-        }
-        
-        .map-link i {
-            font-size: 0.9rem;
-        }
-        
-        /* Анимации */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .delay-1 {
-            animation-delay: 0.1s;
-            opacity: 0;
-        }
-        
-        .delay-2 {
-            animation-delay: 0.2s;
-            opacity: 0;
-        }
-        
-        .delay-3 {
-            animation-delay: 0.3s;
-            opacity: 0;
-        }
-        
-        .delay-4 {
-            animation-delay: 0.4s;
-            opacity: 0;
-        }
-
-        .page-container {
-            width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .page-title {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #2c3e50;
-            font-weight: 600;
-        }
-        
-        .contacts-container {
-            margin-bottom: 40px;
-        }
-        
-        .contact-cards-horizontal {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        
-        .contact-card {
-            flex: 1;
-            width: 1400px;
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-        }
-        
-        .contact-icon {
-            width: 70px;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(13, 110, 253, 0.1);
-            border-radius: 50%;
-            margin-bottom: 15px;
-            color: #0d6efd;
-        }
-        
-        .contact-label {
-            display: block;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-size: 1rem;
-        }
-        
-        .contact-value {
-            color: #555;
-            line-height: 1.5;
-        }
-        
-        .phone-link {
-            color: #0d6efd;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        
-        .phone-link:hover {
-            color: #0a58ca;
-        }
-        
-        .working-hours {
-            font-weight: 500;
-            color: #28a745;
-        }
-        
-        address {
-            font-style: normal;
-            margin-bottom: 0;
-        }
-
-                .feedback-section {
-    position: fixed;
-            bottom: -800px;
-            right: 30px;
-            width: 345px;
-            background-color: white;
-            border-radius: 10px 10px 0 0;
-            box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.15);
-            transition: bottom 0.4s ease-out;
-            z-index: 1001;
-            overflow: hidden;
-
-        }
-
-        .feedback-form {
-            padding: 20px;
-            overflow: hidden;
-        }
-
-         .feedback-form-container {
-            position: fixed;
-            bottom: -500px;
-            right: 30px;
-            width: 345px;
-            background-color: white;
-            border-radius: 10px 10px 0 0;
-            box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.15);
-            transition: bottom 0.4s ease-out;
-            z-index: 1001;
-            overflow: hidden;
-        }
-
-        .blue-button{
-          border-radius: 35%;
-        }
-        
-        .feedback-form-container.visible {
-            bottom: 80px;
-        }
-        
-        .feedback-form-header {
-            color: rgb(0, 0, 0);
-            padding: 15px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            text-align: center;
-            font-family: 'Montserrat';
-            font-weight: bold;
-        }
-
-        .property-photo{
-          width: 100%;
-        }
-
-        .message{
-          height: 50px;
-        }
-        
-        .feedback-form {
-            padding: 20px;
-            overflow: hidden;
-        }
-        
-        .feedback-form label {
-            display: block;
-            margin-bottom: 15px;
-            font-size: 14px;
-            color: #555;
-        }
-        
-        .feedback-form input[type="text"],
-        .feedback-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            font-size: 14px;
-        }
-
-        #feedbackModal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-
-        .feedback-modal {
-            display: none;
-        position: fixed;
-        bottom: -100%;
-        left: 0;
-        width: 100%;
-        background-color: #f9f9f9;
-        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-        transition: bottom 0.5s ease;
-        z-index: 1000;
-        }
-
-        .feedback-modal.active {
-            bottom: 0;
-        }
-
-        .feedback-container {
-            max-width: 600px;
-        margin: 0 auto;
-        padding: 20px;
-        position: relative;
-        }
-
-        .feedback-modal.active .feedback-container {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .close-btn {
-            position: absolute;
-        top: 10px;
-        right: 10px;
-        background: none;
-        border: none;
-        font-size: 24px;
-        cursor: pointer;
-        color: #666;
-        }
-
-        .close-btn:hover {
-            color: #333;
-        }
-
-      
-        .feedback-section {
-    position: fixed;
-            bottom: -800px;
-            right: 30px;
-            width: 345px;
-            background-color: white;
-            border-radius: 10px 10px 0 0;
-            box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.15);
-            transition: bottom 0.4s ease-out;
-            z-index: 1001;
-            overflow: hidden;
-
-        }
-
-        .feedback-section.visible{
-            bottom: 100px;   
-        }
-
-        .feedback-form {
-             display: flex;
-    flex-direction: column;
-    gap: 20px;
-        }
-
-        .feedback-title {
-           text-align: center;
-           padding-top: 80px;
-        color: #333;
-        }
-
-        .feedback-form {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-        .feedback-form label {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .feedback-form input,
-        .feedback-form textarea {
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-
-        .feedback-form input:focus,
-        .feedback-form textarea:focus {
-            border-color: #3498db;
-            outline: none;
-        }
-
-        .feedback-form textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-</style>
-
-
-
+</html>
