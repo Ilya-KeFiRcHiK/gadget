@@ -73,230 +73,222 @@ foreach($rows as $row ){
   <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
   <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
 </svg>
-<svg onclick="document.getElementById('formModal-2').showModal()" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+<svg onclick="document.getElementById('formModal-2').showModal()" xmlns="http://www.w3.org/2000/svg" href="cart.html" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
   <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
+  <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708"/>
 </svg>
 </nav>
 
-    <p><a href="index.html">Главная</a> / Смартфоны / Apple iPhone 13 Pro Max 256 ГБ серый</p>
+    <!-- Хлебные крошки с семантической разметкой -->
 
-    <div class="information">
+  <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a class="breadcrumb-item" href="index.html">Главная</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Каталог</li>
+    <span class="breadcrumb-item">6.9" Смартфон Xiaomi REDMI 15 256 ГБ черный</span>
+  </ol>
+</nav>
 
+<dialog class="feedback-form-container11" id="feedbackFormContainer11">
+    <button class="form-button" onclick="this.closest('.feedback-form-container11').close()">
+        <img class="form-img"  src="assets/images/Krestiksvgpng.ru_.png" alt="">
+    </button>
+    <div class="feedback-form-header" id="feedbackFormHeader">
+        Оставьте свои данные и наш менеджер свяжется с вами
+    </div>
+    
+    <form action="" method="POST" id="feedback-form" class="feedback-form" autocomplete="off" novalidate>
+        <label>
+            Имя:
+            <input type="text" class="name" name="name" id="name" 
+                   placeholder="Только буквы, от 1 до 12 символов" 
+                   pattern="[A-Za-zА-Яа-яЁё\s]{1,12}" 
+                   title="Только буквы (рус/англ), от 1 до 12 символов"
+                   required>
+            <div class="hint" id="name-hint"></div>
+        </label>
+
+        <label>
+            Телефон:
+            <input type="tel" class="telefon-name" name="phone" id="phone" 
+                   placeholder="+7 (___) ___-__-__" 
+                   pattern="\+7\s?[\(]{0,1}\d{3}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" 
+                   title="Формат: +7 (XXX) XXX-XX-XX"
+                   required>
+            <div class="hint" id="phone-hint"></div>
+        </label>
+    
+        <button id="submit-btn" type="submit">Отправить</button>
+    </form>
+</dialog>
+
+  <main>
+    <div class="information" itemscope itemtype="https://schema.org/Product">
+      
+      <!-- Левая колонка с галереей -->
       <div class="information-left">
-
-        <div class="swiper mySwiper">
-
+        <!-- Основной слайдер -->
+        <div class="swiper mySwiper" role="region" aria-label="Галерея товара">
           <div class="swiper-wrapper">
-
-            <div class="swiper-slide"><img src="assets/images/Telephone.jpg" alt=""></div>
-            <div class="swiper-slide"><img src="assets/images/Telephone.jpg" alt=""></div>
-            <div class="swiper-slide"><img src="assets/images/Telephone.jpg" alt=""></div>
-            <div class="swiper-slide"><img src="assets/images/Telephone.jpg" alt=""></div>
-            <div class="swiper-slide"><img src="assets/images/Telephone.jpg" alt=""></div>
-
+            <div class="swiper-slide">
+              <img src="assets/images/Xiaomi-redmi-15.webp" alt="Apple iPhone 13 Pro Max серый, вид спереди" itemprop="image">
+            </div>
           </div>
-
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-
         </div>
-
-        <div class="information-preview">
-
-          <img src="Telephone.png" alt="">
-          <img src="Telephone.png" alt="">
-          <img src="Telephone.png" alt="">
-
-        </div>
-
         
-        <h3>Характеристики Apple iPhone 13 Pro Max 256 ГБ серый</h3>
-
-        <div class="information-characteristic">
-
-          <p>Камера <span><b>48 MPx</b></span></p>
-          <p>Система <span><b>iOS</b></span></p>
-          <p>Диагональ <span><b>6,1"</b></span></p>
-          <p>Зарядка <span><b>Беспроводная</b></span></p>
-
-        </div>
-
-        <h4><b>Описание</b></h4>
-        <p>Смартфон Apple iPhone 13 выполнен в компактном корпусе с привлекательной розовой расцветкой и защищенной
-          конструкцией по стандарту IP68. Мощный чип A15 Bionic обеспечивает быструю и стабильную работу при запуске
-          приложений, просмотре видео, веб-серфинге и выполнении других задач. На дисплее 6.1 дюйма OLED выводится
-          четкая и красочная картинка.
-          На тыловой стороне расположена камера с двумя датчиками по 12 Мп, которые при поддержке ряда технологий и
-          функций позволяют создавать реалистичные снимки в различных условиях. На передней стороне имеется камера 12 Мп
-          для селфи и общения. В мобильном устройстве предлагается широкий набор беспроводных интерфейсов и разъем
-          Lightning 8-pin. Аккумулятор гарантирует продолжительное время автономности. Из особенностей отмечаются
-          поддержка быстрой зарядки, беспроводной зарядки и устройств MagSafe с магнитным позиционированием.</p>
-
       </div>
+      
+      <!-- Правая колонка с информацией -->
       <div class="information-right">
-        <h3>Apple iPhone 13 Pro Max 256 ГБ серый</h3>
+        <h1 itemprop="name">6.9" Смартфон Xiaomi REDMI 15 256 ГБ черный</h1>
+        
         <div class="information-answers">
-          <p class="answer"><span class="answer-green">4.4 </span> Оценка экспертов</p>
+          <p class="answer">
+            <span class="answer-green" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+              <span itemprop="ratingValue">4.4</span>
+            </span> 
+            Оценка экспертов
+          </p>
+          
           <div class="information-rating">
-            <p>4.0</p>
-            <div class="information-stars">
-              <img src="Star-red.png" alt="">
-              <img src="Star-red.png" alt="">
-              <img src="Star-red.png" alt="">
-              <img src="Star-red.png" alt="">
-              <img src="Star-Grey.png" alt="">
+            <span class="visually-hidden">Рейтинг покупателей:</span>
+            <span itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+              <meta itemprop="ratingValue" content="4.0">
+              <meta itemprop="reviewCount" content="447">
+              <span aria-label="Рейтинг 4 из 5">4.77</span>
+            </span>
+            
+            <div class="information-stars" aria-hidden="true">
+              <img src="assets/images/Star-red.png" alt="">
+              <img src="assets/images/Star-red.png" alt="">
+              <img src="assets/images/Star-red.png" alt="">
+              <img src="assets/images/Star-red.png" alt="">
+              <img src="assets/images/Star-Grey.png" alt="">
             </div>
-            <p><span>447</span> отзывов</p>
+            
+            <p>
+              <a href="#reviews" class="reviews-link">
+                <span itemprop="reviewCount">478</span> отзывов
+              </a>
+            </p>
           </div>
         </div>
 
-        <div class="information-static">
-          <div class="features-container">
-            <div class="feature-box">
-              <div class="feature-header">
-                <p class="feature-title">Дизайн</p>
-              </div>
-            </div>
+        <div class="information-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <h3>
+            <span itemprop="priceCurrency" content="RUB">₽</span>
+            <span itemprop="price" content="78999">14 980 </span> p.
+          </h3>
+          <meta itemprop="availability" content="https://schema.org/InStock">
+          <meta itemprop="priceValidUntil" content="2024-12-31">
+        </div>
 
-            <div class="feature-box">
-              <div class="feature-header">
-                <p class="feature-title">Портативность</p>
-              </div>
-            </div>
+        <div class="d-flex gap-2">
+            <button class="btn btn-danger btn-lg">Купить сейчас</button>
+            <button class="btn btn-outline-success btn-lg" aria-label="Добавить в корзину">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1z"/>
+              </svg>
+            </button>
+          </div>
+        
+      
+        <h3>Все характеристики</h3>
 
-            <div class="feature-box">
-              <div class="feature-header">
-                <p class="feature-title">Камера</p>
-              </div>
-            </div>
+<div class="specs-grid"> <!-- БЛОК 1: Дизайн, дисплей и корпус --> <div class="spec-card"> <div class="card-title">Дисплей и дизайн <span>6.9" 144 Гц</span></div> <div class="spec-list"> <div class="spec-row"> <span class="spec-label">Модель</span> <span class="spec-value"><span class="feature">Xiaomi Redmi 15</span></span> </div> <div class="spec-row"> <span class="spec-label">Тип</span> <span class="spec-value">Смартфон</span> </div> <div class="spec-row"> <span class="spec-label">Год выпуска</span> <span class="spec-value">2025 [citation:1][citation:4]</span> </div> <div class="spec-row"> <span class="spec-label">Материал корпуса</span> <span class="spec-value">Пластик [citation:1][citation:7]</span> </div> <div class="spec-row"> <span class="spec-label">Цвета</span> <span class="spec-value">Черный (Midnight Black), Серый, Фиолетовый [citation:1][citation:3][citation:9]</span> </div> <div class="spec-row"> <span class="spec-label">Защита</span> <span class="spec-value">IP64 (пыле- и влагозащита) [citation:1][citation:2][citation:9]</span> </div> <div class="spec-row"> <span class="spec-label">Дисплей</span> <span class="spec-value"><span class="technology">IPS LCD, DotDisplay</span> [citation:1][citation:2]</span> </div> <div class="spec-row"> <span class="spec-label">Диагональ</span> <span class="spec-value">6.9" [citation:1][citation:2]</span> </div> <div class="spec-row"> <span class="spec-label">Разрешение</span> <span class="spec-value">2340 x 1080 (FHD+) [citation:1][citation:6]</span> </div> <div class="spec-row"> <span class="spec-label">Частота</span> <span class="spec-value"><span class="highlight">144 Гц</span> (AdaptiveSync) [citation:1][citation:2]</span> </div> <div class="spec-row"> <span class="spec-label">Плотность / яркость</span> <span class="spec-value">374 ppi · до 850 нит (HBM) [citation:2][citation:6]</span> </div> <div class="spec-row"> <span class="spec-label">Особенности</span> <span class="spec-value">TÜV Rheinland, DC Dimming, Wet Touch Technology 2.0 [citation:2]</span> </div> </div> </div>
+  </main>
 
-            <div class="feature-box">
-              <div class="feature-header">
-                <p class="feature-title">Дисплей</p>
-              </div>
-            </div>
-          </div>
+  <!-- Подключение Swiper и инициализация -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    // Инициализация Swiper с улучшенными настройками
+    document.addEventListener('DOMContentLoaded', function() {
+      const swiper = new Swiper('.mySwiper', {
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        keyboard: {
+          enabled: true,
+        },
+        a11y: {
+          prevSlideMessage: 'Предыдущий слайд',
+          nextSlideMessage: 'Следующий слайд',
+          firstSlideMessage: 'Это первый слайд',
+          lastSlideMessage: 'Это последний слайд',
+        },
+      });
+      
+      // Сохраняем экземпляр Swiper для использования в миниатюрах
+      document.querySelector('.mySwiper').swiper = swiper;
+    });
 
-        </div>
-        <div class="information-title">
-          <img class="crown" src="assets/images/crown.png" alt="">
-            <h2>Самый дешевый</h2>
-        </div>
-        <div class="information-price">
-          <h3>78999 p.</h3>
-          <img class="image20" src="assets/images/image 20.png" alt="">
-        </div>
-        <div class="information-delivery">
-          <h3><span style="color: green;">Доставка бесплатная</span></h3>
-          <div class="information-gridprices">
-            <img class="frame1948" src="assets/images/Frame 8.png" alt="">
-            <div class="pricegood">
-              <h3>Цена хорошая</h3>
-              <p>Исходя из последних 40 дней, сумма составляет близко  к среднему <b>80000 p.</b></p>
-            </div>
-          </div>
-          <img src="assets/images/Frame 1948756368.png" alt="">
-        </div>
-        <div class="information-change-color">
-          <h3>Цвет: </h3>
-          <div class="information-colors">
-            <button class="information-color information-white"></button>
-            <button class="information-color information-peach"></button>
-            <button class="information-color information-red"></button>
-            <button class="information-color information-black"></button>
-            <button class="information-color information-mint"></button>
-            <button class="information-color information-blue"></button>
-            <button class="information-color information-purple"></button>
-          </div>
-        </div>
-        <div class="information-brain">
-          <h3>Память: </h3>
-          <div class="information-brain-change">
-            <button class="information-color-change">128 ГБ</button>
-            <button class="information-color-change">256 ГБ</button>
-            <button class="information-color-change">512 ГБ</button>
-          </div>
-        </div>
-        <div class="information-graffic">
-          <h3>История цены</h3>
-          <img src="assets/images/Chart.png" alt="">
-        </div>
-        <div class="information-magazines">
-          <div class="information-card">
-            <div class="information-price-card">
-              <h3>83 999 р.</h3>
-              <img src="assets/images/image 20 (1).png" alt="">
-            </div>
-            <h3 class="information-delivery">Доставка бесплатная</h3>
-            <img class="information-eldorado" src="assets/images/Chart (2).png" alt="">
-            <a href="#">Перейти в магазин</a>
-          </div>
-          <div class="information-card">
-            <div class="information-price-card">
-              <h3>81 999 р.</h3>
-              <img src="assets/images/image 20 (3).png" alt="">
-            </div>
-            <h3 class="information-delivery-price">Доставка включена в стоимость</h3>
-            <img src="assets/images/Chart (3).png" alt="">
-            <a href="#">Перейти в магазин</a>
-          </div>
-          <div class="information-card">
-            <div class="information-price-card">
-              <h3>81 999 р.</h3>
-              <img src="assets/images/image 20 (3).png" alt="">
-            </div>
-            <h3 class="information-delivery-price">Доставка включена в стоимость</h3>
-            <img src="assets/images/Chart (3).png" alt="">
-            <a href="#">Перейти в магазин</a>
-          </div>
-          <div class="information-card">
-            <div class="information-price-card">
-              <h3>83 999 р.</h3>
-              <img class="information-eldorado" src="assets/images/image 20 (1).png" alt="">
-            </div>
-            <h3 class="information-delivery">Доставка бесплатная</h3>
-            <img src="assets/images/Chart (2).png" alt="">
-            <a href="#">Перейти в магазин</a>
-          </div>
-          <div class="information-card">
-            <div class="information-price-card">
-              <h3>83 999 р.</h3>
-              <img class="information-eldorado" src="assets/images/image 20 (1).png" alt="">
-            </div>
-            <h3 class="information-delivery">Доставка бесплатная</h3>
-            <img src="assets/images/Chart (2).png" alt="">
-            <a href="#">Перейти в магазин</a>
-          </div>
-          <div class="assets/images/information-card">
-            <div class="information-price-card">
-              <h3>81 999 р.</h3>
-              <img src="assets/images/image 20 (3).png" alt="">
-            </div>
-            <h3 class="information-delivery-price">Доставка включена в стоимость</h3>
-            <img src="assets/images/Chart (3).png" alt="">
-            <a href="#">Перейти в магазин</a>
-          </div>
-          <div class="information-card">
-            <div class="information-price-card">
-              <h3>81 999 р.</h3>
-              <img src="assets/images/image 20 (3).png" alt="">
-            </div>
-            <h3 class="information-delivery-price">Доставка включена в стоимость</h3>
-            <img src="assets/images/Chart (3).png" alt="">
-            <a href="#">Перейти в магазин</a>
-          </div>
-          <div class="information-card">
-            <div class="information-price-card">
-              <h3>83 999 р.</h3>
-              <img class="information-eldorado" src="assets/images/image 20 (1).png" alt="">
-            </div>
-            <h3 class="information-delivery">Доставка бесплатная</h3>
-            <img src="assets/images/Chart (2).png" alt="">
-            <a href="#">Перейти в магазин</a>
-          </div>
-        </div>
-      </div>
-</div>
+    // Функция переключения объема памяти
+    function changeMemory(button, memorySize) {
+      // Убираем активное состояние со всех кнопок
+      const buttons = document.querySelectorAll('.information-color-change');
+      buttons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-pressed', 'false');
+      });
+      
+      // Активируем выбранную кнопку
+      button.classList.add('active');
+      button.setAttribute('aria-pressed', 'true');
+      
+      // Здесь можно добавить логику обновления цены и характеристик
+      console.log(`Выбрана память: ${memorySize} ГБ`);
+      
+      // Обновляем URL или отправляем запрос
+      updateProductInfo(memorySize);
+    }
+
+    // Функция обновления информации о товаре
+    function updateProductInfo(memorySize) {
+      // Пример обновления цены (можно заменить на реальный AJAX запрос)
+      const priceElement = document.querySelector('.information-price [itemprop="price"]');
+      const memoryPrices = {
+        '128': '69999',
+        '256': '78999',
+        '512': '89999'
+      };
+      
+      if (priceElement && memoryPrices[memorySize]) {
+        priceElement.textContent = memoryPrices[memorySize];
+        priceElement.setAttribute('content', memoryPrices[memorySize]);
+        
+        // Обновляем отображаемую цену
+        const priceContainer = priceElement.closest('h3');
+        if (priceContainer) {
+          priceContainer.innerHTML = `<span itemprop="priceCurrency" content="RUB">₽</span>
+                                     <span itemprop="price" content="${memoryPrices[memorySize]}">${Number(memoryPrices[memorySize]).toLocaleString('ru-RU')}</span> p.`;
+        }
+      }
+    }
+
+    // Ленивая загрузка для изображений (если браузер не поддерживает loading="lazy")
+    if ('IntersectionObserver' in window) {
+      const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+      const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src || img.src;
+            imageObserver.unobserve(img);
+          }
+        });
+      });
+      
+      lazyImages.forEach((img) => imageObserver.observe(img));
+    }
+  </script>
 
       <section class="reviews-box">
         <div class="reviews-box-review">
@@ -357,7 +349,7 @@ foreach($rows as $row ){
            как в какой нибудь самсе.</p>
 
         </div>
-        <div class="reviews-box-review">
+        <!-- <div class="reviews-box-review">
           <div class="review-box-title">
             <img src="assets/images/Avatar3.png" alt="">
             <div class="">
@@ -386,8 +378,8 @@ foreach($rows as $row ){
           вечные экраны Mini LED которые в ipad pro, макбуках 
           и т.д.</p>
 
-        </div>
-        <div class="reviews-box-review">
+        </div> -->
+        <!-- <div class="reviews-box-review">
           <div class="review-box-title">
             <img src="assets/images/Avatar4.png" alt="">
             <div class="">
@@ -403,9 +395,9 @@ foreach($rows as $row ){
                 <p class="reviews-data">18.11.2025</p>
               </div>
             </div>
-          </div>
+          </div> -->
 
-         <h3>Восхитительный мобильный</h3>
+         <!-- <h3>Восхитительный мобильный</h3>
          <p>Самое заметное это производительность, прям новый 
           уровень в быстродействии, в повседневных задачах 
           просто летает, отличные камеры, но сильно выпирают 
@@ -444,7 +436,7 @@ foreach($rows as $row ){
             что-то невероятное, высокая производительность,
              великолепное качество снимков, видео.</p>
 
-        </div>
+        </div> -->
         <div class="reviews-box-review">
           <div class="review-box-title">
             <img src="assets/images/Avatar6.png" alt="">
@@ -470,7 +462,13 @@ foreach($rows as $row ){
             В общем ужас!!!!</p>
 
         </div>
-        <div class="reviews-box-review">
+
+        <div class="pagination-top">
+            <a class="pagination-top-style" href="">1</a>
+            <a class="pagination-top-style" href="">2</a>
+            <a class="pagination-top-style" href="">3</a>
+        </div>
+        <!-- <div class="reviews-box-review">
           <div class="review-box-title">
             <img src="assets/images/Avatar7.png" alt="">
             <div class="">
@@ -493,8 +491,8 @@ foreach($rows as $row ){
            разницы днем в хороших условиях не видно, а ночью.
            (+зум и супер стаб).</p>
 
-        </div>
-        <div class="reviews-box-review">
+        </div> -->
+        <!-- <div class="reviews-box-review">
           <div class="review-box-title">
             <img src="assets/images/Avatar8.png" alt="">
             <div class="">
@@ -517,8 +515,8 @@ foreach($rows as $row ){
            разницы днем в хороших условиях не видно, а ночью.
            (+зум и супер стаб).</p>
 
-        </div>
-        <div class="reviews-box-review">
+        </div> -->
+        <!-- <div class="reviews-box-review">
           <div class="review-box-title">
             <img src="assets/images/Avatar9.png" alt="">
             <div class="">
@@ -547,8 +545,48 @@ foreach($rows as $row ){
           в лабиринте из меню, переходов, надстроек и дополнительных танцев, 
           как в какой нибудь самсе.</p>
 
-        </div>
+        </div> -->
       </section>
+
+      <button onclick="document.getElementById('feedbackFormContainer11').showModal()" 
+        class="feedback-toggle-btn" 
+        id="feedbackToggleBtn"
+        aria-label="Открыть форму обратной связи">
+</button>
+
+    <!-- <div class="overlay" id="overlay"></div> -->
+
+    <div class="feedback-form-container" id="feedbackFormContainer">
+        <button class="close-btn" id="closeBtn">×</button>
+        
+        <div class="feedback-form-header" id="feedbackFormHeader">
+            Оставьте свои данные и мы перезвоним в ближайшее время
+        </div>
+        
+        <form action="" method="" id="feedback-form" class="feedback-form" autocomplete="off" novalidate>
+            <label>
+                Имя:
+                <input type="text" class="name" name="name" id="name" 
+                       placeholder="Только буквы, от 1 до 12 символов" 
+                       pattern="[A-Za-zА-Яа-яЁё\s]{1,12}" 
+                       title="Только буквы (рус/англ), от 1 до 12 символов"
+                       required>
+                <div class="hint" id="name-hint"></div>
+            </label>
+
+            <label>
+                Телефон:
+                <input type="tel" class="telefon-name" name="phone" id="phone" 
+                       placeholder="+7 (___) ___-__-__" 
+                       pattern="\+7\s?[\(]{0,1}\d{3}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" 
+                       title="Формат: +7 (XXX) XXX-XX-XX"
+                       required>
+                <div class="hint" id="phone-hint"></div>
+            </label>
+        
+            <button id="submit-btn" type="submit">Отправить</button>
+        </form>
+    </div>
 
       <footer class="footer">
   <button class="scroll-to-top" id="scrollUp" aria-label="Прокрутить наверх">

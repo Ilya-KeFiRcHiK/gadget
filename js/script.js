@@ -16,7 +16,7 @@
       })
   })()
 
-const targetDate = new Date("december 31, 2025 23:59:59").getTime();
+const targetDate = new Date("june 30, 2026 23:59:59").getTime();
 
 function updateCountdown() {
   const now = new Date().getTime();

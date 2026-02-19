@@ -56,7 +56,7 @@ foreach($rows as $row ){
   <div class="container-fluid">
     <form class="d-flex" role="search">
       <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
-      <button class="btn btn-outline-success btn-ilya" type="submit">Поиск</button>
+      <button class="button-search"><img src="assets/images/search.svg" alt=""></button>
     </form>
   </div>
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
@@ -73,16 +73,19 @@ foreach($rows as $row ){
 <svg onclick="document.getElementById('formModal-2').showModal()" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
   <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/>
 </svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi bi-cart-check-fill" viewBox="0 0 16 16">
+  <a href="cart.html"><path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708"/></a>
+</svg>
 </nav>
 
 <nav class=" top-nav container">
 
        <ul class="top-nav-ul">
-        <li class="top-nav-li"><a class="top-nav-link" href="#">Акции</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="sales.html">Акции</a></li>
         <li class="top-nav-li"><a class="top-nav-link" href="company.html">О компании</a></li>
-        <li class="top-nav-li"><a class="top-nav-link" href="#">Вакансии</a></li>
-        <li class="top-nav-li"><a class="top-nav-link" href="">Обзоры</a></li>
-        <li class="top-nav-li"><a class="top-nav-link" href="#">Контакты</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="vacancy.html">Вакансии</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="obzor1.html">Обзоры</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="contacts.html">Контакты</a></li>
         <li class="top-nav-li"><a class="top-nav-link" href="help.html">Помощь</a></li>
        </ul>
 </nav>
@@ -97,7 +100,6 @@ foreach($rows as $row ){
           <li><a href="#" class="catalog-dropdown__link">Ноутбуки</a></li>
           <li><a href="#" class="catalog-dropdown__link">Планшеты</a></li>
           <li><a href="#" class="catalog-dropdown__link">Портативные колонки</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Аксессуары</a></li>
 
         </ul>
       </section>
@@ -109,11 +111,13 @@ foreach($rows as $row ){
 </nav>
 </header>
 <main>
-     <button class="feedback-toggle-btn" id="feedbackToggleBtn">
-        Заказать звонок <span class="icon"><img src="http://www.w3.org/2000/svg" alt=""></span>
-    </button>
+     <button onclick="document.getElementById('feedbackFormContainer11').showModal()" 
+        class="feedback-toggle-btn" 
+        id="feedbackToggleBtn"
+        aria-label="Открыть форму обратной связи">
+</button>
 
-    <div class="overlay" id="overlay"></div>
+    <!-- <div class="overlay" id="overlay"></div> -->
 
     <div class="feedback-form-container" id="feedbackFormContainer">
         <button class="close-btn" id="closeBtn">×</button>
@@ -146,22 +150,23 @@ foreach($rows as $row ){
             <button id="submit-btn" type="submit">Отправить</button>
         </form>
     </div>
+
 <section>
   <div class="tovars">
     <div class="tovar-1">
       <div class="swiper swiper-sell">
         <div class="swiper-wrapper">
-          <div class="swiper-slide tovar-slide-1"><h2>Успей купить смартфон выгодно</h2><a href="#">Перейти</a></div>
-          <div class="swiper-slide tovar-slide-2"><h2>Выгодный трейд-ин</h2><a href="#">Перейти</a></div>
-          <div class="swiper-slide tovar-slide-3"><h2>Получи скидку 10% при оплате наличными</h2><a href="#">Перейти</a></div>
-          <div class="swiper-slide tovar-slide-4"><h2>Скидка 30% на часы при покупке дуэта!</h2><a href="#">Перейти</a></div>
-          <div class="swiper-slide tovar-slide-5"><h2>Новая бонусная программа</h2><a href="#">Перейти</a></div>
-          <div class="swiper-slide tovar-slide-6"><h2>Горячие скидки на планшеты Xiaomi</h2><a href="#">Перейти</a></div>
+          <div class="swiper-slide tovar-slide-1"><h2>Успей купить смартфон выгодно</h2><a href="sales1.html">Перейти</a></div>
+          <div class="swiper-slide tovar-slide-2"><h2>Выгодный трейд-ин</h2><a href="sale2.html">Перейти</a></div>
+          <div class="swiper-slide tovar-slide-3"><h2>Получи скидку 10% при оплате наличными</h2><a href="sales3.html">Перейти</a></div>
+          <div class="swiper-slide tovar-slide-4"><h2>Скидка 30% на часы при покупке дуэта!</h2><a href="sales4.html">Перейти</a></div>
+          <div class="swiper-slide tovar-slide-5"><h2>Новая бонусная программа</h2><a href="sales5.html">Перейти</a></div>
+          <div class="swiper-slide tovar-slide-6"><h2>Горячие скидки на планшеты Xiaomi</h2><a href="sales6.html">Перейти</a></div>
         </div>
       </div>
     </div>
     <div class="tovar-2">
-      <p class="tovar-text-2"><span style="color: #dc3545;">Самое горячее</span> предложение 2025 года</p>
+      <p class="tovar-text-2"><span style="color: #dc3545;">Горячее</span> предложение 2026 года</p>
       <p class="timer-text">Успейте купить!:</p>
             <div class="timer" id="countdown">
                     Загрузка...
@@ -171,7 +176,7 @@ foreach($rows as $row ){
       <div class="tovar-price">
         <h3>Iphone 17 pro</h3>
         <p>77 990 p.</p>
-      <button class="button-red-2">В корзину</button>
+      <a href="cart.html"><button class="button-red-2">В корзину</button></a>
       <div class="img-home parallax" style="background-image: url('img/e3f3dc517ec08cf38a70b364f6e29d3abf9f2ff4.jpg');"></div>
         <div class="sale-container">
     <div class="sale-tanhouse">
@@ -185,16 +190,16 @@ foreach($rows as $row ){
     </div>
   </div>
 
-  <h1 class="vibor-h1">Лучший выбор</h1>
+  <h1 class="vibor-h1">КАТАЛОГ</h1>
   
  <div class="stats-1">
         <div class="stat-1">
-            <a href="information.html"><img src="assets/images/Telephone.png" alt="Смартфоны"></a>
+            <a href="telephones.html"><img src="assets/images/Telephone.png" alt="Смартфоны"></a>
             <p>Смартфоны</p>
         </div>
         
         <div class="stat-1">
-            <img src="assets/images/clock.png" alt="Умные часы">
+          <a href="clocks.html"><img src="assets/images/clock.png" alt="Умные часы"></a>
             <p>Умные часы</p>
         </div>
         
@@ -204,23 +209,18 @@ foreach($rows as $row ){
         </div>
         
         <div class="stat-1">
-            <img src="assets/images/Notebook.png" alt="Ноутбуки">
+            <a href="notebooks.html"><img src="assets/images/Notebook.png" alt="Ноутбуки"></a>
             <p>Ноутбуки</p>
         </div>
 
         <div class="stat-1">
-            <img src="assets/images/Table.png" alt="Планшеты">
+            <a href="tablets.html"><img src="assets/images/Table.png" alt="Планшеты"></a>
             <p>Планшеты</p>
         </div>
 
         <div class="stat-1">
             <img src="assets/images/colonka.png" alt="Портативные колонки">
             <p>Портативные колонки</p>
-        </div>
-
-        <div class="stat-1">
-            <img src="assets/images/accesories.png" alt="Аксессуары">
-            <p>Аксессуары</p>
         </div>
     </div>
     </div>
@@ -259,174 +259,127 @@ foreach($rows as $row ){
     </div>
 </section>
 
-<section class="benefits">
+<section class="benefits container">
   <div class="benefits__content">
-    <h2 class="benefits__title"><span style="color: red;">Экономьте</span> свое время<br>и получайте <span style="color: red;">максимум</span><br>от ежедневных покупок</h2>
-    <img src="assets/images/Frame 2358.png" alt="Преимущества сервиса" class="benefits__image" width="300">
+    <div class="benefits__wrap">
+      <h2 class="benefits__title"><span style="color: red;">Экономьте</span> свое время<br>и получайте <span style="color: red;">максимум</span><br>от ежедневных покупок</h2>
+      <img src="assets/images/Frame 2358.png" alt="Преимущества сервиса" class="benefits__image" width="300">
+    </div>
     <img class="benefits__title_phone" src="assets/images/gadgets.jpg" alt="">
   </div>
 </section>
 
-
-
 <section class="container">
-  <h2 class="index-h2">Новинки</h2>
   <div class="row g-4">
-    <!-- Товары -->
-    <div class="col-md-6 col-lg-3">
-        <article class="product-card">
-            <div class="product-card__image-wrapper">
-                <img class="product-card__image" 
-                     src="assets/images/samsung 1.png" 
-                     alt="Samsung Galaxy S25" 
-                     loading="lazy">
-            </div>
-            <div class="product-card__info">
-                <h3 class="product-card__title">Samsung Galaxy S25</h3>
-                <div class="product-card__price">
-                    <span class="product-card__price-label">Цена</span>
-                    <span class="product-card__price-value">55 000 ₽</span>
-                </div>
-                <button class="product-card__add-to-cart">В корзину</button>
-            </div>
-        </article>
+    <h2 class="index-h2">Новинки</h2>
+    <!-- Первый ряд (4 карточки) -->
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/images/samsung 1.png" alt="Samsung Galaxy S25">
+      </div>
+      <h2 class="product-title">Samsung Galaxy S25 </h2>
+      <p class="product-description">4/128 ГБ, серый</p>
+      <div class="price-container">
+        <span class="current-price">55 000 ₽</span>
+      </div>
+      <div class="availability">Доступно</div>
+      <button class="add-to-cart">В корзину</button>
     </div>
 
-    <div class="col-md-6 col-lg-3">
-        <article class="product-card">
-            <div class="product-card__image-wrapper">
-                <img class="product-card__image" 
-                     src="assets/images/galaxywatch 1.svg" 
-                     alt="Galaxy Watch Ultra 47 мм" 
-                     loading="lazy">
-            </div>
-            <div class="product-card__info">
-                <h3 class="product-card__title">Galaxy Watch Ultra 47 мм LTE-синий-титан</h3>
-                <div class="product-card__price">
-                    <span class="product-card__price-label">Цена</span>
-                    <span class="product-card__price-value">39 990 ₽</span>
-                </div>
-                <button class="product-card__add-to-cart">В корзину</button>
-            </div>
-        </article>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/images/galaxywatch 1.svg" alt="Galaxy Watch Ultra">
+      </div>
+      <h2 class="product-title">Galaxy Watch Ultra 47 мм LTE-синий-титан</h2>
+      <p class="product-description">Смарт-часы с LTE</p>
+      <div class="price-container">
+        <span class="current-price">39 990 ₽</span>
+      </div>
+      <div class="availability">Доступно</div>
+      <button class="add-to-cart">В корзину</button>
     </div>
 
-    <div class="col-md-6 col-lg-3">
-        <article class="product-card">
-            <div class="product-card__image-wrapper">
-                <img class="product-card__image" 
-                     src="assets/images/ears 1.png" 
-                     alt="Наушники JBL Tune 770NC Black" 
-                     loading="lazy">
-            </div>
-            <div class="product-card__info">
-                <h3 class="product-card__title">Беспроводные наушники JBL Tune 770NC Black</h3>
-                <div class="product-card__price">
-                    <span class="product-card__price-label">Цена</span>
-                    <span class="product-card__price-value">6 000 ₽</span>
-                </div>
-                <button class="product-card__add-to-cart">В корзину</button>
-            </div>
-        </article>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/images/ears 1.png" alt="Наушники JBL">
+      </div>
+      <h2 class="product-title">Беспроводные наушники JBL Tune 770NC Black</h2>
+      <p class="product-description">Шумоподавление</p>
+      <div class="price-container">
+        <span class="current-price">6 000 ₽</span>
+      </div>
+      <div class="availability">Доступно</div>
+      <button class="add-to-cart">В корзину</button>
     </div>
 
-    <div class="col-md-6 col-lg-3">
-        <article class="product-card">
-            <div class="product-card__image-wrapper">
-                <img class="product-card__image" 
-                     src="assets/images/notebook.png" 
-                     alt="Ноутбук HUAWEI MateBook D 16" 
-                     loading="lazy">
-            </div>
-            <div class="product-card__info">
-                <h3 class="product-card__title">Ноутбук HUAWEI MateBook D 16 i5-13420H/8/512GB WIN SG 53014CNC5</h3>
-                <div class="product-card__price">
-                    <span class="product-card__price-label">Цена</span>
-                    <span class="product-card__price-value">54 999 ₽</span>
-                </div>
-                <button class="product-card__add-to-cart">В корзину</button>
-            </div>
-        </article>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/images/Notebook.png" alt="Ноутбук Huawei">
+      </div>
+      <h2 class="product-title">Ноутбук HUAWEI MateBook D 16 i5-13420H/8/512GB WIN SG 53014CNC5</h2>
+      <p class="product-description">16-дюймовый экран</p>
+      <div class="price-container">
+        <span class="current-price">54 999 ₽</span>
+      </div>
+      <div class="availability">Доступно</div>
+      <button class="add-to-cart">В корзину</button>
     </div>
 
-    <div class="col-md-6 col-lg-3">
-        <article class="product-card">
-            <div class="product-card__image-wrapper">
-                <img class="product-card__image" 
-                     src="assets/images/tablet.avif" 
-                     alt="Планшет HUAWEI MatePad SE 11" 
-                     loading="lazy">
-            </div>
-            <div class="product-card__info">
-                <h3 class="product-card__title">Планшет HUAWEI MatePad SE 11 (2024) 8/128GB LTE Gray 53014AYK</h3>
-                <div class="product-card__price">
-                    <span class="product-card__price-label">Цена</span>
-                    <span class="product-card__price-value">17 399 ₽</span>
-                </div>
-                <button class="product-card__add-to-cart">В корзину</button>
-            </div>
-        </article>
+    <!-- Второй ряд (4 карточки) -->
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/images/tablet.avif" alt="Планшет Huawei">
+      </div>
+      <h2 class="product-title">Планшет HUAWEI MatePad SE 11 (2024) 8/128GB LTE Gray 53014AYK</h2>
+      <p class="product-description">11-дюймовый экран</p>
+      <div class="price-container">
+        <span class="current-price">17 399 ₽</span>
+      </div>
+      <div class="availability">Доступно</div>
+      <button class="add-to-cart">В корзину</button>
     </div>
 
-    <div class="col-md-6 col-lg-3">
-        <article class="product-card">
-            <div class="product-card__image-wrapper">
-                <img class="product-card__image" 
-                     src="assets/images/kolonka.avif" 
-                     alt="Колонка Яндекс Станция Мини" 
-                     loading="lazy">
-            </div>
-            <div class="product-card__info">
-                <h3 class="product-card__title">Умная колонка Яндекс Станция Мини с Алисой, с часами, 10Вт, синий сапфир</h3>
-                <div class="product-card__price">
-                    <span class="product-card__price-label">Цена</span>
-                    <span class="product-card__price-value">8 499 ₽</span>
-                </div>
-                <button class="product-card__add-to-cart">В корзину</button>
-            </div>
-        </article>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/images/kolonka.avif" alt="Колонка Яндекс">
+      </div>
+      <h2 class="product-title">Умная колонка Яндекс Станция Мини с Алисой, с часами, 10Вт, синий сапфир</h2>
+      <p class="product-description">С голосовым помощником</p>
+      <div class="price-container">
+        <span class="current-price">8 499 ₽</span>
+      </div>
+      <div class="availability">Доступно</div>
+      <button class="add-to-cart">В корзину</button>
     </div>
 
-    <div class="col-md-6 col-lg-3">
-        <article class="product-card">
-            <div class="product-card__image-wrapper">
-                <img class="product-card__image" 
-                     src="assets/images/samsung 1.svg" 
-                     alt="Samsung Galaxy S25" 
-                     loading="lazy">
-            </div>
-            <div class="product-card__info">
-                <h3 class="product-card__title">Samsung Galaxy S25</h3>
-                <div class="product-card__price">
-                    <span class="product-card__price-label">Цена</span>
-                    <span class="product-card__price-value">55 000 ₽</span>
-                </div>
-                <button class="product-card__add-to-cart">В корзину</button>
-            </div>
-        </article>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/images/samsung 1.svg" alt="Samsung Galaxy S25">
+      </div>
+      <h2 class="product-title">Samsung Galaxy S25 </h2>
+      <p class="product-description">4/128 ГБ, серый</p>
+      <div class="price-container">
+        <span class="current-price">39 499 ₽</span>
+      </div>
+      <div class="availability">Доступно</div>
+      <button class="add-to-cart">В корзину</button>
     </div>
 
-    <div class="col-md-6 col-lg-3">
-        <article class="product-card">
-            <div class="product-card__image-wrapper">
-                <img class="product-card__image" 
-                     src="assets/images/30079355bb.avif" 
-                     alt="Samsung Galaxy S25+" 
-                     loading="lazy">
-            </div>
-            <div class="product-card__info">
-                <h3 class="product-card__title">Samsung Galaxy S25+</h3>
-                <div class="product-card__price">
-                    <span class="product-card__price-label">Цена</span>
-                    <span class="product-card__price-value">96 999 ₽</span>
-                </div>
-                <button class="product-card__add-to-cart">В корзину</button>
-            </div>
-        </article>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/images/30079355bb.avif" alt="Samsung Galaxy S25">
+      </div>
+      <h2 class="product-title">Samsung Galaxy S25 </h2>
+      <p class="product-description">4/128 ГБ, серый</p>
+      <div class="price-container">
+        <span class="current-price">96 999 ₽</span>
+      </div>
+      <div class="availability">Доступно</div>
+      <button class="add-to-cart">В корзину</button>
     </div>
-</div>
-</section>   
-
+    
+  </div>
+</section>
 
 <div class="container">
         <div class="header-section">
@@ -606,13 +559,13 @@ foreach($rows as $row ){
                 
                 <!-- Карточка 6 -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="review-card review-card--secondary">
+                    <div class="review-card review-card--primary">
                         <div class="review-content">
                             <div class="review-image-container">
-                                <img class="rtl_0009_large" src="assets/images/obzor-ears.jpg" alt="TWS наушники" class="review-image">
+                                <img src="assets/images/obzor-ears.jpg" alt="TWS наушники" class="review-image">
                             </div>
                             <h3 class="review-title">Как выбрать лучшие наушники?</h3>
-                            <a href="" class="review-button">Смотреть обзор <span class="arrow">→</span></a>
+                            <a href="obzor6.html" class="review-button">Смотреть обзор <span class="arrow">→</span></a>
                         </div>
                     </div>
                 </div>
@@ -622,7 +575,7 @@ foreach($rows as $row ){
     </section>
 </main>
 <footer class="footer">
-  <button class="scroll-to-top" id="scrollUp" aria-label="Прокрутить наверх">
+   <button class="scroll-to-top" id="scrollUp" aria-label="Прокрутить наверх">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
     </svg>
@@ -680,10 +633,43 @@ foreach($rows as $row ){
     </nav>
 
     <div class="footer__copyright">
-      <p class="footer-p">Copyright © 2025 GadgetTrium, Inc. Все права защищены</p>
+      <p class="footer-p">Copyright © 2026 GadgetTrium, Inc. Все права защищены</p>
     </div>
   </div>
 </footer>
+
+<dialog class="feedback-form-container11" id="feedbackFormContainer11">
+    <button class="form-button" onclick="this.closest('.feedback-form-container11').close()">
+        <img class="form-img"  src="assets/images/Krestiksvgpng.ru_.png" alt="">
+    </button>
+    <div class="feedback-form-header" id="feedbackFormHeader">
+        Оставьте свои данные и наш менеджер свяжется с вами
+    </div>
+    
+    <form action="" method="POST" id="feedback-form" class="feedback-form" autocomplete="off" novalidate>
+        <label>
+            Имя:
+            <input type="text" class="name" name="name" id="name" 
+                   placeholder="Только буквы, от 1 до 12 символов" 
+                   pattern="[A-Za-zА-Яа-яЁё\s]{1,12}" 
+                   title="Только буквы (рус/англ), от 1 до 12 символов"
+                   required>
+            <div class="hint" id="name-hint"></div>
+        </label>
+
+        <label>
+            Телефон:
+            <input type="tel" class="telefon-name" name="phone" id="phone" 
+                   placeholder="+7 (___) ___-__-__" 
+                   pattern="\+7\s?[\(]{0,1}\d{3}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" 
+                   title="Формат: +7 (XXX) XXX-XX-XX"
+                   required>
+            <div class="hint" id="phone-hint"></div>
+        </label>
+    
+        <button id="submit-btn" type="submit">Отправить</button>
+    </form>
+</dialog>
 
 <dialog class="form-container" id="formModal">
     <button class="form-button" onclick="this.closest('.form-container').close()">
@@ -723,7 +709,7 @@ foreach($rows as $row ){
         </div>
         <input type="password" class="input" placeholder="Введите ваш пароль"> 
 
-      <span class="sub">Вы уже зарегистрированы? <a href="registration.html">Войти</a></span>
+      <span class="sub">Вы уже есть аккаунт? <a href="registration.html">Войти</a></span>
         <button>войти</button>
     </form>
 </dialog>
@@ -903,6 +889,61 @@ document.addEventListener('DOMContentLoaded', function() {
                 modalOverlay.style.display = 'none';
             }
         });
+        // Плавная прокрутка наверх
+    scrollButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // Микро-анимация при клике
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+
+    // Функционал кнопки
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.getElementById('scrollUp');
+    const scrollProgress = scrollButton.querySelector('.scroll-progress');
+    
+    // Показывать/скрывать кнопку при прокрутке
+    window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (scrollY / (documentHeight - windowHeight)) * 100;
+        
+        if (scrollY > 400) {
+            scrollButton.classList.add('show');
+            scrollButton.classList.add('show-progress');
+            
+            // Обновление индикатора прогресса
+            const circumference = 2 * Math.PI * 30; // радиус кнопки
+            const offset = circumference - (scrollPercentage / 100) * circumference;
+            scrollProgress.style.strokeDasharray = circumference;
+            scrollProgress.style.strokeDashoffset = offset;
+        } else {
+            scrollButton.classList.remove('show');
+            scrollButton.classList.remove('show-progress');
+        }
+    });
+    
+    // Плавная прокрутка наверх
+    scrollButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // Микро-анимация при клике
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});
 
 </script>
     
@@ -916,6 +957,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Initialize Swiper -->
    <script>
     var swiper = new Swiper(".swiper-sell", {
+      loop: true,
       slidesPerView: 1,
       spaceBetween: 30,
       freeMode: false,

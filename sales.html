@@ -63,10 +63,16 @@ foreach($rows as $row ){
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
   <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"/>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" id="openModalBtn" href="registration.html" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+<svg onclick="document.getElementById('formModal').showModal()" xmlns="http://www.w3.org/2000/svg"  href="registration.html" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
   <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
   <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
   <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+</svg>
+<svg onclick="document.getElementById('formModal-2').showModal()" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+  <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
+  <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708"/>
 </svg>
 </nav>
 <nav class=" top-nav container">
@@ -105,7 +111,7 @@ foreach($rows as $row ){
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+    <li class="breadcrumb-item"><a class="breadcrumb-item" href="index.html">Главная</a></li>
     <li class="breadcrumb-item active" aria-current="page">Контакты</li>
   </ol>
 </nav>
@@ -122,7 +128,7 @@ foreach($rows as $row ){
                             <div class="review-image-container">
                                 <img class="rtl_0009_large" src="assets/images/elegantnaa-kompozicia-smartfona.jpg" alt="Смартфон" class="review-image">
                             </div>
-                            <a href="obzor1.html"><h3 class="review-title">Успей купить смартфон выгодно</h3></a>
+                            <a href="sales1.html"><h3 class="review-title">Успей купить смартфон выгодно</h3></a>
                         </div>
                     </div>
                 </div>
@@ -146,7 +152,7 @@ foreach($rows as $row ){
                             <div class="review-image-container">
                                 <img class="rtl_0009_large" src="assets/images/SL-022323-56120-08 1.png" alt="Портативные колонки" class="review-image">
                             </div>
-                            <a href="obzor3.html"><h3 class="review-title">Получи скидку 10% при оплате наличными</h3></a>
+                            <a href="sales3.html"><h3 class="review-title">Получи скидку 10% при оплате наличными</h3></a>
                         </div>
                     </div>
                 </div>
@@ -158,7 +164,7 @@ foreach($rows as $row ){
                             <div class="review-image-container">
                                 <img src="assets/images/cifrovoe-ustroistvo-s-ekranom-smartwatch.jpg" alt="Умные часы" class="review-image">
                             </div>
-                            <a href="obzor4.html"><h3 class="review-title">Скидка 30% на часы при покупке дуэта!</h3></a>
+                            <a href="sales4.html"><h3 class="review-title">Скидка 30% на часы при покупке дуэта!</h3></a>
                         </div>
                     </div>
                 </div>
@@ -170,7 +176,7 @@ foreach($rows as $row ){
                             <div class="review-image-container">
                                 <img src="assets/images/8997262.jpg" alt="Ноутбуки" class="review-image">
                             </div>
-                            <a href="obzor5.html"><h3 class="review-title">Новая бонусная программа</h3></a>
+                            <a href="sales5.html"><h3 class="review-title">Новая бонусная программа</h3></a>
                         </div>
                     </div>
                 </div>
@@ -180,9 +186,9 @@ foreach($rows as $row ){
                     <div class="review-card review-card--secondary">
                         <div class="review-content">
                             <div class="review-image-container">
-                                <img class="rtl_0009_large" src="assets/images/elektronnoe-ustroistvo-v-okruzenii-prirody.jpg" alt="TWS наушники" class="review-image">
+                                <img class="rtl_0009_large" src="assets/images/cifrovoe-ustroistvo-s-ekranom-smartwatch.jpg" alt="TWS наушники" class="review-image">
                             </div>
-                            <a href="obzor6.html"><h3 class="review-title">Горячие скидки на планшеты Xiaomi</h3></a>
+                            <a href="sales6.html"><h3 class="review-title">Горячие скидки на планшеты Xiaomi</h3></a>
                         </div>
                     </div>
                 </div>
@@ -309,35 +315,67 @@ foreach($rows as $row ){
     </script>
 </body>
 
+<dialog class="form-container" id="formModal">
+    <button class="form-button" onclick="this.closest('.form-container').close()">
+        <img class="form-img"  src="assets/images/Krestiksvgpng.ru_.png" alt="">
+    </button>
+    
+    <form class="form">
+      <span class="title">Форма регистрации</span>
+        <input type="text" class="input" placeholder="Введите ваше имя">
+        <input type="email" class="input" placeholder="Введите вашу почту">
+        <input type="text" class="input" placeholder="Введите ваш номер телефона">
+                <div class="Gender">
+          <h5 class="pol">Выберите ваш пол</h5>
+          <div class="home-wrap">
+          <input type="radio" name="gender1" class="gender1" id="gender1">
+          <label for="gender1">Мужской</label>  
+          </div>
+          <div class="home-wrap">
+          <input type="radio" name="gender2" class="gender2" id="gender2">
+          <label for="gender2">Женский</label>  
+          </div>
+        </div>
+        <input type="password" class="input" placeholder="Введите ваш пароль"> 
 
-        <div class="feedback-form-container" id="feedbackFormContainer">
-            <form action="feedback.php" method="POST" id="feedback-form" class="feedback-form" autocomplete="off">
-                <label>
-                Заголовок:
-                <input type="text" id="title" name="heading" placeholder="Введите заголовок" required>
-                <div class="hint" id="title-hint"></div>
-            </label>
-            <label>
-                Имя:
-                <input type="text" class="name" name="name" id="name" placeholder="Только буквы, от 1 до 12 символов" required>
-                <div class="hint" id="name-hint"></div>
-            </label>
-        
-            <label>
-                Email:
-                <input type="text" id="email" name="email" placeholder="example@mail.com" required>
-                <div class="hint" id="email-hint"></div>
-            </label>
-        
-            <label>
-                Сообщение:
-                <textarea id="message" name="message" placeholder="Макс. 255 слов, предлоги и союзы учитываются" required></textarea>
-                <div class="hint" id="message-hint"></div>
-            </label>
-        
-            <button id="submit-btn" type="submit">Отправить</button>
-            </form>
-         </div>
+      <span class="sub">Вы уже зарегистрированы? <a href="sign-in.html">Войти</a></span>
+        <button>Зарегистрироваться</button>
+    </form>
+</dialog>
+
+<dialog class="feedback-form-container11" id="feedbackFormContainer11">
+    <button class="form-button" onclick="this.closest('.feedback-form-container11').close()">
+        <img class="form-img"  src="assets/images/Krestiksvgpng.ru_.png" alt="">
+    </button>
+    <div class="feedback-form-header" id="feedbackFormHeader">
+        Оставьте свои данные и наш менеджер свяжется с вами
+    </div>
+    
+    <form action="" method="POST" id="feedback-form" class="feedback-form" autocomplete="off" novalidate>
+        <label>
+            Имя:
+            <input type="text" class="name" name="name" id="name" 
+                   placeholder="Только буквы, от 1 до 12 символов" 
+                   pattern="[A-Za-zА-Яа-яЁё\s]{1,12}" 
+                   title="Только буквы (рус/англ), от 1 до 12 символов"
+                   required>
+            <div class="hint" id="name-hint"></div>
+        </label>
+
+        <label>
+            Телефон:
+            <input type="tel" class="telefon-name" name="phone" id="phone" 
+                   placeholder="+7 (___) ___-__-__" 
+                   pattern="\+7\s?[\(]{0,1}\d{3}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" 
+                   title="Формат: +7 (XXX) XXX-XX-XX"
+                   required>
+            <div class="hint" id="phone-hint"></div>
+        </label>
+    
+        <button id="submit-btn" type="submit">Отправить</button>
+    </form>
+</dialog>
+
 
   
   <div class="catalog-dropdown__menu" id="catalog-dropdown-menu">
@@ -355,7 +393,7 @@ foreach($rows as $row ){
       </section>
     </div>
   </div>
-  <footer class="footer">
+<footer class="footer">
   <button class="scroll-to-top" id="scrollUp" aria-label="Прокрутить наверх">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
@@ -414,10 +452,17 @@ foreach($rows as $row ){
     </nav>
 
     <div class="footer__copyright">
-      <p>Copyright © 2025 GadgetTrium, Inc. Все права защищены</p>
+      <p class="footer-p">Copyright © 2026 GadgetTrium, Inc. Все права защищены</p>
     </div>
   </div>
 </footer>
+
+<button onclick="document.getElementById('feedbackFormContainer11').showModal()" 
+        class="feedback-toggle-btn" 
+        id="feedbackToggleBtn"
+        aria-label="Открыть форму обратной связи">
+</button>
+
 
 <dialog class="form-container" id="formModal">
     <button class="form-button" onclick="this.closest('.form-container').close()">
@@ -461,6 +506,8 @@ foreach($rows as $row ){
         <button>войти</button>
     </form>
 </dialog>
+
+
 
 <script>
     document.querySelector('.catalog-dropdown__toggle').addEventListener('click', function() {

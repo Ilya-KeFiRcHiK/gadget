@@ -17,7 +17,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <div class="navbar-logo-container">
-      <img src="assets/images/behoof_logo.png" alt="">
+      <a href="index.html"><img src="assets/images/behoof_logo.png" alt=""></a>
       <h1>ГаджетТриум</h1>
       <p>Лучшие цены в интернет-магазинах</p>
     </div>
@@ -70,7 +70,7 @@ foreach($rows as $row ){
   <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
   <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
 </svg>
-<svg onclick="document.getElementById('formModal-2').showModal()" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+<svg onclick="document.getElementById('formModal-2').showModal()" xmlns="http://www.w3.org/2000/svg" href="cart.html" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
   <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/>
 </svg>
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
@@ -80,12 +80,12 @@ foreach($rows as $row ){
 <nav class=" top-nav container">
 
        <ul class="top-nav-ul">
-        <li class="top-nav-li"><a class="top-nav-link" href="#">Акции</a></li>
-        <li class="top-nav-li"><a class="top-nav-link" href="#">О компании</a></li>
-        <li class="top-nav-li"><a class="top-nav-link" href="#">Вакансии</a></li>
-        <li class="top-nav-li"><a class="top-nav-link" href="#">Обзоры</a></li>
-        <li class="top-nav-li"><a class="top-nav-link" href="#">Контакты</a></li>
-        <li class="top-nav-li"><a class="top-nav-link" href="#">Помощь</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="sales.html">Акции</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="company.html">О компании</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="vacancy.html">Вакансии</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="obzor1.html">Обзоры</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="contacts.html">Контакты</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="help.html">Помощь</a></li>
        </ul>
 </nav>
 
@@ -119,6 +119,78 @@ foreach($rows as $row ){
 </nav>
 </header>
 
+ <button onclick="document.getElementById('feedbackFormContainer11').showModal()" 
+        class="feedback-toggle-btn" 
+        id="feedbackToggleBtn"
+        aria-label="Открыть форму обратной связи">
+</button>
+    <!-- <div class="overlay" id="overlay"></div> -->
+
+    <div class="feedback-form-container" id="feedbackFormContainer">
+        <button class="close-btn" id="closeBtn">×</button>
+        
+        <div class="feedback-form-header" id="feedbackFormHeader">
+            Оставьте свои данные и мы перезвоним в ближайшее время
+        </div>
+        
+        <form action="" method="" id="feedback-form" class="feedback-form" autocomplete="off" novalidate>
+            <label>
+                Имя:
+                <input type="text" class="name" name="name" id="name" 
+                       placeholder="Только буквы, от 1 до 12 символов" 
+                       pattern="[A-Za-zА-Яа-яЁё\s]{1,12}" 
+                       title="Только буквы (рус/англ), от 1 до 12 символов"
+                       required>
+                <div class="hint" id="name-hint"></div>
+            </label>
+
+            <label>
+                Телефон:
+                <input type="tel" class="telefon-name" name="phone" id="phone" 
+                       placeholder="+7 (___) ___-__-__" 
+                       pattern="\+7\s?[\(]{0,1}\d{3}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" 
+                       title="Формат: +7 (XXX) XXX-XX-XX"
+                       required>
+                <div class="hint" id="phone-hint"></div>
+            </label>
+        
+            <button id="submit-btn" type="submit">Отправить</button>
+        </form>
+    </div>
+
+    <dialog class="feedback-form-container11" id="feedbackFormContainer11">
+    <button class="form-button" onclick="this.closest('.feedback-form-container11').close()">
+        <img class="form-img"  src="assets/images/Krestiksvgpng.ru_.png" alt="">
+    </button>
+    <div class="feedback-form-header" id="feedbackFormHeader">
+        Оставьте свои данные и наш менеджер свяжется с вами
+    </div>
+    
+    <form action="" method="POST" id="feedback-form" class="feedback-form" autocomplete="off" novalidate>
+        <label>
+            Имя:
+            <input type="text" class="name" name="name" id="name" 
+                   placeholder="Только буквы, от 1 до 12 символов" 
+                   pattern="[A-Za-zА-Яа-яЁё\s]{1,12}" 
+                   title="Только буквы (рус/англ), от 1 до 12 символов"
+                   required>
+            <div class="hint" id="name-hint"></div>
+        </label>
+
+        <label>
+            Телефон:
+            <input type="tel" class="telefon-name" name="phone" id="phone" 
+                   placeholder="+7 (___) ___-__-__" 
+                   pattern="\+7\s?[\(]{0,1}\d{3}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" 
+                   title="Формат: +7 (XXX) XXX-XX-XX"
+                   required>
+            <div class="hint" id="phone-hint"></div>
+        </label>
+    
+        <button id="submit-btn" type="submit">Отправить</button>
+    </form>
+</dialog>
+
 <main>
     <div class="container">
         <h2>Корзина</h2>
@@ -128,8 +200,8 @@ foreach($rows as $row ){
             <p>Найдите то, что вам нужно в каталоге, на <br>
             главной странице или при помощи поиска</p>
             <div class="cart-empty-button">
-                <a html="catalog.html" class="cart-button">В каталог</a>
-                <a html="index.html" class="cart-button">На главную</a>
+                <a href="catalog.html" class="cart-button">В каталог</a>
+                <a href="index.html" class="cart-button">На главную</a>
             </div>
         </div>
     </div>
@@ -199,6 +271,49 @@ foreach($rows as $row ){
   </div>
 </footer>
 
+<dialog class="form-container" id="formModal">
+    <button class="form-button" onclick="this.closest('.form-container').close()">
+        <img class="form-img"  src="assets/images/Krestiksvgpng.ru_.png" alt="">
+    </button>
+    
+    <form class="form">
+      <span class="title">Форма регистрации</span>
+        <input type="text" class="input" placeholder="Введите ваше имя">
+        <input type="email" class="input" placeholder="Введите вашу почту">
+        <input type="text" class="input" placeholder="Введите ваш номер телефона">
+                <div class="Gender">
+          <h5 class="pol">Выберите ваш пол</h5>
+          <div class="home-wrap">
+          <input type="radio" name="gender1" class="gender1" id="gender1">
+          <label for="gender1">Мужской</label>  
+          </div>
+          <div class="home-wrap">
+          <input type="radio" name="gender2" class="gender2" id="gender2">
+          <label for="gender2">Женский</label>  
+          </div>
+        </div>
+        <input type="password" class="input" placeholder="Введите ваш пароль"> 
+
+      <span class="sub">Вы уже зарегистрированы? <a href="sign-in.html">Войти</a></span>
+        <button>Зарегистрироваться</button>
+    </form>
+</dialog>
+
+<dialog class="form-container-2" id="formModal-2">
+    <button class="form-button" onclick="this.closest('.form-container-2').close()">
+        <img class="form-img"  src="assets/images/Krestiksvgpng.ru_.png" alt="">
+    </button>
+    <form class="form">
+      <span class="title">Форма входа</span>
+        <input type="email" class="input" placeholder="Введите вашу почту">
+        </div>
+        <input type="password" class="input" placeholder="Введите ваш пароль"> 
+
+      <span class="sub">Вы уже зарегистрированы? <a href="registration.html">Войти</a></span>
+        <button>войти</button>
+    </form>
+</dialog>
+
 <script>
     document.querySelector('.catalog-dropdown__toggle').addEventListener('click', function() {
   const dropdown = this.closest('.catalog-dropdown');
@@ -219,12 +334,185 @@ document.addEventListener('click', function(e) {
     });
   }
 });
+
+        const feedbackToggleBtn = document.getElementById('feedbackToggleBtn');
+        const feedbackFormContainer = document.getElementById('feedbackFormContainer');
+        const overlay = document.getElementById('overlay');
+        const closeBtn = document.getElementById('closeBtn');
+        const feedbackForm = document.getElementById('feedback-form');
+        const nameInput = document.getElementById('name');
+        const phoneInput = document.getElementById('phone');
+        const nameHint = document.getElementById('name-hint');
+        const phoneHint = document.getElementById('phone-hint');
+
+        // Открытие формы
+        feedbackToggleBtn.addEventListener('click', () => {
+            feedbackFormContainer.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Закрытие формы
+        function closeForm() {
+            feedbackFormContainer.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        closeBtn.addEventListener('click', closeForm);
+        overlay.addEventListener('click', closeForm);
+
+        // Валидация в реальном времени
+        nameInput.addEventListener('input', function() {
+            if (this.validity.valid) {
+                nameHint.textContent = '✓ Корректное имя';
+                nameHint.style.color = '#2ecc71';
+            } else {
+                nameHint.textContent = 'Только буквы (рус/англ), от 1 до 12 символов';
+                nameHint.style.color = '#e74c3c';
+            }
+        });
+
+        phoneInput.addEventListener('input', function() {
+            if (this.validity.valid) {
+                phoneHint.textContent = '✓ Корректный номер';
+                phoneHint.style.color = '#2ecc71';
+            } else {
+                phoneHint.textContent = 'Формат: +7 (XXX) XXX-XX-XX';
+                phoneHint.style.color = '#e74c3c';
+            }
+        });
+
+        // Обработка отправки формы
+        feedbackForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (nameInput.validity.valid && phoneInput.validity.valid) {
+                // Имитация отправки
+                const submitBtn = document.getElementById('submit-btn');
+                submitBtn.textContent = 'Отправка...';
+                submitBtn.disabled = true;
+                
+                setTimeout(() => {
+                    alert('Форма успешно отправлена! Мы свяжемся с вами в ближайшее время.');
+                    feedbackForm.reset();
+                    nameHint.textContent = '';
+                    phoneHint.textContent = '';
+                    submitBtn.textContent = 'Отправить';
+                    submitBtn.disabled = false;
+                    closeForm();
+                }, 1500);
+            }
+        });
+
+        // Маска для телефона
+        phoneInput.addEventListener('input', function(e) {
+            let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+            e.target.value = '+7' + (x[2] ? ' (' + x[2] : '') + (x[3] ? ') ' + x[3] : '') + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
+        });
+
+        // Закрытие по ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeForm();
+            }
+        });
+
+// Функционал кнопки
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.getElementById('scrollUp');
+    const scrollProgress = scrollButton.querySelector('.scroll-progress');
+    
+    // Показывать/скрывать кнопку при прокрутке
+    window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (scrollY / (documentHeight - windowHeight)) * 100;
+        
+        if (scrollY > 400) {
+            scrollButton.classList.add('show');
+            scrollButton.classList.add('show-progress');
+            
+            // Обновление индикатора прогресса
+            const circumference = 2 * Math.PI * 30; // радиус кнопки
+            const offset = circumference - (scrollPercentage / 100) * circumference;
+            scrollProgress.style.strokeDasharray = circumference;
+            scrollProgress.style.strokeDashoffset = offset;
+        } else {
+            scrollButton.classList.remove('show');
+            scrollButton.classList.remove('show-progress');
+        }
+    });
+    
+    // Плавная прокрутка наверх
+    scrollButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // Микро-анимация при клике
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});
+
+ // Получаем элементы
+        const openModalBtn = document.getElementById('openModalBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const modalOverlay = document.getElementById('modalOverlay');
+        
+        // Открытие модального окна
+        openModalBtn.addEventListener('click', function() {
+            modalOverlay.style.display = 'flex';
+        });
+        
+        // Закрытие модального окна при клике на крестик
+        closeModalBtn.addEventListener('click', function() {
+            modalOverlay.style.display = 'none';
+        });
+        
+        // Закрытие модального окна при клике вне формы
+        modalOverlay.addEventListener('click', function(event) {
+            if (event.target === modalOverlay) {
+                modalOverlay.style.display = 'none';
+            }
+        });
+        
+        // Закрытие модального окна при нажатии клавиши Esc
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                modalOverlay.style.display = 'none';
+            }
+        });
+
 </script>
   </div>
     </div>
   </div>
 </nav>
 </header>
-<script src="script.js"></script>
+<!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+   <script>
+    var swiper = new Swiper(".swiper-sell", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      freeMode: false,
+      autoplay: {
+        delay: 5000,
+      },
+    });
+  </script>
+<script src="JS/script.js"></script>
 </body>
 </html>
