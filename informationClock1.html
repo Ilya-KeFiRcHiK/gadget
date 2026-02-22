@@ -7,7 +7,7 @@
   <title>Document</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -130,15 +130,49 @@ foreach($rows as $row ){
       <!-- Левая колонка с галереей -->
       <div class="information-left">
         <!-- Основной слайдер -->
-        <div class="swiper mySwiper" role="region" aria-label="Галерея товара">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="assets/images/Samsung-Galaxy-Watch8.webp" alt="Apple iPhone 13 Pro Max серый, вид спереди" itemprop="image">
+          <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper informationSwiper2">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="assets/images/Samsung-Galaxy-Watch8.webp" />
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/Samsung-Galaxy-Watch8-2.webp" />
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/Samsung-Galaxy-Watch8-3.webp" />
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/Samsung-Galaxy-Watch8-4.webp" />
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/Samsung-Galaxy-Watch8-5.webp" />
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+          <div thumbsSlider="" class="swiper informationSwiper1">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="assets/images/Samsung-Galaxy-Watch8.webp" />
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/Samsung-Galaxy-Watch8-2.webp" />
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/Samsung-Galaxy-Watch8-3.webp" />
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/Samsung-Galaxy-Watch8-4.webp" />
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/Samsung-Galaxy-Watch8-5.webp" />
+              </div>
             </div>
           </div>
         </div>
         
-      </div>
+      
       
       <!-- Правая колонка с информацией -->
       <div class="information-right">
@@ -215,39 +249,14 @@ foreach($rows as $row ){
         <div itemprop="description">
           <p>Самые тонкие Galaxy Watch в истории произведут на вас незабываемое впечатление. Благодаря обновленному дизайну корпуса и усовершенствованной системе крепления ремешка Dynamic Lug Galaxy Watch8 стали еще комфортнее в ношении, а 3-нм процессор гарантирует великолепную производительность. Оцените также и преимущества персонализированных рекомендаций — советы по сну, беговым тренировкам и комплексному подходу к здоровью теперь прямо на вашем запястье. Наслаждайтесь каждым моментом благодаря Galaxy AI в сочетании с интерфейсом One UI.</p>
         </div>
-
+</div>
   </main>
 
   <!-- Подключение Swiper и инициализация -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    // Инициализация Swiper с улучшенными настройками
-    document.addEventListener('DOMContentLoaded', function() {
-      const swiper = new Swiper('.mySwiper', {
-        loop: true,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-        },
-        keyboard: {
-          enabled: true,
-        },
-        a11y: {
-          prevSlideMessage: 'Предыдущий слайд',
-          nextSlideMessage: 'Следующий слайд',
-          firstSlideMessage: 'Это первый слайд',
-          lastSlideMessage: 'Это последний слайд',
-        },
-      });
-      
-      // Сохраняем экземпляр Swiper для использования в миниатюрах
-      document.querySelector('.mySwiper').swiper = swiper;
-    });
-
+   
+  
     // Функция переключения объема памяти
     function changeMemory(button, memorySize) {
       // Убираем активное состояние со всех кнопок
@@ -714,25 +723,26 @@ foreach($rows as $row ){
 </dialog>
   
 
-  <script>
-    const myCarouselElement = document.querySelector('#myCarousel')
-
-    const carousel = new bootstrap.Carousel(myCarouselElement, {
-      interval: 5000,
-      touch: false
-    })
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-  </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="JS/script.js"></script>
+    <script>
+      var swiper = new Swiper(".informationSwiper1", {
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+      });
+      var swiper2 = new Swiper(".informationSwiper2", { 
+        spaceBetween: 10,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+          swiper: swiper,
+        },
+      });
+    </script>
 
 </body>
 

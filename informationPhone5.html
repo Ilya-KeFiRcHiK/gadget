@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+  </script>
+
+  <container>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <div class="navbar-logo-container">
+      <img src="assets/images/behoof_logo.png" alt="">
+      <h1>ГаджетТриум</h1>
+      <p>Лучшие цены в интернет-магазинах</p>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="catalog-dropdown">
+        
+  <button class="catalog-dropdown__toggle" type="button" aria-expanded="false" aria-controls="catalog-dropdown-menu" aria-label="Открыть каталог товаров">
+    Каталог товаров
+    <svg class="catalog-dropdown__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  
+  <div class="catalog-dropdown__menu" id="catalog-dropdown-menu">
+    <div class="catalog-dropdown__categories">
+      <section class="catalog-dropdown__category">
+        <ul class="catalog-dropdown__list">
+<?php
+$stmt = $db->prepare("SELECT * FROM categories");
+$stmt->execute();
+$result = $stmt->get_result();
+$rows = $result->fetch_all();   
+           
+foreach($rows as $row ){
+    echo sprintf('<li><a href="#" class="catalog-dropdown__link">%s</a></li>', $row[1]);
+}
+?> 
+</ul>
+      </section>
+    </div>
+  </div>
+</div>
+  <div class="container-fluid">
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+      <button class="btn btn-outline-success btn-ilya" type="submit">Поиск</button>
+    </form>
+  </div>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+  <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"/>
+</svg>
+<svg onclick="document.getElementById('formModal').showModal()" xmlns="http://www.w3.org/2000/svg"  href="registration.html" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+  <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+  <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+  <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+</svg>
+<svg onclick="document.getElementById('formModal-2').showModal()" xmlns="http://www.w3.org/2000/svg" href="cart.html" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+  <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
+  <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708"/>
+</svg>
+</nav>
+
+    <!-- Хлебные крошки с семантической разметкой -->
+
+  <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a class="breadcrumb-item" href="index.html">Главная</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Каталог</li>
+    <span class="breadcrumb-item">6.7" Смартфон Samsung Galaxy A56 256 ГБ черный</span>
+  </ol>
+</nav>
+
+<dialog class="feedback-form-container11" id="feedbackFormContainer11">
+    <button class="form-button" onclick="this.closest('.feedback-form-container11').close()">
+        <img class="form-img"  src="assets/images/Krestiksvgpng.ru_.png" alt="">
+    </button>
+    <div class="feedback-form-header" id="feedbackFormHeader">
+        Оставьте свои данные и наш менеджер свяжется с вами
+    </div>
+    
+    <form action="" method="POST" id="feedback-form" class="feedback-form" autocomplete="off" novalidate>
+        <label>
+            Имя:
+            <input type="text" class="name" name="name" id="name" 
+                   placeholder="Только буквы, от 1 до 12 символов" 
+                   pattern="[A-Za-zА-Яа-яЁё\s]{1,12}" 
+                   title="Только буквы (рус/англ), от 1 до 12 символов"
+                   required>
+            <div class="hint" id="name-hint"></div>
+        </label>
+
+        <label>
+            Телефон:
+            <input type="tel" class="telefon-name" name="phone" id="phone" 
+                   placeholder="+7 (___) ___-__-__" 
+                   pattern="\+7\s?[\(]{0,1}\d{3}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" 
+                   title="Формат: +7 (XXX) XXX-XX-XX"
+                   required>
+            <div class="hint" id="phone-hint"></div>
+        </label>
+    
+        <button id="submit-btn" type="submit">Отправить</button>
+    </form>
+</dialog>
+
+  <main>
+    <div class="information" itemscope itemtype="https://schema.org/Product">
+      
+      <!-- Левая колонка с галереей -->
+      <div class="information-left">
+        <!-- Основной слайдер -->
+        <div class="swiper mySwiper" role="region" aria-label="Галерея товара">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="assets/images/samsungA56.webp" alt="Apple iPhone 13 Pro Max серый, вид спереди" itemprop="image">
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+      <!-- Правая колонка с информацией -->
+      <div class="information-right">
+        <h1 itemprop="name">6.7" Смартфон Samsung Galaxy A56 256 ГБ черный</h1>
+        
+        <div class="information-answers">
+          <p class="answer">
+            <span class="answer-green" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+              <span itemprop="ratingValue">4.8</span>
+            </span> 
+            Оценка экспертов
+          </p>
+          
+          <div class="information-rating">
+            <span class="visually-hidden">Рейтинг покупателей:</span>
+            <span itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+              <meta itemprop="ratingValue" content="4.0">
+              <meta itemprop="reviewCount" content="447">
+              <span aria-label="Рейтинг 4 из 5">4.82</span>
+            </span>
+            
+            <div class="information-stars" aria-hidden="true">
+              <img src="assets/images/Star-red.png" alt="">
+              <img src="assets/images/Star-red.png" alt="">
+              <img src="assets/images/Star-red.png" alt="">
+              <img src="assets/images/Star-red.png" alt="">
+              <img src="assets/images/Star-Grey.png" alt="">
+            </div>
+            
+            <p>
+              <a href="#reviews" class="reviews-link">
+                <span itemprop="reviewCount">689</span> отзывов
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div class="information-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <h3>
+            <span itemprop="price" content="78999">30 780</span> ₽
+          </h3>
+          <meta itemprop="availability" content="https://schema.org/InStock">
+          <meta itemprop="priceValidUntil" content="2024-12-31">
+        </div>
+
+        <div class="d-flex gap-2">
+            <button class="btn btn-danger btn-lg">Купить сейчас</button>
+            <button class="btn btn-outline-success btn-lg" aria-label="Добавить в корзину">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1z"/>
+              </svg>
+            </button>
+          </div>
+        
+      
+        <h3>Характеристики 6.7" Смартфон Samsung Galaxy A56 256 ГБ черный</h3>
+        
+<div class="specs-card" itemprop="description">
+  <dl>
+    <div class="spec-item"><dt>Камера</dt><dd>48 MPx</dd></div>
+    <div class="spec-item"><dt>Система</dt><dd>iOS</dd></div>
+    <div class="spec-item"><dt>Диагональ</dt><dd>6,1"</dd></div>
+    <div class="spec-item"><dt>Память</dt><dd>256 ГБ</dd></div>
+    <div class="spec-item"><dt>Гарантия</dt><dd>12 мес.</dd></div>
+  </dl>
+</div>
+
+<div class="specs-header">
+  <a href="characteristicPhone5.html" class="all-specs-link">Все характеристики</a>
+</div>
+        
+        <h4>Описание</h4>
+        <div itemprop="description">
+          <p>Samsung Galaxy A56 предлагает функции искусственного интеллекта. Мгновенный поиск с помощью Surround to Search, персональный помощник Gemini, редактируйте фотографии с помощью Object Eraser, персонализируйте снимки с помощью фильтров, создавайте видеоролики за считанные секунды с помощью функции редактирования на основе искусственного интеллекта и каждый раз делайте великолепные групповые снимки с помощью Best Pose.
+Больше, ярче, мощнее. 6,7-дюймовый FHD+ Super AMOLED-экран стал больше и ярче до 1200 нит, а улучшенный процессор обеспечивает высокую производительность. Galaxy A56 5G имеет сертификат водонепроницаемости IP67, что делает его устойчивым к воздействию воды и пыли. Различные датчики Galaxy A56 были улучшены для повышения качества изображения. Запечатлейте невероятные моменты в высоком разрешении: с помощью сверхширокоугольного объектива 12 МП, основного датчика 50 МП, макродатчика 5 МП на задней панели, а также 12 МП фронтальной камеры (селфи).
+Емкость аккумулятора Galaxy A56 составляет 5000 мАч. Он обеспечивает до 29 часов воспроизведения видео и до 2,5 дней автономной работы.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Подключение Swiper и инициализация -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    // Инициализация Swiper с улучшенными настройками
+    document.addEventListener('DOMContentLoaded', function() {
+      const swiper = new Swiper('.mySwiper', {
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        keyboard: {
+          enabled: true,
+        },
+        a11y: {
+          prevSlideMessage: 'Предыдущий слайд',
+          nextSlideMessage: 'Следующий слайд',
+          firstSlideMessage: 'Это первый слайд',
+          lastSlideMessage: 'Это последний слайд',
+        },
+      });
+      
+      // Сохраняем экземпляр Swiper для использования в миниатюрах
+      document.querySelector('.mySwiper').swiper = swiper;
+    });
+
+    // Функция переключения объема памяти
+    function changeMemory(button, memorySize) {
+      // Убираем активное состояние со всех кнопок
+      const buttons = document.querySelectorAll('.information-color-change');
+      buttons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-pressed', 'false');
+      });
+      
+      // Активируем выбранную кнопку
+      button.classList.add('active');
+      button.setAttribute('aria-pressed', 'true');
+      
+      // Здесь можно добавить логику обновления цены и характеристик
+      console.log(`Выбрана память: ${memorySize} ГБ`);
+      
+      // Обновляем URL или отправляем запрос
+      updateProductInfo(memorySize);
+    }
+
+    // Функция обновления информации о товаре
+    function updateProductInfo(memorySize) {
+      // Пример обновления цены (можно заменить на реальный AJAX запрос)
+      const priceElement = document.querySelector('.information-price [itemprop="price"]');
+      const memoryPrices = {
+        '128': '69999',
+        '256': '78999',
+        '512': '89999'
+      };
+      
+      if (priceElement && memoryPrices[memorySize]) {
+        priceElement.textContent = memoryPrices[memorySize];
+        priceElement.setAttribute('content', memoryPrices[memorySize]);
+        
+        // Обновляем отображаемую цену
+        const priceContainer = priceElement.closest('h3');
+        if (priceContainer) {
+          priceContainer.innerHTML = `<span itemprop="priceCurrency" content="RUB">₽</span>
+                                     <span itemprop="price" content="${memoryPrices[memorySize]}">${Number(memoryPrices[memorySize]).toLocaleString('ru-RU')}</span> p.`;
+        }
+      }
+    }
+
+    // Ленивая загрузка для изображений (если браузер не поддерживает loading="lazy")
+    if ('IntersectionObserver' in window) {
+      const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+      const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src || img.src;
+            imageObserver.unobserve(img);
+          }
+        });
+      });
+      
+      lazyImages.forEach((img) => imageObserver.observe(img));
+    }
+  </script>
+
+      <section class="reviews-box">
+        <div class="reviews-box-review">
+          <div class="review-box-title">
+            <img src="assets/images/Avatar1.png" alt="">
+            <div class="">
+              <h3>Роман Сергеев</h3>
+              <div class="reviews-stars">
+                <div class="review-stars-box">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                </div>
+                <p class="reviews-data">12.11.2025</p>
+              </div>
+            </div>
+          </div>
+
+         <h3>Восхитительный мобильный</h3>
+         <p>Я перешел с Samsung через 7 лет без iPhone, так что
+           это странно и возвращаюсь, однако я еще не был 
+           разочарован, единственное, чего мне может не 
+           хватать, это лучшей камеры, но этого достаточно, вам 
+           нужно все выяснить еще раз, но, очевидно, 
+           рекомендация отсюда 😁 💪🏼</p>
+
+        </div>
+        <div class="reviews-box-review">
+          <div class="review-box-title">
+            <img src="assets/images/Avatar2.png" alt="">
+            <div class="">
+              <h3>Иван Соловьёв</h3>
+              <div class="reviews-stars">
+                <div class="review-stars-box">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                </div>
+                <p class="reviews-data">14.11.2025</p>
+              </div>
+            </div>
+          </div>
+
+         <h3>Восхитительный мобильный</h3>
+         <p>Этот телефон просто работает. Моментальный отклик
+           на любое действие. Все механизмы отлажены. В 
+           совокупности с остальными девайсами от apple 
+           образует органичную инфраструктуру, которой легко 
+           и просто пользоваться. Интерфейс не перегружен
+          бесполезными, запутанными и лишними элементами, 
+          как в Андроид телефонах. Просто разобраться, где 
+          что настроить и при этом не утонуть в лабиринте из 
+          меню, переходов, надстроек и дополнительных танцев,
+           как в какой нибудь самсе.</p>
+
+        </div>
+        <!-- <div class="reviews-box-review">
+          <div class="review-box-title">
+            <img src="assets/images/Avatar3.png" alt="">
+            <div class="">
+              <h3>Елизавета Воронцова</h3>
+              <div class="reviews-stars">
+                <div class="review-stars-box">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                </div>
+                <p class="reviews-data">16.11.2025</p>
+              </div>
+            </div>
+          </div>
+
+         <h3>Восхитительный мобильный</h3>
+         <p>Самое заметное это производительность, прям новый 
+          уровень в быстродействии, в повседневных задачах 
+          просто летает, отличные камеры, но сильно выпирают 
+          из корпуса. Экран смотрится отлично, единственное 
+          что беспокоит сколько проживет OLED матрица, как 
+          можно во флагман засунуть экран выгорающий со 
+          временем, есть же у них топовые практически 
+          вечные экраны Mini LED которые в ipad pro, макбуках 
+          и т.д.</p>
+
+        </div> -->
+        <!-- <div class="reviews-box-review">
+          <div class="review-box-title">
+            <img src="assets/images/Avatar4.png" alt="">
+            <div class="">
+              <h3>Екатерина Соловьёва</h3>
+              <div class="reviews-stars">
+                <div class="review-stars-box">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                </div>
+                <p class="reviews-data">18.11.2025</p>
+              </div>
+            </div>
+          </div> -->
+
+         <!-- <h3>Восхитительный мобильный</h3>
+         <p>Самое заметное это производительность, прям новый 
+          уровень в быстродействии, в повседневных задачах 
+          просто летает, отличные камеры, но сильно выпирают 
+          из корпуса. Экран смотрится отлично, единственное 
+          что беспокоит сколько проживет OLED матрица, как 
+          можно во флагман засунуть экран выгорающий со 
+          временем, есть же у них топовые практически 
+          вечные экраны Mini LED которые в ipad pro, 
+          макбуках и т.д.</p>
+
+        </div>
+        <div class="reviews-box-review">
+          <div class="review-box-title">
+            <img src="assets/images/Avatar5.png" alt="">
+            <div class="">
+              <h3>Елена Ковалёва</h3>
+              <div class="reviews-stars">
+                <div class="review-stars-box">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                </div>
+                <p class="reviews-data">20.11.2025</p>
+              </div>
+            </div>
+          </div>
+
+         <h3>Восхитительный мобильный</h3>
+         <p>Доброго времени суток! Приобрёл данное устройство в 
+          январе 2023 года, и спустя несколько месяцев
+           обслуживания решил поделиться впечатлениями об 
+           данной модели телефона. Если вы обладатель Android
+            устройства, то переход на эту модель телефона будет 
+            что-то невероятное, высокая производительность,
+             великолепное качество снимков, видео.</p>
+
+        </div> -->
+        <div class="reviews-box-review">
+          <div class="review-box-title">
+            <img src="assets/images/Avatar6.png" alt="">
+            <div class="">
+              <h3>Светлана Стрюк</h3>
+              <div class="reviews-stars">
+                <div class="review-stars-box">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                </div>
+                <p class="reviews-data">22.11.2025</p>
+              </div>
+            </div>
+          </div>
+
+         <h3>Восхитительный мобильный</h3>
+         <p>Ужасный аккумулятор, держит только 24 часа,
+           иногда даже меньше. При этом Bluetooth hi-fi отключены. 
+           Навигатором вообще не пользуюсь, видео не смотрю.
+            В общем ужас!!!!</p>
+
+        </div>
+
+        <div class="pagination-top">
+            <a class="pagination-top-style" href="">1</a>
+            <a class="pagination-top-style" href="">2</a>
+            <a class="pagination-top-style" href="">3</a>
+        </div>
+        <!-- <div class="reviews-box-review">
+          <div class="review-box-title">
+            <img src="assets/images/Avatar7.png" alt="">
+            <div class="">
+              <h3>Юрий Самойлов</h3>
+              <div class="reviews-stars">
+                <div class="review-stars-box">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                </div>
+                <p class="reviews-data">24.11.2025</p>
+              </div>
+            </div>
+          </div>
+
+         <h3>Восхитительный мобильный</h3>
+         <p>По камере могу сказать что после 11 айфона особой
+           разницы днем в хороших условиях не видно, а ночью.
+           (+зум и супер стаб).</p>
+
+        </div> -->
+        <!-- <div class="reviews-box-review">
+          <div class="review-box-title">
+            <img src="assets/images/Avatar8.png" alt="">
+            <div class="">
+              <h3>Дмитрий Зорин</h3>
+              <div class="reviews-stars">
+                <div class="review-stars-box">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                </div>
+                <p class="reviews-data">26.11.2025</p>
+              </div>
+            </div>
+          </div>
+
+         <h3>Восхитительный мобильный</h3>
+         <p>По камере могу сказать что после 11 айфона особой
+           разницы днем в хороших условиях не видно, а ночью.
+           (+зум и супер стаб).</p>
+
+        </div> -->
+        <!-- <div class="reviews-box-review">
+          <div class="review-box-title">
+            <img src="assets/images/Avatar9.png" alt="">
+            <div class="">
+              <h3>Светлана Дятлова</h3>
+              <div class="reviews-stars">
+                <div class="review-stars-box">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                  <img src="Star-red.png" alt="">
+                </div>
+                <p class="reviews-data">28.11.2025</p>
+              </div>
+            </div>
+          </div>
+
+         <h3>Восхитительный мобильный</h3>
+         <p>Этот телефон просто работает. Моментальный отклик 
+          на любое действие. Все механизмы отлажены. В 
+          совокупности с остальными девайсами от apple 
+          образует органичную инфраструктуру, которой легко 
+          и просто пользоваться. Интерфейс не перегружен бесполезными, 
+          запутанными и лишними элементами, как в Андроид телефонах. 
+          Просто разобраться, где что настроить и при этом не утонуть 
+          в лабиринте из меню, переходов, надстроек и дополнительных танцев, 
+          как в какой нибудь самсе.</p>
+
+        </div> -->
+      </section>
+
+      <button onclick="document.getElementById('feedbackFormContainer11').showModal()" 
+        class="feedback-toggle-btn" 
+        id="feedbackToggleBtn"
+        aria-label="Открыть форму обратной связи">
+</button>
+
+    <!-- <div class="overlay" id="overlay"></div> -->
+
+    <div class="feedback-form-container" id="feedbackFormContainer">
+        <button class="close-btn" id="closeBtn">×</button>
+        
+        <div class="feedback-form-header" id="feedbackFormHeader">
+            Оставьте свои данные и мы перезвоним в ближайшее время
+        </div>
+        
+        <form action="" method="" id="feedback-form" class="feedback-form" autocomplete="off" novalidate>
+            <label>
+                Имя:
+                <input type="text" class="name" name="name" id="name" 
+                       placeholder="Только буквы, от 1 до 12 символов" 
+                       pattern="[A-Za-zА-Яа-яЁё\s]{1,12}" 
+                       title="Только буквы (рус/англ), от 1 до 12 символов"
+                       required>
+                <div class="hint" id="name-hint"></div>
+            </label>
+
+            <label>
+                Телефон:
+                <input type="tel" class="telefon-name" name="phone" id="phone" 
+                       placeholder="+7 (___) ___-__-__" 
+                       pattern="\+7\s?[\(]{0,1}\d{3}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}" 
+                       title="Формат: +7 (XXX) XXX-XX-XX"
+                       required>
+                <div class="hint" id="phone-hint"></div>
+            </label>
+        
+            <button id="submit-btn" type="submit">Отправить</button>
+        </form>
+    </div>
+
+      <footer class="footer">
+  <button class="scroll-to-top" id="scrollUp" aria-label="Прокрутить наверх">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+    </svg>
+    <div class="scroll-progress"></div>
+</button>
+  <div class="footer__container">
+    <div class="footer__logo">
+      <img src="assets/images/behoof_logo.png"> ГаджетТриум
+    </div>
+    
+    <nav class="footer__links">
+      <div class="footer__column">
+        <h3 class="footer__title">Пользователю</h3>
+        <ul class="footer__list">
+          <li><a href="#" class="footer__link">Магазины</a></li>
+          <li><a href="#" class="footer__link">Кредит и рассрочка</a></li>
+          <li><a href="#" class="footer__link">Акции</a></li>
+          <li><a href="#" class="footer__link">Условия оплаты и доставки</a></li>
+          <li><a href="#" class="footer__link">Гарантия и возрат</a></li>
+          <li><a href="#" class="footer__link">Правовая информация</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer__column">
+        <h3 class="footer__title">Популярные категории</h3>
+        <ul class="footer__list">
+          <li><a href="#" class="footer__link">Умные часы</a></li>
+          <li><a href="#" class="footer__link">Смартфоны</a></li>
+          <li><a href="#" class="footer__link">Ноутбуки</a></li>
+          <li><a href="#" class="footer__link">Аксессуары</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer__column">
+        <h3 class="footer__title">Команда ГаджетТриум</h3>
+        <ul class="footer__list">
+          <li><a href="#" class="footer__link">О компании</a></li>
+          <li><a href="#" class="footer__link">Вакансии</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h3 class="footer__title">Контакты</h3>
+        <ul class="footer__list">
+          <li><a href="#" class="footer__link">+79632937333</a></li>
+          <li><a href="#" class="footer__link">ilakabirov78@mail.ru</a></li>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+  <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+</svg>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="footer__copyright">
+      <p class="footer-p">Copyright © 2025 GadgetTrium, Inc. Все права защищены</p>
+    </div>
+  </div>
+</footer>
+
+<dialog class="form-container" id="formModal">
+    <button class="form-button" onclick="this.closest('.form-container').close()">
+        <img class="form-img"  src="assets/images/Krestiksvgpng.ru_.png" alt="">
+    </button>
+    
+    <form class="form">
+      <span class="title">Форма регистрации</span>
+        <input type="text" class="input" placeholder="Введите ваше имя">
+        <input type="email" class="input" placeholder="Введите вашу почту">
+        <input type="text" class="input" placeholder="Введите ваш номер телефона">
+                <div class="Gender">
+          <h5 class="pol">Выберите ваш пол</h5>
+          <div class="home-wrap">
+          <input type="radio" name="gender1" class="gender1" id="gender1">
+          <label for="gender1">Мужской</label>  
+          </div>
+          <div class="home-wrap">
+          <input type="radio" name="gender2" class="gender2" id="gender2">
+          <label for="gender2">Женский</label>  
+          </div>
+        </div>
+        <input type="password" class="input" placeholder="Введите ваш пароль"> 
+
+      <span class="sub">Вы уже зарегистрированы? <a href="sign-in.html">Войти</a></span>
+        <button>Зарегистрироваться</button>
+    </form>
+</dialog>
+
+<dialog class="form-container-2" id="formModal-2">
+    <button class="form-button" onclick="this.closest('.form-container-2').close()">
+        <img class="form-img"  src="assets/images/Krestiksvgpng.ru_.png" alt="">
+    </button>
+    <form class="form">
+      <span class="title">Форма входа</span>
+        <input type="email" class="input" placeholder="Введите вашу почту">
+        </div>
+        <input type="password" class="input" placeholder="Введите ваш пароль"> 
+
+      <span class="sub">Вы уже зарегистрированы? <a href="registration.html">Войти</a></span>
+        <button>войти</button>
+    </form>
+</dialog>
+  
+
+<script>
+    document.querySelector('.catalog-dropdown__toggle').addEventListener('click', function() {
+  const dropdown = this.closest('.catalog-dropdown');
+  dropdown.classList.toggle('open');
+  
+  // Обновляем aria-атрибуты
+  const isExpanded = dropdown.classList.contains('open');
+  this.setAttribute('aria-expanded', isExpanded);
+});
+
+// Закрытие при клике вне dropdown
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.catalog-dropdown')) {
+    const openDropdowns = document.querySelectorAll('.catalog-dropdown.open');
+    openDropdowns.forEach(dropdown => {
+      dropdown.classList.remove('open');
+      dropdown.querySelector('.catalog-dropdown__toggle').setAttribute('aria-expanded', 'false');
+    });
+  }
+});
+
+// Функционал кнопки
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.getElementById('scrollUp');
+    const scrollProgress = scrollButton.querySelector('.scroll-progress');
+    
+    // Показывать/скрывать кнопку при прокрутке
+    window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (scrollY / (documentHeight - windowHeight)) * 100;
+        
+        if (scrollY > 400) {
+            scrollButton.classList.add('show');
+            scrollButton.classList.add('show-progress');
+            
+            // Обновление индикатора прогресса
+            const circumference = 2 * Math.PI * 30; // радиус кнопки
+            const offset = circumference - (scrollPercentage / 100) * circumference;
+            scrollProgress.style.strokeDasharray = circumference;
+            scrollProgress.style.strokeDashoffset = offset;
+        } else {
+            scrollButton.classList.remove('show');
+            scrollButton.classList.remove('show-progress');
+        }
+    });
+    
+    // Плавная прокрутка наверх
+    scrollButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // Микро-анимация при клике
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});
+
+// Функционал кнопки
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.getElementById('scrollUp');
+    const scrollProgress = scrollButton.querySelector('.scroll-progress');
+    
+    // Показывать/скрывать кнопку при прокрутке
+    window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (scrollY / (documentHeight - windowHeight)) * 100;
+        
+        if (scrollY > 400) {
+            scrollButton.classList.add('show');
+            scrollButton.classList.add('show-progress');
+            
+            // Обновление индикатора прогресса
+            const circumference = 2 * Math.PI * 30; // радиус кнопки
+            const offset = circumference - (scrollPercentage / 100) * circumference;
+            scrollProgress.style.strokeDasharray = circumference;
+            scrollProgress.style.strokeDashoffset = offset;
+        } else {
+            scrollButton.classList.remove('show');
+            scrollButton.classList.remove('show-progress');
+        }
+    });
+    
+    // Плавная прокрутка наверх
+    scrollButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // Микро-анимация при клике
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});
+</script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+
+</body>
+
+</html>

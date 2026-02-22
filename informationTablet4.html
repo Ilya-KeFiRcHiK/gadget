@@ -133,7 +133,7 @@ foreach($rows as $row ){
         <div class="swiper mySwiper" role="region" aria-label="Галерея товара">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="assets/images/xiaomi-pad-7.webp" alt="Apple iPhone 13 Pro Max серый, вид спереди" itemprop="image">
+              <img src="assets/images/xiaomi-redmi-pad-pro.webp" alt="Apple iPhone 13 Pro Max серый, вид спереди" itemprop="image">
             </div>
           </div>
         </div>
@@ -142,7 +142,7 @@ foreach($rows as $row ){
       
       <!-- Правая колонка с информацией -->
       <div class="information-right">
-        <h1 itemprop="name">Планшет Xiaomi Pad 7</h1>
+        <h1 itemprop="name">12.1" Планшет Xiaomi Redmi Pad Pro Wi-Fi 128 ГБ серый</h1>
         
         <div class="information-answers">
           <p class="answer">
@@ -157,7 +157,7 @@ foreach($rows as $row ){
             <span itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
               <meta itemprop="ratingValue" content="4.0">
               <meta itemprop="reviewCount" content="447">
-              <span aria-label="Рейтинг 4 из 5">4.75</span>
+              <span aria-label="Рейтинг 4 из 5">4.82</span>
             </span>
             
             <div class="information-stars" aria-hidden="true">
@@ -170,7 +170,7 @@ foreach($rows as $row ){
             
             <p>
               <a href="#reviews" class="reviews-link">
-                <span itemprop="reviewCount">433</span> отзывов
+                <span itemprop="reviewCount">580</span> отзывов
               </a>
             </p>
           </div>
@@ -179,7 +179,7 @@ foreach($rows as $row ){
         <div class="information-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
           <h3>
             <span itemprop="priceCurrency" content="RUB">₽</span>
-            <span itemprop="price" content="78999">30 320</span> p.
+            <span itemprop="price" content="78999">28 100</span> p.
           </h3>
           <meta itemprop="availability" content="https://schema.org/InStock">
           <meta itemprop="priceValidUntil" content="2024-12-31">
@@ -195,7 +195,7 @@ foreach($rows as $row ){
           </div>
         
       
-        <h3>Характеристики Планшет Xiaomi Pad 7 серый</h3>
+        <h3>Характеристики 12.1" Планшет Xiaomi Redmi Pad Pro Wi-Fi 128 ГБ серый</h3>
 
         <div class="specs-card" itemprop="description">
   <dl>
@@ -208,12 +208,14 @@ foreach($rows as $row ){
 </div>
 
 <div class="specs-header">
-  <a href="characteristicTablet1.html" class="all-specs-link">Все характеристики</a>
+  <a href="characteristicTablet4.html" class="all-specs-link">Все характеристики</a>
 </div>
 
 <h4>Описание</h4>
         <div itemprop="description">
-          <p>Самые тонкие Galaxy Watch в истории произведут на вас незабываемое впечатление. Благодаря обновленному дизайну корпуса и усовершенствованной системе крепления ремешка Dynamic Lug Galaxy Watch8 стали еще комфортнее в ношении, а 3-нм процессор гарантирует великолепную производительность. Оцените также и преимущества персонализированных рекомендаций — советы по сну, беговым тренировкам и комплексному подходу к здоровью теперь прямо на вашем запястье. Наслаждайтесь каждым моментом благодаря Galaxy AI в сочетании с интерфейсом One UI.</p>
+          <p>Планшет Redmi Pad Pro Wi-Fi 128 ГБ 12.1” поставляется в алюминиевом корпусе серого цвета. Экран закрыт стеклом Corning Gorilla Glass 3, которое отличает высокая устойчивость к царапинам и трещинам — испытания показали, что оно остается целым при падении на твердые поверхносости с высоты не более 1 м. Предусмотрена система биометрической идентификации путем сканирования лица. Такая защита предотвратит доступ сторонних лиц к личным данным, хранящимся на устройстве.
+Планшет Redmi Pad Pro оснащен экраном диагональю 12.1” дюйма с разрешением 2560×1600 и IPS-матрицей. IPS-экран передает насыщенные и точные цвета, на нем комфортно работать с графикой и мультимедийным контентом. 4 динамика и технология Dolby Atmos формируют объемное, живое звучание во всех диапазонах без дефектов. А поддержка формата Hi-Res Audio помогает прослушивать аудиофайлы в исходом виде, какими они были до сжатия, различать нюансы оригинальной студийной записи.
+Интеллектуальная оболочка ОС Android HyperOS получила аппаратное шифрование передачи данных, надежно защищает данные пользователей от злоумышленников.</p>
         </div>
 
   </main>
@@ -714,16 +716,114 @@ foreach($rows as $row ){
 </dialog>
   
 
-  <script>
-    const myCarouselElement = document.querySelector('#myCarousel')
+<script>
+    document.querySelector('.catalog-dropdown__toggle').addEventListener('click', function() {
+  const dropdown = this.closest('.catalog-dropdown');
+  dropdown.classList.toggle('open');
+  
+  // Обновляем aria-атрибуты
+  const isExpanded = dropdown.classList.contains('open');
+  this.setAttribute('aria-expanded', isExpanded);
+});
 
-    const carousel = new bootstrap.Carousel(myCarouselElement, {
-      interval: 5000,
-      touch: false
-    })
-  </script>
+// Закрытие при клике вне dropdown
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.catalog-dropdown')) {
+    const openDropdowns = document.querySelectorAll('.catalog-dropdown.open');
+    openDropdowns.forEach(dropdown => {
+      dropdown.classList.remove('open');
+      dropdown.querySelector('.catalog-dropdown__toggle').setAttribute('aria-expanded', 'false');
+    });
+  }
+});
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+// Функционал кнопки
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.getElementById('scrollUp');
+    const scrollProgress = scrollButton.querySelector('.scroll-progress');
+    
+    // Показывать/скрывать кнопку при прокрутке
+    window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (scrollY / (documentHeight - windowHeight)) * 100;
+        
+        if (scrollY > 400) {
+            scrollButton.classList.add('show');
+            scrollButton.classList.add('show-progress');
+            
+            // Обновление индикатора прогресса
+            const circumference = 2 * Math.PI * 30; // радиус кнопки
+            const offset = circumference - (scrollPercentage / 100) * circumference;
+            scrollProgress.style.strokeDasharray = circumference;
+            scrollProgress.style.strokeDashoffset = offset;
+        } else {
+            scrollButton.classList.remove('show');
+            scrollButton.classList.remove('show-progress');
+        }
+    });
+    
+    // Плавная прокрутка наверх
+    scrollButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // Микро-анимация при клике
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});
+
+// Функционал кнопки
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.getElementById('scrollUp');
+    const scrollProgress = scrollButton.querySelector('.scroll-progress');
+    
+    // Показывать/скрывать кнопку при прокрутке
+    window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (scrollY / (documentHeight - windowHeight)) * 100;
+        
+        if (scrollY > 400) {
+            scrollButton.classList.add('show');
+            scrollButton.classList.add('show-progress');
+            
+            // Обновление индикатора прогресса
+            const circumference = 2 * Math.PI * 30; // радиус кнопки
+            const offset = circumference - (scrollPercentage / 100) * circumference;
+            scrollProgress.style.strokeDasharray = circumference;
+            scrollProgress.style.strokeDashoffset = offset;
+        } else {
+            scrollButton.classList.remove('show');
+            scrollButton.classList.remove('show-progress');
+        }
+    });
+    
+    // Плавная прокрутка наверх
+    scrollButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // Микро-анимация при клике
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});
+</script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
     var swiper = new Swiper(".mySwiper", {

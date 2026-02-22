@@ -91,3 +91,4 @@ document.addEventListener('DOMContentLoaded', () => {
         nameInput.style.borderColor = isValid ? '#ddd' : 'red';
     });
 });
+
