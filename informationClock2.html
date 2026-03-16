@@ -231,11 +231,11 @@ foreach($rows as $row ){
 
         <div class="specs-card" itemprop="description">
   <dl>
-    <div class="spec-item"><dt>Камера</dt><dd>48 MPx</dd></div>
-    <div class="spec-item"><dt>Система</dt><dd>iOS</dd></div>
-    <div class="spec-item"><dt>Диагональ</dt><dd>6,1"</dd></div>
-    <div class="spec-item"><dt>Память</dt><dd>256 ГБ</dd></div>
-    <div class="spec-item"><dt>Гарантия</dt><dd>12 мес.</dd></div>
+    <div class="spec-item"><dt>Экран</dt><dd>1.34" Super AMOLED, 438x438</dd></div>
+    <div class="spec-item"><dt>Измерения</dt><dd>артериальное давление, количество шагов, потраченные калории</dd></div>
+    <div class="spec-item"><dt>Степень защиты</dt><dd>IP68</dd></div>
+    <div class="spec-item"><dt>Беспроводная связь</dt><dd>Bluetooth, NFC, Wi-Fi</dd></div>
+    <div class="spec-item"><dt>Навигация</dt><dd>A-GPS, BeiDou, Galileo, GPS</dd></div>
   </dl>
 </div>
 
@@ -774,6 +774,48 @@ foreach($rows as $row ){
           swiper: swiper,
         },
       });
+
+      // Функционал кнопки
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.getElementById('scrollUp');
+    const scrollProgress = scrollButton.querySelector('.scroll-progress');
+    
+    // Показывать/скрывать кнопку при прокрутке
+    window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (scrollY / (documentHeight - windowHeight)) * 100;
+        
+        if (scrollY > 400) {
+            scrollButton.classList.add('show');
+            scrollButton.classList.add('show-progress');
+            
+            // Обновление индикатора прогресса
+            const circumference = 2 * Math.PI * 30; // радиус кнопки
+            const offset = circumference - (scrollPercentage / 100) * circumference;
+            scrollProgress.style.strokeDasharray = circumference;
+            scrollProgress.style.strokeDashoffset = offset;
+        } else {
+            scrollButton.classList.remove('show');
+            scrollButton.classList.remove('show-progress');
+        }
+    });
+    
+    // Плавная прокрутка наверх
+    scrollButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // Микро-анимация при клике
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});
     </script>
 
 </body>

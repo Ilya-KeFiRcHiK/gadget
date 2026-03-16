@@ -130,13 +130,46 @@ foreach($rows as $row ){
       <!-- Левая колонка с галереей -->
       <div class="information-left">
         <!-- Основной слайдер -->
-        <div class="swiper mySwiper" role="region" aria-label="Галерея товара">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="assets/images/Apple-Watch-SE-3.webp" alt="Apple iPhone 13 Pro Max серый, вид спереди" itemprop="image">
+         <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper informationSwiper2">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="assets/images/Apple-Watch-SE-3.webp" />
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/Apple-Watch-SE-3-2.webp" />
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/Apple-Watch-SE-3-3.webp" />
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/Apple-Watch-SE-3-4.webp" />
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/Apple-Watch-SE-3-5.webp" />
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+          <div thumbsSlider="" class="swiper informationSwiper1">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="assets/images/Apple-Watch-SE-3.webp" />
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/Apple-Watch-SE-3-2.webp" />
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/Apple-Watch-SE-3-3.webp" />
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/Apple-Watch-SE-3-4.webp" />
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/Apple-Watch-SE-3-5.webp" />
+              </div>
             </div>
           </div>
-        </div>
         
       </div>
       
@@ -199,11 +232,11 @@ foreach($rows as $row ){
 
         <div class="specs-card" itemprop="description">
   <dl>
-    <div class="spec-item"><dt>Камера</dt><dd>48 MPx</dd></div>
-    <div class="spec-item"><dt>Система</dt><dd>iOS</dd></div>
-    <div class="spec-item"><dt>Диагональ</dt><dd>6,1"</dd></div>
-    <div class="spec-item"><dt>Память</dt><dd>256 ГБ</dd></div>
-    <div class="spec-item"><dt>Гарантия</dt><dd>12 мес.</dd></div>
+    <div class="spec-item"><dt>Экран</dt><dd>1.57" OLED, 394x324</dd></div>
+    <div class="spec-item"><dt>Измерения</dt><dd>продолжительность и качество сна, пульс, уровень стресса и </dd></div>
+    <div class="spec-item"><dt>Время работы</dt><dd>32 ч</dd></div>
+    <div class="spec-item"><dt>Беспроводная связь</dt><dd>Bluetooth, NFC, Wi-Fi</dd></div>
+    <div class="spec-item"><dt>Навигация</dt><dd>BeiDou, Galileo, GPS, QZSS</dd></div>
   </dl>
 </div>
 
@@ -728,12 +761,66 @@ foreach($rows as $row ){
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <script>
-    var swiper = new Swiper(".mySwiper", {
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
+
+    var swiper = new Swiper(".informationSwiper1", {
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+      });
+      var swiper2 = new Swiper(".informationSwiper2", { 
+        spaceBetween: 10,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+          swiper: swiper,
+        },
+      });
+    
+
+    // Функционал кнопки
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.getElementById('scrollUp');
+    const scrollProgress = scrollButton.querySelector('.scroll-progress');
+    
+    // Показывать/скрывать кнопку при прокрутке
+    window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (scrollY / (documentHeight - windowHeight)) * 100;
+        
+        if (scrollY > 400) {
+            scrollButton.classList.add('show');
+            scrollButton.classList.add('show-progress');
+            
+            // Обновление индикатора прогресса
+            const circumference = 2 * Math.PI * 30; // радиус кнопки
+            const offset = circumference - (scrollPercentage / 100) * circumference;
+            scrollProgress.style.strokeDasharray = circumference;
+            scrollProgress.style.strokeDashoffset = offset;
+        } else {
+            scrollButton.classList.remove('show');
+            scrollButton.classList.remove('show-progress');
+        }
     });
+    
+    // Плавная прокрутка наверх
+    scrollButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // Микро-анимация при клике
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});
   </script>
 
 </body>

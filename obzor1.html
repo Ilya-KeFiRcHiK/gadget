@@ -176,7 +176,7 @@ foreach($rows as $row ){
                             <ul class="feature-list">
                                 <li class="feature-item">Экран 15"</li>
                                 <li class="feature-item">Камера 13 МП</li>
-                                <li class="feature-item">Управление умным домом</li>
+                                <li class="feature-item">Управление домом</li>
                             </ul>
                         </div>
                     </article>
@@ -273,7 +273,7 @@ foreach($rows as $row ){
                             <ul class="feature-list">
                                 <li class="feature-item">Навигация LIDAR</li>
                                 <li class="feature-item">Мойка полов</li>
-                                <li class="feature-item">Управление через приложение</li>
+                                <li class="feature-item">Умное приложение</li>
                             </ul>
                         </div>
                     </article>
@@ -286,7 +286,7 @@ foreach($rows as $row ){
                             <h3 class="phone-name">Philips Airfryer XXL</h3>
                             <p class="phone-description">Приготовление с горячим воздухом без масла, 7 предустановленных программ, дистанционное управление.</p>
                             <ul class="feature-list">
-                                <li class="feature-item">Приготовление без масла</li>
+                                <li class="feature-item">Готовит без масла</li>
                                 <li class="feature-item">7 программ</li>
                                 <li class="feature-item">Умное управление</li>
                             </ul>
@@ -782,6 +782,48 @@ document.addEventListener('DOMContentLoaded', function() {
         delay: 5000,
       },
     });
+
+    // Функционал кнопки
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.getElementById('scrollUp');
+    const scrollProgress = scrollButton.querySelector('.scroll-progress');
+    
+    // Показывать/скрывать кнопку при прокрутке
+    window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (scrollY / (documentHeight - windowHeight)) * 100;
+        
+        if (scrollY > 400) {
+            scrollButton.classList.add('show');
+            scrollButton.classList.add('show-progress');
+            
+            // Обновление индикатора прогресса
+            const circumference = 2 * Math.PI * 30; // радиус кнопки
+            const offset = circumference - (scrollPercentage / 100) * circumference;
+            scrollProgress.style.strokeDasharray = circumference;
+            scrollProgress.style.strokeDashoffset = offset;
+        } else {
+            scrollButton.classList.remove('show');
+            scrollButton.classList.remove('show-progress');
+        }
+    });
+    
+    // Плавная прокрутка наверх
+    scrollButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // Микро-анимация при клике
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});
   </script>
   <script src="JS/script.js"></script>
 </body>

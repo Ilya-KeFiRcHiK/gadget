@@ -142,13 +142,13 @@ foreach($rows as $row ){
     <!-- Первый ряд (4 карточки) -->
     <div class="product-card">
       <div class="product-image">
-        <img src="assets/images/Samsung-Galaxy-Book5-Pro.webp" alt="Xiaomi POCO X7 Pro">
+        <img src="assets/images/Samsung-Galaxy-Book5-Pro-360-NP960QHA.webp" alt="Xiaomi POCO X7 Pro">
       </div>
       <div class="product-card-goods">
       <h2 class="product-title">16" Ноутбук Samsung Galaxy Book5 Pro 360 NP960QHA</h2>
       <p class="product-description">ОЗУ/32 ГБ, SSD/1000 ГБ</p>
       <div class="price-container">
-        <span class="current-price">214 999 ₽</span>
+        <span class="current-price">193 999 ₽</span>
       </div>
       <div class="availability">Доступно</div>
       <button class="add-to-cart">В корзину</button>  
@@ -389,7 +389,7 @@ foreach($rows as $row ){
       <h2 class="product-title">18" Ноутбук ASUS TUF Gaming FA808UP-S8030</h2>
       <p class="product-description">ОЗУ/32 ГБ, SSD/1000 ГБ, серый</p>
       <div class="price-container">
-        <span class="current-price">166 999 ₽</span>
+        <span class="current-price">179 999 ₽</span>
       </div>
       <div class="availability">Доступно</div>
       <button class="add-to-cart">В корзину</button>
@@ -746,6 +746,48 @@ document.addEventListener('DOMContentLoaded', function() {
         delay: 5000,
       },
     });
+
+    // Функционал кнопки
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.getElementById('scrollUp');
+    const scrollProgress = scrollButton.querySelector('.scroll-progress');
+    
+    // Показывать/скрывать кнопку при прокрутке
+    window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (scrollY / (documentHeight - windowHeight)) * 100;
+        
+        if (scrollY > 400) {
+            scrollButton.classList.add('show');
+            scrollButton.classList.add('show-progress');
+            
+            // Обновление индикатора прогресса
+            const circumference = 2 * Math.PI * 30; // радиус кнопки
+            const offset = circumference - (scrollPercentage / 100) * circumference;
+            scrollProgress.style.strokeDasharray = circumference;
+            scrollProgress.style.strokeDashoffset = offset;
+        } else {
+            scrollButton.classList.remove('show');
+            scrollButton.classList.remove('show-progress');
+        }
+    });
+    
+    // Плавная прокрутка наверх
+    scrollButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // Микро-анимация при клике
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});
   </script>
   <script src="JS/script.js"></script>
 </body>

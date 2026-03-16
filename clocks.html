@@ -136,7 +136,7 @@ foreach($rows as $row ){
     <!-- Первый ряд (4 карточки) -->
     <div class="product-card">
       <div class="product-image">
-        <img src="assets/images/Samsung-Galaxy-Watch8.webp" alt="Xiaomi POCO X7 Pro">
+        <a href="informationClock1.html"><img src="assets/images/Samsung-Galaxy-Watch8.webp" alt="Xiaomi POCO X7 Pro"></a>
       </div>
       <div class="product-card-goods">
       <h2 class="product-title">Смарт-часы Samsung Galaxy Watch8 40 mm LTE</h2>
@@ -151,7 +151,7 @@ foreach($rows as $row ){
 
     <div class="product-card">
       <div class="product-image">
-        <img src="assets/images/Samsung-Galaxy-Watch8-Classic.webp" alt="Galaxy Watch Ultra">
+        <a href="informationClock2.html"><img src="assets/images/Samsung-Galaxy-Watch8-Classic.webp" alt="Galaxy Watch Ultra"></a>
       </div>
       <div class="product-card-goods">
        <h2 class="product-title">Смарт-часы Samsung Galaxy Watch8 Classic 46 mm LTE</h2>
@@ -166,7 +166,7 @@ foreach($rows as $row ){
 
     <div class="product-card">
       <div class="product-image">
-        <img src="assets/images/Samsung-Galaxy-Watch-Ultra-2025.webp" alt="Наушники JBL">
+        <a href="informationClock3.html"><img src="assets/images/Samsung-Galaxy-Watch-Ultra-2025.webp" alt="Наушники JBL"></a>
       </div>
       <div class="product-card-goods">
        <h2 class="product-title">Смарт-часы Samsung Galaxy Watch Ultra 2025 47 mm LTE</h2>
@@ -181,7 +181,7 @@ foreach($rows as $row ){
 
     <div class="product-card">
       <div class="product-image">
-        <img src="assets/images/Samsung-Galaxy-Fit3.webp" alt="Ноутбук Huawei">
+        <a href="informationClock4.html"><img src="assets/images/Samsung-Galaxy-Fit3.webp" alt="Ноутбук Huawei"></a>
       </div>
       <div class="product-card-goods">
        <h2 class="product-title">Смарт-часы Samsung Galaxy Fit3</h2>
@@ -198,7 +198,7 @@ foreach($rows as $row ){
     <!-- Второй ряд (4 карточки) -->
     <div class="product-card">
       <div class="product-image">
-        <img src="assets/images/Apple-Watch-SE-3.webp" alt="Планшет Huawei">
+        <a href="informationClock5.html"><img src="assets/images/Apple-Watch-SE-3.webp" alt="Планшет Huawei"></a>
       </div>
       <div class="product-card-goods">
        <h2 class="product-title">Смарт-часы Apple Watch SE 3 40 mm</h2>
@@ -798,6 +798,48 @@ document.addEventListener('DOMContentLoaded', function() {
         delay: 5000,
       },
     });
+
+    // Функционал кнопки
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.getElementById('scrollUp');
+    const scrollProgress = scrollButton.querySelector('.scroll-progress');
+    
+    // Показывать/скрывать кнопку при прокрутке
+    window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (scrollY / (documentHeight - windowHeight)) * 100;
+        
+        if (scrollY > 400) {
+            scrollButton.classList.add('show');
+            scrollButton.classList.add('show-progress');
+            
+            // Обновление индикатора прогресса
+            const circumference = 2 * Math.PI * 30; // радиус кнопки
+            const offset = circumference - (scrollPercentage / 100) * circumference;
+            scrollProgress.style.strokeDasharray = circumference;
+            scrollProgress.style.strokeDashoffset = offset;
+        } else {
+            scrollButton.classList.remove('show');
+            scrollButton.classList.remove('show-progress');
+        }
+    });
+    
+    // Плавная прокрутка наверх
+    scrollButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // Микро-анимация при клике
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});
   </script>
   <script src="JS/script.js"></script>
 </body>

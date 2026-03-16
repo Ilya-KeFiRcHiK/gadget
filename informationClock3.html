@@ -132,19 +132,19 @@ foreach($rows as $row ){
         <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper informationSwiper2">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="assets/images/Samsung-Galaxy-Watch8-Classic.webp" />
+                <img src="assets/images/Samsung-Galaxy-Watch-Ultra-2025.webp" />
               </div>
               <div class="swiper-slide">
-                <img src="assets/images/Samsung-Galaxy-Watch8-Classic-2.webp" />
+                <img src="assets/images/Samsung-Galaxy-Watch-Ultra-2025-2.webp" />
               </div>
               <div class="swiper-slide">
-                <img src="assets/images/Samsung-Galaxy-Watch8-Classic-3.webp" />
+                <img src="assets/images/Samsung-Galaxy-Watch-Ultra-2025-3.webp" />
               </div>
               <div class="swiper-slide">
-                <img src="assets/images/Samsung-Galaxy-Watch8-Classic-4.webp" />
+                <img src="assets/images/Samsung-Galaxy-Watch-Ultra-2025-4.webp" />
               </div>
               <div class="swiper-slide">
-                <img src="assets/images/Samsung-Galaxy-Watch8-Classic-5.webp" />
+                <img src="assets/images/Samsung-Galaxy-Watch-Ultra-2025-5.webp" />
               </div>
             </div>
             <div class="swiper-button-next"></div>
@@ -153,19 +153,19 @@ foreach($rows as $row ){
           <div thumbsSlider="" class="swiper informationSwiper1">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="assets/images/Samsung-Galaxy-Watch8-Classic.webp" />
+                <img src="assets/images/Samsung-Galaxy-Watch-Ultra-2025.webp" />
               </div>
               <div class="swiper-slide">
-                <img src="assets/images/Samsung-Galaxy-Watch8-Classic-2.webp" />
+                <img src="assets/images/Samsung-Galaxy-Watch-Ultra-2025-2.webp" />
               </div>
               <div class="swiper-slide">
-                <img src="assets/images/Samsung-Galaxy-Watch8-Classic-3.webp" />
+                <img src="assets/images/Samsung-Galaxy-Watch-Ultra-2025-3.webp" />
               </div>
               <div class="swiper-slide">
-                <img src="assets/images/Samsung-Galaxy-Watch8-Classic-4.webp" />
+                <img src="assets/images/Samsung-Galaxy-Watch-Ultra-2025-4.webp" />
               </div>
               <div class="swiper-slide">
-                <img src="assets/images/Samsung-Galaxy-Watch8-Classic-5.webp" />
+                <img src="assets/images/Samsung-Galaxy-Watch-Ultra-2025-5.webp" />
               </div>
             </div>
           </div>
@@ -231,11 +231,12 @@ foreach($rows as $row ){
 
         <div class="specs-card" itemprop="description">
   <dl>
-    <div class="spec-item"><dt>Камера</dt><dd>48 MPx</dd></div>
-    <div class="spec-item"><dt>Система</dt><dd>iOS</dd></div>
-    <div class="spec-item"><dt>Диагональ</dt><dd>6,1"</dd></div>
-    <div class="spec-item"><dt>Память</dt><dd>256 ГБ</dd></div>
-    <div class="spec-item"><dt>Гарантия</dt><dd>12 мес.</dd></div>
+    <div class="spec-item"><dt>Экран</dt><dd>1.47" Super AMOLED, 480x480</dd></div>
+    <div class="spec-item"><dt>Измерения</dt><dd>артериальное давление, количество шагов, потраченные </dd></div>
+    <div class="spec-item"><dt>Степень защиты</dt><dd>IP68</dd></div>
+    <div class="spec-item"><dt>Время работы</dt><dd>100 ч</dd></div>
+    <div class="spec-item"><dt>Беспроводная связь</dt><dd>Bluetooth, NFC, Wi-Fi</dd></div>
+    <div class="spec-item"><dt>Навигация</dt><dd>A-GPS, GPS, ГЛОНАСС</dd></div>
   </dl>
 </div>
 
@@ -255,32 +256,23 @@ foreach($rows as $row ){
   <!-- Подключение Swiper и инициализация -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    // Инициализация Swiper с улучшенными настройками
-    document.addEventListener('DOMContentLoaded', function() {
-      const swiper = new Swiper('.mySwiper', {
-        loop: true,
+
+    var swiper = new Swiper(".informationSwiper1", {
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+      });
+      var swiper2 = new Swiper(".informationSwiper2", { 
+        spaceBetween: 10,
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-        },
-        keyboard: {
-          enabled: true,
-        },
-        a11y: {
-          prevSlideMessage: 'Предыдущий слайд',
-          nextSlideMessage: 'Следующий слайд',
-          firstSlideMessage: 'Это первый слайд',
-          lastSlideMessage: 'Это последний слайд',
+        thumbs: {
+          swiper: swiper,
         },
       });
-      
-      // Сохраняем экземпляр Swiper для использования в миниатюрах
-      document.querySelector('.mySwiper').swiper = swiper;
-    });
 
     // Функция переключения объема памяти
     function changeMemory(button, memorySize) {
@@ -766,6 +758,48 @@ foreach($rows as $row ){
         prevEl: ".swiper-button-prev",
       },
     });
+
+    // Функционал кнопки
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.getElementById('scrollUp');
+    const scrollProgress = scrollButton.querySelector('.scroll-progress');
+    
+    // Показывать/скрывать кнопку при прокрутке
+    window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (scrollY / (documentHeight - windowHeight)) * 100;
+        
+        if (scrollY > 400) {
+            scrollButton.classList.add('show');
+            scrollButton.classList.add('show-progress');
+            
+            // Обновление индикатора прогресса
+            const circumference = 2 * Math.PI * 30; // радиус кнопки
+            const offset = circumference - (scrollPercentage / 100) * circumference;
+            scrollProgress.style.strokeDasharray = circumference;
+            scrollProgress.style.strokeDashoffset = offset;
+        } else {
+            scrollButton.classList.remove('show');
+            scrollButton.classList.remove('show-progress');
+        }
+    });
+    
+    // Плавная прокрутка наверх
+    scrollButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // Микро-анимация при клике
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});
   </script>
 
 </body>

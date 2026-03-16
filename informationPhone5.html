@@ -198,11 +198,12 @@ foreach($rows as $row ){
         
 <div class="specs-card" itemprop="description">
   <dl>
-    <div class="spec-item"><dt>Камера</dt><dd>48 MPx</dd></div>
-    <div class="spec-item"><dt>Система</dt><dd>iOS</dd></div>
-    <div class="spec-item"><dt>Диагональ</dt><dd>6,1"</dd></div>
-    <div class="spec-item"><dt>Память</dt><dd>256 ГБ</dd></div>
-    <div class="spec-item"><dt>Гарантия</dt><dd>12 мес.</dd></div>
+    <div class="spec-item"><dt>Дисплей</dt><dd>6.7", 2340x1080, Super AMOLED, 120 Гц</dd></div>
+    <div class="spec-item"><dt>Связь</dt><dd>3G, 4G, 5G, eSIM, Nano-SIM</dd></div>
+    <div class="spec-item"><dt>Процессор</dt><dd>Samsung Exynos 1580, 8 x 2.9 ГГц</dd></div>
+    <div class="spec-item"><dt>Память (ОЗУ/ПЗУ)</dt><dd>8 ГБ / 256 ГБ</dd></div>
+    <div class="spec-item"><dt>Камера</dt><dd>50+12+5 Мп</dd></div>
+    <div class="spec-item"><dt>Питание</dt><dd>5000 мА*ч (Li-Pol)</dd></div>
   </dl>
 </div>
 
@@ -223,32 +224,22 @@ foreach($rows as $row ){
   <!-- Подключение Swiper и инициализация -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    // Инициализация Swiper с улучшенными настройками
-    document.addEventListener('DOMContentLoaded', function() {
-      const swiper = new Swiper('.mySwiper', {
-        loop: true,
+    var swiper = new Swiper(".informationSwiper1", {
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+      });
+      var swiper2 = new Swiper(".informationSwiper2", { 
+        spaceBetween: 10,
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-        },
-        keyboard: {
-          enabled: true,
-        },
-        a11y: {
-          prevSlideMessage: 'Предыдущий слайд',
-          nextSlideMessage: 'Следующий слайд',
-          firstSlideMessage: 'Это первый слайд',
-          lastSlideMessage: 'Это последний слайд',
+        thumbs: {
+          swiper: swiper,
         },
       });
-      
-      // Сохраняем экземпляр Swiper для использования в миниатюрах
-      document.querySelector('.mySwiper').swiper = swiper;
-    });
 
     // Функция переключения объема памяти
     function changeMemory(button, memorySize) {

@@ -102,7 +102,7 @@ foreach($rows as $row ){
     <!-- Первый ряд (4 карточки) -->
     <div class="product-card">
       <div class="product-image">
-        <img src="assets/images/poco-yellow.webp" alt="Xiaomi POCO X7 Pro">
+        <a href="informationPhone1.html"><img src="assets/images/poco-yellow.webp" alt="Xiaomi POCO X7 Pro"></a>
       </div>
       <div class="product-card-goods">
        <h2 class="product-title">Смартфон Xiaomi POCO X7 Pro </h2>
@@ -118,7 +118,7 @@ foreach($rows as $row ){
 
     <div class="product-card">
       <div class="product-image">
-        <img src="assets/images/Xiaomi-redmi-note.webp" alt="Galaxy Watch Ultra">
+        <a href="informationPhone2.html"><img src="assets/images/Xiaomi-redmi-note.webp" alt="Galaxy Watch Ultra"></a>
       </div>
       <div class="product-card-goods">
        <h2 class="product-title">Смартфон Xiaomi Redmi Note 14 Pro Plus 5G</h2>
@@ -134,7 +134,7 @@ foreach($rows as $row ){
 
     <div class="product-card">
       <div class="product-image">
-        <img src="assets/images/Xiaomi-redmi-15.webp" alt="Наушники JBL">
+        <a href="informationPhone3.html"><img src="assets/images/Xiaomi-redmi-15.webp" alt="Наушники JBL"></a>
       </div>
       <div class="product-card-goods">
        <h2 class="product-title">Смартфон Xiaomi Redmi 15 4G</h2>
@@ -150,7 +150,7 @@ foreach($rows as $row ){
 
     <div class="product-card">
       <div class="product-image">
-        <img src="assets/images/xiaomi-note-14.webp" alt="Ноутбук Huawei">
+        <a href="informationPhone4.html"><img src="assets/images/xiaomi-note-14.webp" alt="Ноутбук Huawei"></a>
       </div>
       <div class="product-card-goods">
        <h2 class="product-title">Смартфон Xiaomi Redmi Note 14 Pro 4G</h2>
@@ -237,7 +237,7 @@ foreach($rows as $row ){
        <h2 class="product-title">Смартфон Apple iPhone 17 Pro</h2>
       <p class="product-description">256 ГБ, Космический оранжевый Dual</p>
       <div class="price-container">
-        <span class="current-price">102 540 ₽</span>
+        <span class="current-price">154 999 ₽</span>
       </div>
       <div class="availability">Доступно</div>
       <button class="add-to-cart">В корзину</button> 
@@ -253,7 +253,7 @@ foreach($rows as $row ){
        <h2 class="product-title">Смартфон Apple iPhone 17 Pro Max</h2>
       <p class="product-description">512 ГБ, Глубокий синий Dual eSIM</p>
       <div class="price-container">
-        <span class="current-price">125 540 ₽</span>
+        <span class="current-price">170 999 ₽</span>
       </div>
       <div class="availability">Доступно</div>
       <button class="add-to-cart">В корзину</button> 
@@ -765,6 +765,48 @@ document.addEventListener('DOMContentLoaded', function() {
         delay: 5000,
       },
     });
+
+    // Функционал кнопки
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.getElementById('scrollUp');
+    const scrollProgress = scrollButton.querySelector('.scroll-progress');
+    
+    // Показывать/скрывать кнопку при прокрутке
+    window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (scrollY / (documentHeight - windowHeight)) * 100;
+        
+        if (scrollY > 400) {
+            scrollButton.classList.add('show');
+            scrollButton.classList.add('show-progress');
+            
+            // Обновление индикатора прогресса
+            const circumference = 2 * Math.PI * 30; // радиус кнопки
+            const offset = circumference - (scrollPercentage / 100) * circumference;
+            scrollProgress.style.strokeDasharray = circumference;
+            scrollProgress.style.strokeDashoffset = offset;
+        } else {
+            scrollButton.classList.remove('show');
+            scrollButton.classList.remove('show-progress');
+        }
+    });
+    
+    // Плавная прокрутка наверх
+    scrollButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // Микро-анимация при клике
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});
   </script>
   <script src="JS/script.js"></script>
 </body>

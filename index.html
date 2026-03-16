@@ -59,12 +59,6 @@ foreach($rows as $row ){
       <button class="button-search"><img src="assets/images/search.svg" alt=""></button>
     </form>
   </div>
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-</svg>
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
-  <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"/>
-</svg>
 <svg onclick="document.getElementById('formModal').showModal()" xmlns="http://www.w3.org/2000/svg"  href="registration.html" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
   <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
   <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
@@ -86,7 +80,7 @@ foreach($rows as $row ){
         <li class="top-nav-li"><a class="top-nav-link" href="vacancy.html">Вакансии</a></li>
         <li class="top-nav-li"><a class="top-nav-link" href="obzor1.html">Обзоры</a></li>
         <li class="top-nav-li"><a class="top-nav-link" href="contacts.html">Контакты</a></li>
-        <li class="top-nav-li"><a class="top-nav-link" href="help.html">Помощь</a></li>
+        <li class="top-nav-li"><a class="top-nav-link" href="help.html">Гарантии</a></li>
        </ul>
 </nav>
   
@@ -94,12 +88,12 @@ foreach($rows as $row ){
     <div class="catalog-dropdown__categories">
       <section class="catalog-dropdown__category">
         <ul class="catalog-dropdown__list">
-          <li><a href="#" class="catalog-dropdown__link">Смартфоны</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Умные часы</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Наушники</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Ноутбуки</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Планшеты</a></li>
-          <li><a href="#" class="catalog-dropdown__link">Портативные колонки</a></li>
+          <li><a href="telephones.html" class="catalog-dropdown__link">Смартфоны</a></li>
+          <li><a href="clocks.html" class="catalog-dropdown__link">Умные часы</a></li>
+          <li><a href="headphones.html" class="catalog-dropdown__link">Наушники</a></li>
+          <li><a href="notebooks.html" class="catalog-dropdown__link">Ноутбуки</a></li>
+          <li><a href="tablets.html" class="catalog-dropdown__link">Планшеты</a></li>
+          <li><a href="columns.html" class="catalog-dropdown__link">Портативные колонки</a></li>
 
         </ul>
       </section>
@@ -204,7 +198,7 @@ foreach($rows as $row ){
         </div>
         
         <div class="stat-1">
-            <img src="assets/images/ears 1.png" alt="Наушники">
+            <a href="headphones.html"><img src="assets/images/ears 1.png" alt="Наушники"></a>
             <p>Наушники</p>
         </div>
         
@@ -219,7 +213,7 @@ foreach($rows as $row ){
         </div>
 
         <div class="stat-1">
-            <img src="assets/images/colonka.png" alt="Портативные колонки">
+            <a href="columns.html"><img src="assets/images/colonka.png" alt="Портативные колонки"></a>
             <p>Портативные колонки</p>
         </div>
     </div>
@@ -277,52 +271,64 @@ foreach($rows as $row ){
       <div class="product-image">
         <img src="assets/images/samsung 1.png" alt="Samsung Galaxy S25">
       </div>
-      <h2 class="product-title">Samsung Galaxy S25 </h2>
+      <div class="product-card-goods">
+        <h2 class="product-title">Samsung Galaxy S25 </h2>
       <p class="product-description">4/128 ГБ, серый</p>
       <div class="price-container">
         <span class="current-price">55 000 ₽</span>
       </div>
       <div class="availability">Доступно</div>
       <button class="add-to-cart">В корзину</button>
+      </div>
+      
     </div>
 
     <div class="product-card">
       <div class="product-image">
         <img src="assets/images/galaxywatch 1.svg" alt="Galaxy Watch Ultra">
       </div>
-      <h2 class="product-title">Galaxy Watch Ultra 47 мм LTE-синий-титан</h2>
+      <div class="product-card-goods">
+        <h2 class="product-title">Galaxy Watch Ultra 47 мм LTE-синий-титан</h2>
       <p class="product-description">Смарт-часы с LTE</p>
       <div class="price-container">
         <span class="current-price">39 990 ₽</span>
       </div>
       <div class="availability">Доступно</div>
       <button class="add-to-cart">В корзину</button>
+      </div>
+      
     </div>
 
     <div class="product-card">
       <div class="product-image">
         <img src="assets/images/ears 1.png" alt="Наушники JBL">
       </div>
-      <h2 class="product-title">Беспроводные наушники JBL Tune 770NC Black</h2>
+      <div class="product-card-goods">
+       <h2 class="product-title">Беспроводные наушники JBL Tune 770NC Black</h2>
       <p class="product-description">Шумоподавление</p>
       <div class="price-container">
         <span class="current-price">6 000 ₽</span>
       </div>
       <div class="availability">Доступно</div>
-      <button class="add-to-cart">В корзину</button>
+      <button class="add-to-cart">В корзину</button> 
+      </div>
+      
     </div>
 
     <div class="product-card">
       <div class="product-image">
         <img src="assets/images/Notebook.png" alt="Ноутбук Huawei">
       </div>
-      <h2 class="product-title">Ноутбук HUAWEI MateBook D 16 i5-13420H/8/512GB WIN SG 53014CNC5</h2>
+      <div class="product-card-goods">
+       <h2 class="product-title">Ноутбук HUAWEI MateBook D 16 i5-13420H/8/512GB WIN SG 53014CNC5</h2>
       <p class="product-description">16-дюймовый экран</p>
       <div class="price-container">
         <span class="current-price">54 999 ₽</span>
       </div>
       <div class="availability">Доступно</div>
-      <button class="add-to-cart">В корзину</button>
+      <button class="add-to-cart">В корзину</button> 
+      </div>
+      
     </div>
 
     <!-- Второй ряд (4 карточки) -->
@@ -330,52 +336,64 @@ foreach($rows as $row ){
       <div class="product-image">
         <img src="assets/images/tablet.avif" alt="Планшет Huawei">
       </div>
-      <h2 class="product-title">Планшет HUAWEI MatePad SE 11 (2024) 8/128GB LTE Gray 53014AYK</h2>
+      <div class="product-card-goods">
+       <h2 class="product-title">Планшет HUAWEI MatePad SE 11 (2024) 8/128GB LTE Gray 53014AYK</h2>
       <p class="product-description">11-дюймовый экран</p>
       <div class="price-container">
         <span class="current-price">17 399 ₽</span>
       </div>
       <div class="availability">Доступно</div>
-      <button class="add-to-cart">В корзину</button>
+      <button class="add-to-cart">В корзину</button> 
+      </div>
+      
     </div>
 
     <div class="product-card">
       <div class="product-image">
         <img src="assets/images/kolonka.avif" alt="Колонка Яндекс">
       </div>
-      <h2 class="product-title">Умная колонка Яндекс Станция Мини с Алисой, с часами, 10Вт, синий сапфир</h2>
+      <div class="product-card-goods">
+       <h2 class="product-title">Умная колонка Яндекс Станция Мини с Алисой, с часами, 10Вт, синий сапфир</h2>
       <p class="product-description">С голосовым помощником</p>
       <div class="price-container">
         <span class="current-price">8 499 ₽</span>
       </div>
       <div class="availability">Доступно</div>
-      <button class="add-to-cart">В корзину</button>
+      <button class="add-to-cart">В корзину</button> 
+      </div>
+      
     </div>
 
     <div class="product-card">
       <div class="product-image">
         <img src="assets/images/samsung 1.svg" alt="Samsung Galaxy S25">
       </div>
-      <h2 class="product-title">Samsung Galaxy S25 </h2>
+      <div class="product-card-goods">
+       <h2 class="product-title">Samsung Galaxy S25 </h2>
       <p class="product-description">4/128 ГБ, серый</p>
       <div class="price-container">
         <span class="current-price">39 499 ₽</span>
       </div>
       <div class="availability">Доступно</div>
-      <button class="add-to-cart">В корзину</button>
+      <button class="add-to-cart">В корзину</button> 
+      </div>
+      
     </div>
 
     <div class="product-card">
       <div class="product-image">
         <img src="assets/images/30079355bb.avif" alt="Samsung Galaxy S25">
       </div>
-      <h2 class="product-title">Samsung Galaxy S25 </h2>
+      <div class="product-card-goods">
+       <h2 class="product-title">Samsung Galaxy S25 </h2>
       <p class="product-description">4/128 ГБ, серый</p>
       <div class="price-container">
         <span class="current-price">96 999 ₽</span>
       </div>
       <div class="availability">Доступно</div>
-      <button class="add-to-cart">В корзину</button>
+      <button class="add-to-cart">В корзину</button> 
+      </div>
+      
     </div>
     
   </div>
@@ -393,9 +411,6 @@ foreach($rows as $row ){
                     <div class="card-img-container">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Xiaomi_logo_%282021-%29.svg/2560px-Xiaomi_logo_%282021-%29.svg.png" alt="Xiaomi" class="brand-logo">
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title brand-title">Xiaomi</h5>
-                    </div>
                 </div>
             </div>
             
@@ -404,9 +419,6 @@ foreach($rows as $row ){
                 <div class="card brand-card">
                     <div class="card-img-container">
                         <img src="assets/images/Samsung_old_logo_before_year_2015.svg.png" alt="Samsung" class="brand-logo">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title brand-title">Samsung</h5>
                     </div>
                 </div>
             </div>
@@ -417,9 +429,6 @@ foreach($rows as $row ){
                     <div class="card-img-container">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/488px-Apple_logo_black.svg.png" alt="Apple" class="brand-logo">
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title brand-title">Apple</h5>
-                    </div>
                 </div>
             </div>
             
@@ -428,9 +437,6 @@ foreach($rows as $row ){
                 <div class="card brand-card">
                     <div class="card-img-container">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/ASUS_Logo.svg/2560px-ASUS_Logo.svg.png" alt="Asus" class="brand-logo">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title brand-title">Asus</h5>
                     </div>
                 </div>
             </div>
@@ -441,9 +447,6 @@ foreach($rows as $row ){
                     <div class="card-img-container">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/2560px-HP_logo_2012.svg.png" alt="HP" class="brand-logo">
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title brand-title">HP</h5>
-                    </div>
                 </div>
             </div>
             
@@ -452,9 +455,6 @@ foreach($rows as $row ){
                 <div class="card brand-card">
                     <div class="card-img-container">
                         <img src="assets/images/Lenovo_(2015).svg.png" alt="Lenovo" class="brand-logo">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title brand-title">Lenovo</h5>
                     </div>
                 </div>
             </div>
@@ -465,9 +465,6 @@ foreach($rows as $row ){
                     <div class="card-img-container">
                         <img src="assets/images/JBL_logo.svg.png" alt="JBL" class="brand-logo">
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title brand-title">JBL</h5>
-                    </div>
                 </div>
             </div>
             
@@ -476,9 +473,6 @@ foreach($rows as $row ){
                 <div class="card brand-card">
                     <div class="card-img-container">
                         <img src="assets/images/Huawei_Standard_logo.svg.png" alt="Huawei" class="brand-logo">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title brand-title">Huawei</h5>
                     </div>
                 </div>
             </div>
@@ -563,6 +557,7 @@ foreach($rows as $row ){
                         <div class="review-content">
                             <div class="review-image-container">
                                 <img src="assets/images/obzor-ears.jpg" alt="TWS наушники" class="review-image">
+                                <img src="" alt="">
                             </div>
                             <h3 class="review-title">Как выбрать лучшие наушники?</h3>
                             <a href="obzor6.html" class="review-button">Смотреть обзор <span class="arrow">→</span></a>
@@ -965,6 +960,48 @@ document.addEventListener('DOMContentLoaded', function() {
         delay: 5000,
       },
     });
+
+    // Функционал кнопки
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollButton = document.getElementById('scrollUp');
+    const scrollProgress = scrollButton.querySelector('.scroll-progress');
+    
+    // Показывать/скрывать кнопку при прокрутке
+    window.addEventListener('scroll', function() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (scrollY / (documentHeight - windowHeight)) * 100;
+        
+        if (scrollY > 400) {
+            scrollButton.classList.add('show');
+            scrollButton.classList.add('show-progress');
+            
+            // Обновление индикатора прогресса
+            const circumference = 2 * Math.PI * 30; // радиус кнопки
+            const offset = circumference - (scrollPercentage / 100) * circumference;
+            scrollProgress.style.strokeDasharray = circumference;
+            scrollProgress.style.strokeDashoffset = offset;
+        } else {
+            scrollButton.classList.remove('show');
+            scrollButton.classList.remove('show-progress');
+        }
+    });
+    
+    // Плавная прокрутка наверх
+    scrollButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        
+        // Микро-анимация при клике
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+    });
+});
   </script>
   <script src="JS/script.js"></script>
 </body>
